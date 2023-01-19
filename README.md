@@ -1,8 +1,8 @@
 bgfx - Cross-platform rendering library (XYZ Reality fork)
 ============================================================================
 
-[What is it?]
--------------------------------------------------------------
+What is it?
+-----------
 
 Cross-platform, graphics API agnostic, "Bring Your Own Engine/Framework" style
 rendering library. This is our customized fork with some modifications like added project files for all 
@@ -50,7 +50,7 @@ Building
 --------
 The project files are already built and injected to our forked repo, so it is now quite easy to build the library.
 <br>
-##Windows
+## Windows
 ```
 1- Create some folder
 2- cd to the created folder
@@ -63,12 +63,12 @@ The project files are already built and injected to our forked repo, so it is no
 ```
 <br>
 Running this tool under Windows doesn't give you too much since it is mainly targeted for Linux. <br><br>
-**Linux:**
+## Linux
 
 On a x86/x64 archtecture Linux machine:
 ```
-$ mkdir bgfx
-$ cd bgfx
+$ mkdir bgfxroot
+$ cd bgfxroot
 $ git clone git@github.com:XYZReality/bgfx.git
 $ git clone git@github.com:XYZReality/bx.git
 $ git clone git@github.com:XYZReality/bimg.git
@@ -78,8 +78,8 @@ $ make linux
 
 On an ARM architecture Linux machine (like nVidia Orin):
 ```
-$ mkdir bgfx
-$ cd bgfx
+$ mkdir bgfxroot
+$ cd bgfxroot
 $ git clone git@github.com:XYZReality/bgfx.git
 $ git clone git@github.com:XYZReality/bx.git
 $ git clone git@github.com:XYZReality/bimg.git
@@ -88,7 +88,7 @@ $ make linux-arm
 ```
 
 Based on the CPU architecture of the machine you are building this on, it will generate the binaries in either 
-bgfx/bgfx/.build/linux64_gcc or bgfx/bgfx/.build/linux32_arm_gcc folder.
+**bgfxroot/bgfx/.build/linux64_gcc** or **bgfxroot/bgfx/.build/linux32_arm_gcc** folder.
 
 [License (BSD 2-clause)](https://bkaradzic.github.io/bgfx/license.html)
 -----------------------------------------------------------------------
