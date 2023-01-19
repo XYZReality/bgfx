@@ -57,9 +57,8 @@ The project files are already built and injected to our forked repo, so it is no
 3- Clone https://github.com/XYZReality/bgfx repo to that folder
 4- Clone https://github.com/XYZReality/bx repo to the same folder
 5- Clone https://github.com/XYZReality/bimg repo to the same folder
-6- Open <folder>/bgfx/.build/projects/vs2022/bgfx.sln in your Visual Studio and built it!
-2- Open the visual studio solution file from GENie/scripts/genie.sln
-3- Build
+6- Open <folder>/bgfx/.build/projects/vs2022/bgfx.sln in your Visual Studio
+7- Build
 ```
 <br>
 Running this tool under Windows doesn't give you too much since it is mainly targeted for Linux. <br><br>
