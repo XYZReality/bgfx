@@ -62,7 +62,7 @@ The project files are already built and injected to our forked repo, so it is no
 ```
 <br>
 
-**Linux:** <br><br>
+**Linux:** <br>
 On a **x86/x64** archtecture Linux machine:
 ```
 $ mkdir bgfxroot
