@@ -48,9 +48,8 @@ Supported compilers:
 
 Building
 --------
-The project files are already built and injected to our forked repo, so it is now quite easy to build the library.
-<br>
-## Windows
+The project files are already built and injected to our forked repo, so it is now quite easy to build the library.<br>
+**Windows**
 ```
 1- Create some folder
 2- cd to the created folder
@@ -62,9 +61,8 @@ The project files are already built and injected to our forked repo, so it is no
 ```
 <br>
 Running this tool under Windows doesn't give you too much since it is mainly targeted for Linux. <br><br>
-## Linux
-
-On a x86/x64 archtecture Linux machine:
+**Linux**
+On a **x86/x64** archtecture Linux machine:
 ```
 $ mkdir bgfxroot
 $ cd bgfxroot
@@ -75,7 +73,7 @@ $ cd bgfx
 $ make linux
 ```
 
-On an ARM architecture Linux machine (like nVidia Orin):
+On an **ARM** architecture Linux machine (like nVidia Orin):
 ```
 $ mkdir bgfxroot
 $ cd bgfxroot
