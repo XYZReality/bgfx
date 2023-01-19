@@ -49,6 +49,7 @@ Supported compilers:
 Building
 --------
 The project files are already built and injected to our forked repo, so it is now quite easy to build the library.<br>
+
 **Windows**
 ```
 1- Create some folder
@@ -60,7 +61,8 @@ The project files are already built and injected to our forked repo, so it is no
 7- Build
 ```
 <br>
-Running this tool under Windows doesn't give you too much since it is mainly targeted for Linux. <br><br>
+
+Running this tool under Windows doesn't give you too much since it is mainly targeted for Linux. <br>
 **Linux**
 On a **x86/x64** archtecture Linux machine:
 ```
