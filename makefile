@@ -65,6 +65,7 @@ projgen: ## Generate project files for all configurations.
 	$(GENIE)              --with-combined-examples                   --gcc=ios-simulator64 gmake
 	$(GENIE)              --with-combined-examples                   --gcc=rpi             gmake
 	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=linux-arm-gcc   gmake
+	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=orin            gmake
 
 idl: ## Generate code from IDL.
 	@echo Generating code from IDL.
@@ -128,11 +129,19 @@ linux: linux-debug64 linux-release64 ## Build - Linux x86/x64 Debug and Release
 
 .build/projects/gmake-linux-arm-gcc:
 	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=linux-arm-gcc gmake
-linux-arm-debug64: .build/projects/gmake-linux-arm-gcc ## Build - Linux x64 Debug
+linux-arm-debug64: .build/projects/gmake-linux-arm-gcc ## Build - Linux ARM Debug
 	$(MAKE) -R -C .build/projects/gmake-linux-arm-gcc config=debug64
-linux-arm-release64: .build/projects/gmake-linux-arm-gcc ## Build - Linux x64 Release
+linux-arm-release64: .build/projects/gmake-linux-arm-gcc ## Build - Linux ARM Release
 	$(MAKE) -R -C .build/projects/gmake-linux-arm-gcc config=release64
-linux-arm: linux-arm-debug64 linux-arm-release64 ## Build - Linux x86/x64 Debug and Release
+linux-arm: linux-arm-debug64 linux-arm-release64 ## Build - Linux ARM Debug and Release
+
+.build/projects/gmake-orin:
+	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=orin gmake
+orin-debug64: .build/projects/gmake-orin ## Build - nVidia Orin Debug
+	$(MAKE) -R -C .build/projects/gmake-orin config=debug64
+orin-release64: .build/projects/gmake-orin ## Build - nVidia Orin Release
+	$(MAKE) -R -C .build/projects/gmake-orin config=release64
+orin: orin-debug64 orin-release64 ## Build - nVidia Orin Debug and Release
 
 .build/projects/gmake-freebsd:
 	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=freebsd gmake
@@ -260,6 +269,8 @@ build-darwin: osx-x64
 build-linux: linux-debug64 linux-release64
 
 build-linux-arm: linux-arm-debug64 linux-arm-release64
+
+orin: orin-debug64 orin-release64
 
 build-windows: mingw-gcc
 

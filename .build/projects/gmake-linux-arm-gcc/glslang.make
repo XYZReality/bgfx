@@ -46,8 +46,8 @@ endif
 MAKEFILE = glslang.make
 
 ifeq ($(config),debug32)
-  OBJDIR              = ../../linux32_arm_gcc/obj/x32/Debug/glslang
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/x32/Debug/glslang
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/libglslangDebug.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DENABLE_OPT=1 -DENABLE_HLSL=1
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty/glslang" -I"../../../3rdparty" -I"../../../3rdparty/spirv-tools/include" -I"../../../3rdparty/spirv-tools/source"
@@ -58,7 +58,7 @@ ifeq ($(config),debug32)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wshadow -Wunused-value -Wundef -fno-strict-aliasing -Wno-ignored-qualifiers -Wno-implicit-fallthrough -Wno-missing-field-initializers -Wno-reorder -Wno-return-type -Wno-shadow -Wno-sign-compare -Wno-switch -Wno-undef -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -Wundef -fno-strict-aliasing -Wno-ignored-qualifiers -Wno-implicit-fallthrough -Wno-missing-field-initializers -Wno-reorder -Wno-return-type -Wno-shadow -Wno-sign-compare -Wno-switch -Wno-undef -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -129,8 +129,8 @@ ifeq ($(config),debug32)
 endif
 
 ifeq ($(config),release32)
-  OBJDIR              = ../../linux32_arm_gcc/obj/x32/Release/glslang
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/x32/Release/glslang
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/libglslangRelease.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DENABLE_OPT=1 -DENABLE_HLSL=1
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty/glslang" -I"../../../3rdparty" -I"../../../3rdparty/spirv-tools/include" -I"../../../3rdparty/spirv-tools/source"
@@ -141,7 +141,7 @@ ifeq ($(config),release32)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wshadow -Wunused-value -Wundef -fno-strict-aliasing -Wno-ignored-qualifiers -Wno-implicit-fallthrough -Wno-missing-field-initializers -Wno-reorder -Wno-return-type -Wno-shadow -Wno-sign-compare -Wno-switch -Wno-undef -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -Wundef -fno-strict-aliasing -Wno-ignored-qualifiers -Wno-implicit-fallthrough -Wno-missing-field-initializers -Wno-reorder -Wno-return-type -Wno-shadow -Wno-sign-compare -Wno-switch -Wno-undef -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -212,8 +212,8 @@ ifeq ($(config),release32)
 endif
 
 ifeq ($(config),debug64)
-  OBJDIR              = ../../linux32_arm_gcc/obj/x64/Debug/glslang
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/x64/Debug/glslang
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/libglslangDebug.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DENABLE_OPT=1 -DENABLE_HLSL=1
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty/glslang" -I"../../../3rdparty" -I"../../../3rdparty/spirv-tools/include" -I"../../../3rdparty/spirv-tools/source"
@@ -224,7 +224,7 @@ ifeq ($(config),debug64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wshadow -Wunused-value -Wundef -fno-strict-aliasing -Wno-ignored-qualifiers -Wno-implicit-fallthrough -Wno-missing-field-initializers -Wno-reorder -Wno-return-type -Wno-shadow -Wno-sign-compare -Wno-switch -Wno-undef -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -Wundef -fno-strict-aliasing -Wno-ignored-qualifiers -Wno-implicit-fallthrough -Wno-missing-field-initializers -Wno-reorder -Wno-return-type -Wno-shadow -Wno-sign-compare -Wno-switch -Wno-undef -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -295,8 +295,8 @@ ifeq ($(config),debug64)
 endif
 
 ifeq ($(config),release64)
-  OBJDIR              = ../../linux32_arm_gcc/obj/x64/Release/glslang
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/x64/Release/glslang
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/libglslangRelease.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DENABLE_OPT=1 -DENABLE_HLSL=1
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty/glslang" -I"../../../3rdparty" -I"../../../3rdparty/spirv-tools/include" -I"../../../3rdparty/spirv-tools/source"
@@ -307,7 +307,7 @@ ifeq ($(config),release64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wshadow -Wunused-value -Wundef -fno-strict-aliasing -Wno-ignored-qualifiers -Wno-implicit-fallthrough -Wno-missing-field-initializers -Wno-reorder -Wno-return-type -Wno-shadow -Wno-sign-compare -Wno-switch -Wno-undef -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -Wundef -fno-strict-aliasing -Wno-ignored-qualifiers -Wno-implicit-fallthrough -Wno-missing-field-initializers -Wno-reorder -Wno-return-type -Wno-shadow -Wno-sign-compare -Wno-switch -Wno-undef -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -378,8 +378,8 @@ ifeq ($(config),release64)
 endif
 
 ifeq ($(config),debug)
-  OBJDIR              = ../../linux32_arm_gcc/obj/Debug/glslang
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/Debug/glslang
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/libglslangDebug.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DENABLE_OPT=1 -DENABLE_HLSL=1
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty/glslang" -I"../../../3rdparty" -I"../../../3rdparty/spirv-tools/include" -I"../../../3rdparty/spirv-tools/source"
@@ -390,7 +390,7 @@ ifeq ($(config),debug)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wshadow -Wunused-value -Wundef -fno-strict-aliasing -Wno-ignored-qualifiers -Wno-implicit-fallthrough -Wno-missing-field-initializers -Wno-reorder -Wno-return-type -Wno-shadow -Wno-sign-compare -Wno-switch -Wno-undef -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -Wundef -fno-strict-aliasing -Wno-ignored-qualifiers -Wno-implicit-fallthrough -Wno-missing-field-initializers -Wno-reorder -Wno-return-type -Wno-shadow -Wno-sign-compare -Wno-switch -Wno-undef -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -461,8 +461,8 @@ ifeq ($(config),debug)
 endif
 
 ifeq ($(config),release)
-  OBJDIR              = ../../linux32_arm_gcc/obj/Release/glslang
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/Release/glslang
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/libglslangRelease.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DENABLE_OPT=1 -DENABLE_HLSL=1
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty/glslang" -I"../../../3rdparty" -I"../../../3rdparty/spirv-tools/include" -I"../../../3rdparty/spirv-tools/source"
@@ -473,7 +473,7 @@ ifeq ($(config),release)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wshadow -Wunused-value -Wundef -fno-strict-aliasing -Wno-ignored-qualifiers -Wno-implicit-fallthrough -Wno-missing-field-initializers -Wno-reorder -Wno-return-type -Wno-shadow -Wno-sign-compare -Wno-switch -Wno-undef -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -Wundef -fno-strict-aliasing -Wno-ignored-qualifiers -Wno-implicit-fallthrough -Wno-missing-field-initializers -Wno-reorder -Wno-return-type -Wno-shadow -Wno-sign-compare -Wno-switch -Wno-undef -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =

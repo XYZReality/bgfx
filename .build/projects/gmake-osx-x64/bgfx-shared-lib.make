@@ -52,11 +52,11 @@ ifeq ($(config),debug32)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBGFX_SHARED_LIB_BUILD=1 -DBX_CONFIG_DEBUG=1
   INCLUDES           += -I"../../../../bx/include/compat/osx" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-x64/bin" -shared -arch x86_64 -framework Cocoa -framework IOKit -framework OpenGL -framework QuartzCore -weak_framework Metal -weak_framework MetalKit
   LIBDEPS            += ../../osx-x64/bin/libbimgDebug.a ../../osx-x64/bin/libbxDebug.a
@@ -111,11 +111,11 @@ ifeq ($(config),release32)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBGFX_SHARED_LIB_BUILD=1 -DBX_CONFIG_DEBUG=0
   INCLUDES           += -I"../../../../bx/include/compat/osx" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-x64/bin" -shared -arch x86_64 -framework Cocoa -framework IOKit -framework OpenGL -framework QuartzCore -weak_framework Metal -weak_framework MetalKit
   LIBDEPS            += ../../osx-x64/bin/libbimgRelease.a ../../osx-x64/bin/libbxRelease.a
@@ -170,11 +170,11 @@ ifeq ($(config),debug64)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBGFX_SHARED_LIB_BUILD=1 -DBX_CONFIG_DEBUG=1
   INCLUDES           += -I"../../../../bx/include/compat/osx" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-x64/bin" -shared -arch x86_64 -framework Cocoa -framework IOKit -framework OpenGL -framework QuartzCore -weak_framework Metal -weak_framework MetalKit
   LIBDEPS            += ../../osx-x64/bin/libbimgDebug.a ../../osx-x64/bin/libbxDebug.a
@@ -229,11 +229,11 @@ ifeq ($(config),release64)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBGFX_SHARED_LIB_BUILD=1 -DBX_CONFIG_DEBUG=0
   INCLUDES           += -I"../../../../bx/include/compat/osx" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-x64/bin" -shared -arch x86_64 -framework Cocoa -framework IOKit -framework OpenGL -framework QuartzCore -weak_framework Metal -weak_framework MetalKit
   LIBDEPS            += ../../osx-x64/bin/libbimgRelease.a ../../osx-x64/bin/libbxRelease.a
@@ -288,11 +288,11 @@ ifeq ($(config),debug)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBGFX_SHARED_LIB_BUILD=1 -DBX_CONFIG_DEBUG=1
   INCLUDES           += -I"../../../../bx/include/compat/osx" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-x64/bin" -shared -arch x86_64 -framework Cocoa -framework IOKit -framework OpenGL -framework QuartzCore -weak_framework Metal -weak_framework MetalKit
   LIBDEPS            += ../../osx-x64/bin/libbimgDebug.a ../../osx-x64/bin/libbxDebug.a
@@ -347,11 +347,11 @@ ifeq ($(config),release)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBGFX_SHARED_LIB_BUILD=1 -DBX_CONFIG_DEBUG=0
   INCLUDES           += -I"../../../../bx/include/compat/osx" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef -x objective-c++
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-x64/bin" -shared -arch x86_64 -framework Cocoa -framework IOKit -framework OpenGL -framework QuartzCore -weak_framework Metal -weak_framework MetalKit
   LIBDEPS            += ../../osx-x64/bin/libbimgRelease.a ../../osx-x64/bin/libbxRelease.a

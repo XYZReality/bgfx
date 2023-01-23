@@ -256,7 +256,7 @@ function exampleProjectDefaults()
 		defines { "ENTRY_CONFIG_USE_SDL=1" }
 		links   { "SDL2" }
 
-		configuration { "linux or freebsd" }
+		configuration { "linux or freebsd or orin" }
 			if _OPTIONS["with-wayland"]  then
 				links {
 					"wayland-egl",
@@ -273,7 +273,7 @@ function exampleProjectDefaults()
 		defines { "ENTRY_CONFIG_USE_GLFW=1" }
 		links   { "glfw3" }
 
-		configuration { "linux or freebsd" }
+		configuration { "linux or freebsd or orin" }
 			if _OPTIONS["with-wayland"] then
 				links {
 					"wayland-egl",
@@ -391,7 +391,7 @@ function exampleProjectDefaults()
 			"Optimize"
 		}
 
-	configuration { "linux-* or freebsd" }
+	configuration { "linux-* or freebsd or orin" }
 		links {
 			"X11",
 			"GL",

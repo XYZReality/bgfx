@@ -455,16 +455,16 @@
 				OBJROOT = obj/Debug/geometryv;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -539,16 +539,16 @@
 				OBJROOT = obj/Release/geometryv;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",

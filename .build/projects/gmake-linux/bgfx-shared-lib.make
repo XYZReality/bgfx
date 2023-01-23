@@ -52,11 +52,11 @@ ifeq ($(config),debug32)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBGFX_SHARED_LIB_BUILD=1 -DBX_CONFIG_DEBUG=1
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_gcc" -L"." -L"../../linux32_gcc/bin" -shared -Wl,--gc-sections -Wl,--as-needed
   LIBDEPS            += ../../linux32_gcc/bin/libbimgDebug.a ../../linux32_gcc/bin/libbxDebug.a
@@ -108,11 +108,11 @@ ifeq ($(config),release32)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBGFX_SHARED_LIB_BUILD=1 -DBX_CONFIG_DEBUG=0
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m32 -fPIC
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_gcc" -L"." -L"../../linux32_gcc/bin" -shared -Wl,--gc-sections -Wl,--as-needed
   LIBDEPS            += ../../linux32_gcc/bin/libbimgRelease.a ../../linux32_gcc/bin/libbxRelease.a
@@ -164,11 +164,11 @@ ifeq ($(config),debug64)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBGFX_SHARED_LIB_BUILD=1 -DBX_CONFIG_DEBUG=1
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux64_gcc" -L"." -L"../../linux64_gcc/bin" -shared -Wl,--gc-sections -Wl,--as-needed
   LIBDEPS            += ../../linux64_gcc/bin/libbimgDebug.a ../../linux64_gcc/bin/libbxDebug.a
@@ -220,11 +220,11 @@ ifeq ($(config),release64)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBGFX_SHARED_LIB_BUILD=1 -DBX_CONFIG_DEBUG=0
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -m64 -fPIC
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux64_gcc" -L"." -L"../../linux64_gcc/bin" -shared -Wl,--gc-sections -Wl,--as-needed
   LIBDEPS            += ../../linux64_gcc/bin/libbimgRelease.a ../../linux64_gcc/bin/libbxRelease.a
@@ -276,11 +276,11 @@ ifeq ($(config),debug)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBGFX_SHARED_LIB_BUILD=1 -DBX_CONFIG_DEBUG=1
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -fPIC
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -fPIC
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -fPIC
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -fPIC
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -fPIC
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -fPIC
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -fPIC
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -fPIC
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -fPIC
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -fPIC
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"." -L"../../../../bimg/scripts" -L"../../../../bx/scripts" -shared -Wl,--gc-sections -Wl,--as-needed
   LIBDEPS            += ../../../../bimg/scripts/libbimgDebug.a ../../../../bx/scripts/libbxDebug.a
@@ -332,11 +332,11 @@ ifeq ($(config),release)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBGFX_SHARED_LIB_BUILD=1 -DBX_CONFIG_DEBUG=0
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -fPIC
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -fPIC
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -fPIC
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -fPIC
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -Wunused-value -Wundef -Wlogical-op -fPIC
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -fPIC
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -fPIC
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -fPIC
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -fPIC
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -fPIC -std=c++14 -fno-rtti -fno-exceptions -Wshadow -mfpmath=sse -msse4.2 -Wunused-value -Wundef -Wlogical-op -fPIC
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"." -L"../../../../bimg/scripts" -L"../../../../bx/scripts" -shared -Wl,--gc-sections -Wl,--as-needed
   LIBDEPS            += ../../../../bimg/scripts/libbimgRelease.a ../../../../bx/scripts/libbxRelease.a

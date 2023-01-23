@@ -244,8 +244,8 @@
 				OBJROOT = obj/Debug/fcpp;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -255,8 +255,8 @@
 					"-Wno-parentheses-equality",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -325,8 +325,8 @@
 				OBJROOT = obj/Release/fcpp;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -336,8 +336,8 @@
 					"-Wno-parentheses-equality",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",

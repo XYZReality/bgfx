@@ -52,11 +52,11 @@ ifeq ($(config),debug32)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DWIN32 -DMINGW_HAS_SECURE_API=1 -DBX_CONFIG_DEBUG=1
   INCLUDES           += -I"../../../../bx/include/compat/mingw" -I"../../../../bimg/include" -I"../../../include" -I"../../../3rdparty" -I"../../../examples/common" -I"../../../../bx/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef -m32 -mstackrealign
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef -m32 -mstackrealign
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef -m32 -mstackrealign
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef -m32 -mstackrealign
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef -m32 -mstackrealign
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/win32_mingw-gcc" -L"../../win32_mingw-gcc/bin" -L"." -Wl,--gc-sections -static -static-libgcc -static-libstdc++
   LIBDEPS            += ../../win32_mingw-gcc/bin/libexample-glueDebug.a ../../win32_mingw-gcc/bin/libexample-commonDebug.a ../../win32_mingw-gcc/bin/libbgfxDebug.a ../../win32_mingw-gcc/bin/libbimg_decodeDebug.a ../../win32_mingw-gcc/bin/libbimgDebug.a ../../win32_mingw-gcc/bin/libbxDebug.a
@@ -137,11 +137,11 @@ ifeq ($(config),release32)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DWIN32 -DMINGW_HAS_SECURE_API=1 -DBX_CONFIG_DEBUG=0
   INCLUDES           += -I"../../../../bx/include/compat/mingw" -I"../../../../bimg/include" -I"../../../include" -I"../../../3rdparty" -I"../../../examples/common" -I"../../../../bx/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef -m32 -mstackrealign
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef -m32 -mstackrealign
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef -m32 -mstackrealign
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef -m32 -mstackrealign
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef -m32 -mstackrealign
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/win32_mingw-gcc" -L"../../win32_mingw-gcc/bin" -L"." -Wl,--gc-sections -static -static-libgcc -static-libstdc++
   LIBDEPS            += ../../win32_mingw-gcc/bin/libexample-glueRelease.a ../../win32_mingw-gcc/bin/libexample-commonRelease.a ../../win32_mingw-gcc/bin/libbgfxRelease.a ../../win32_mingw-gcc/bin/libbimg_decodeRelease.a ../../win32_mingw-gcc/bin/libbimgRelease.a ../../win32_mingw-gcc/bin/libbxRelease.a
@@ -225,11 +225,11 @@ ifeq ($(config),debug64)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DWIN32 -DMINGW_HAS_SECURE_API=1 -DBX_CONFIG_DEBUG=1
   INCLUDES           += -I"../../../../bx/include/compat/mingw" -I"../../../../bimg/include" -I"../../../include" -I"../../../3rdparty" -I"../../../examples/common" -I"../../../../bx/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/win64_mingw-gcc" -L"../../win64_mingw-gcc/bin" -L"." -Wl,--gc-sections -static -static-libgcc -static-libstdc++
   LIBDEPS            += ../../win64_mingw-gcc/bin/libexample-glueDebug.a ../../win64_mingw-gcc/bin/libexample-commonDebug.a ../../win64_mingw-gcc/bin/libbgfxDebug.a ../../win64_mingw-gcc/bin/libbimg_decodeDebug.a ../../win64_mingw-gcc/bin/libbimgDebug.a ../../win64_mingw-gcc/bin/libbxDebug.a
@@ -310,11 +310,11 @@ ifeq ($(config),release64)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DWIN32 -DMINGW_HAS_SECURE_API=1 -DBX_CONFIG_DEBUG=0
   INCLUDES           += -I"../../../../bx/include/compat/mingw" -I"../../../../bimg/include" -I"../../../include" -I"../../../3rdparty" -I"../../../examples/common" -I"../../../../bx/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/win64_mingw-gcc" -L"../../win64_mingw-gcc/bin" -L"." -Wl,--gc-sections -static -static-libgcc -static-libstdc++
   LIBDEPS            += ../../win64_mingw-gcc/bin/libexample-glueRelease.a ../../win64_mingw-gcc/bin/libexample-commonRelease.a ../../win64_mingw-gcc/bin/libbgfxRelease.a ../../win64_mingw-gcc/bin/libbimg_decodeRelease.a ../../win64_mingw-gcc/bin/libbimgRelease.a ../../win64_mingw-gcc/bin/libbxRelease.a
@@ -398,11 +398,11 @@ ifeq ($(config),debug)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DWIN32 -DMINGW_HAS_SECURE_API=1 -DBX_CONFIG_DEBUG=1
   INCLUDES           += -I"../../../../bx/include/compat/mingw" -I"../../../../bimg/include" -I"../../../include" -I"../../../3rdparty" -I"../../../examples/common" -I"../../../../bx/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../scripts" -L"../../../../bimg/scripts" -L"../../../../bx/scripts" -L"." -Wl,--gc-sections -static -static-libgcc -static-libstdc++
   LIBDEPS            += ../../../scripts/libexample-glueDebug.a ../../../scripts/libexample-commonDebug.a ../../../scripts/libbgfxDebug.a ../../../../bimg/scripts/libbimg_decodeDebug.a ../../../../bimg/scripts/libbimgDebug.a ../../../../bx/scripts/libbxDebug.a
@@ -483,11 +483,11 @@ ifeq ($(config),release)
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DWIN32 -DMINGW_HAS_SECURE_API=1 -DBX_CONFIG_DEBUG=0
   INCLUDES           += -I"../../../../bx/include/compat/mingw" -I"../../../../bimg/include" -I"../../../include" -I"../../../3rdparty" -I"../../../examples/common" -I"../../../../bx/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -Wundef
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../scripts" -L"../../../../bimg/scripts" -L"../../../../bx/scripts" -L"." -Wl,--gc-sections -static -static-libgcc -static-libstdc++
   LIBDEPS            += ../../../scripts/libexample-glueRelease.a ../../../scripts/libexample-commonRelease.a ../../../scripts/libbgfxRelease.a ../../../../bimg/scripts/libbimg_decodeRelease.a ../../../../bimg/scripts/libbimgRelease.a ../../../../bx/scripts/libbxRelease.a

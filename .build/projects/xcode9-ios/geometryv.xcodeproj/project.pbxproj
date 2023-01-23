@@ -455,15 +455,15 @@
 				OBJROOT = "../../ios-arm/obj/Debug/geometryv";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
@@ -539,15 +539,15 @@
 				OBJROOT = "../../ios-arm/obj/Release/geometryv";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",

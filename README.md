@@ -74,7 +74,7 @@ $ cd bgfx
 $ make linux
 ```
 
-On an **ARM** architecture Linux machine (like nVidia Orin):
+On an **ARM** architecture Linux machine:
 ```
 $ mkdir bgfxroot
 $ cd bgfxroot
@@ -85,8 +85,19 @@ $ cd bgfx
 $ make linux-arm
 ```
 
+On **nVidia Orin** SBC board:
+```
+$ mkdir bgfxroot
+$ cd bgfxroot
+$ git clone git@github.com:XYZReality/bgfx.git
+$ git clone git@github.com:XYZReality/bx.git
+$ git clone git@github.com:XYZReality/bimg.git
+$ cd bgfx 
+$ make orin
+```
+
 Based on the CPU architecture of the machine you are building this on, it will generate the binaries in either 
-**bgfxroot/bgfx/.build/linux64_gcc** or **bgfxroot/bgfx/.build/linux32_arm_gcc** folder.
+**bgfxroot/bgfx/.build/linux64_gcc** or **bgfxroot/bgfx/.build/linux32_arm_gcc** or **bgfxroot/bgfx/.build/orin** folder.
 
 [License (BSD 2-clause)](https://bkaradzic.github.io/bgfx/license.html)
 -----------------------------------------------------------------------

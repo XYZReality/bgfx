@@ -46,8 +46,8 @@ endif
 MAKEFILE = glsl-optimizer.make
 
 ifeq ($(config),debug32)
-  OBJDIR              = ../../linux32_arm_gcc/obj/x32/Debug/glsl-optimizer
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/x32/Debug/glsl-optimizer
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/libglsl-optimizerDebug.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty/glsl-optimizer/src" -I"../../../3rdparty/glsl-optimizer/include" -I"../../../3rdparty/glsl-optimizer/src/mesa" -I"../../../3rdparty/glsl-optimizer/src/mapi" -I"../../../3rdparty/glsl-optimizer/src/glsl"
@@ -58,7 +58,7 @@ ifeq ($(config),debug32)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -fno-strict-aliasing -Wno-implicit-fallthrough -Wno-parentheses -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -Wunused-value -Wundef -fno-strict-aliasing -Wno-implicit-fallthrough -Wno-parentheses -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -182,8 +182,8 @@ ifeq ($(config),debug32)
 endif
 
 ifeq ($(config),release32)
-  OBJDIR              = ../../linux32_arm_gcc/obj/x32/Release/glsl-optimizer
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/x32/Release/glsl-optimizer
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/libglsl-optimizerRelease.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty/glsl-optimizer/src" -I"../../../3rdparty/glsl-optimizer/include" -I"../../../3rdparty/glsl-optimizer/src/mesa" -I"../../../3rdparty/glsl-optimizer/src/mapi" -I"../../../3rdparty/glsl-optimizer/src/glsl"
@@ -194,7 +194,7 @@ ifeq ($(config),release32)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O2 -Wunused-value -Wundef -fno-strict-aliasing -Wno-implicit-fallthrough -Wno-parentheses -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O2 -std=c++14 -fno-rtti -fno-exceptions -Wunused-value -Wundef -fno-strict-aliasing -Wno-implicit-fallthrough -Wno-parentheses -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -318,8 +318,8 @@ ifeq ($(config),release32)
 endif
 
 ifeq ($(config),debug64)
-  OBJDIR              = ../../linux32_arm_gcc/obj/x64/Debug/glsl-optimizer
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/x64/Debug/glsl-optimizer
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/libglsl-optimizerDebug.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty/glsl-optimizer/src" -I"../../../3rdparty/glsl-optimizer/include" -I"../../../3rdparty/glsl-optimizer/src/mesa" -I"../../../3rdparty/glsl-optimizer/src/mapi" -I"../../../3rdparty/glsl-optimizer/src/glsl"
@@ -330,7 +330,7 @@ ifeq ($(config),debug64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -fno-strict-aliasing -Wno-implicit-fallthrough -Wno-parentheses -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -Wunused-value -Wundef -fno-strict-aliasing -Wno-implicit-fallthrough -Wno-parentheses -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -454,8 +454,8 @@ ifeq ($(config),debug64)
 endif
 
 ifeq ($(config),release64)
-  OBJDIR              = ../../linux32_arm_gcc/obj/x64/Release/glsl-optimizer
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/x64/Release/glsl-optimizer
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/libglsl-optimizerRelease.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty/glsl-optimizer/src" -I"../../../3rdparty/glsl-optimizer/include" -I"../../../3rdparty/glsl-optimizer/src/mesa" -I"../../../3rdparty/glsl-optimizer/src/mapi" -I"../../../3rdparty/glsl-optimizer/src/glsl"
@@ -466,7 +466,7 @@ ifeq ($(config),release64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O2 -Wunused-value -Wundef -fno-strict-aliasing -Wno-implicit-fallthrough -Wno-parentheses -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O2 -std=c++14 -fno-rtti -fno-exceptions -Wunused-value -Wundef -fno-strict-aliasing -Wno-implicit-fallthrough -Wno-parentheses -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -590,8 +590,8 @@ ifeq ($(config),release64)
 endif
 
 ifeq ($(config),debug)
-  OBJDIR              = ../../linux32_arm_gcc/obj/Debug/glsl-optimizer
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/Debug/glsl-optimizer
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/libglsl-optimizerDebug.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty/glsl-optimizer/src" -I"../../../3rdparty/glsl-optimizer/include" -I"../../../3rdparty/glsl-optimizer/src/mesa" -I"../../../3rdparty/glsl-optimizer/src/mapi" -I"../../../3rdparty/glsl-optimizer/src/glsl"
@@ -602,7 +602,7 @@ ifeq ($(config),debug)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -fno-strict-aliasing -Wno-implicit-fallthrough -Wno-parentheses -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -Wunused-value -Wundef -fno-strict-aliasing -Wno-implicit-fallthrough -Wno-parentheses -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -726,8 +726,8 @@ ifeq ($(config),debug)
 endif
 
 ifeq ($(config),release)
-  OBJDIR              = ../../linux32_arm_gcc/obj/Release/glsl-optimizer
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/Release/glsl-optimizer
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/libglsl-optimizerRelease.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../3rdparty/glsl-optimizer/src" -I"../../../3rdparty/glsl-optimizer/include" -I"../../../3rdparty/glsl-optimizer/src/mesa" -I"../../../3rdparty/glsl-optimizer/src/mapi" -I"../../../3rdparty/glsl-optimizer/src/glsl"
@@ -738,7 +738,7 @@ ifeq ($(config),release)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O2 -Wunused-value -Wundef -fno-strict-aliasing -Wno-implicit-fallthrough -Wno-parentheses -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O2 -std=c++14 -fno-rtti -fno-exceptions -Wunused-value -Wundef -fno-strict-aliasing -Wno-implicit-fallthrough -Wno-parentheses -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =

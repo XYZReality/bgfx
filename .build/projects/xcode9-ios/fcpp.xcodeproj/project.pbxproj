@@ -244,8 +244,8 @@
 				OBJROOT = "../../ios-arm/obj/Debug/fcpp";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
@@ -254,8 +254,8 @@
 					"-Wno-parentheses-equality",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
@@ -326,8 +326,8 @@
 				OBJROOT = "../../ios-arm/obj/Release/fcpp";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
@@ -336,8 +336,8 @@
 					"-Wno-parentheses-equality",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",

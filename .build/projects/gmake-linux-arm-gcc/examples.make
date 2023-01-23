@@ -46,8 +46,8 @@ endif
 MAKEFILE = examples.make
 
 ifeq ($(config),debug32)
-  OBJDIR              = ../../linux32_arm_gcc/obj/x32/Debug/examples
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/x32/Debug/examples
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/examplesDebug
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBX_CONFIG_DEBUG=1
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../bimg/include" -I"../../../include" -I"../../../3rdparty" -I"../../../examples/common" -I"../../../../bx/include"
@@ -58,9 +58,9 @@ ifeq ($(config),debug32)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -L"../../linux32_arm_gcc/bin" -Wl,--gc-sections
-  LIBDEPS            += ../../linux32_arm_gcc/bin/libexample-glueDebug.a ../../linux32_arm_gcc/bin/libexample-commonDebug.a ../../linux32_arm_gcc/bin/libbgfxDebug.a ../../linux32_arm_gcc/bin/libbimg_decodeDebug.a ../../linux32_arm_gcc/bin/libbimgDebug.a ../../linux32_arm_gcc/bin/libbxDebug.a
-  LDDEPS             += ../../linux32_arm_gcc/bin/libexample-glueDebug.a ../../linux32_arm_gcc/bin/libexample-commonDebug.a ../../linux32_arm_gcc/bin/libbgfxDebug.a ../../linux32_arm_gcc/bin/libbimg_decodeDebug.a ../../linux32_arm_gcc/bin/libbimgDebug.a ../../linux32_arm_gcc/bin/libbxDebug.a
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -L"../../linux_arm_gcc/bin" -Wl,--gc-sections
+  LIBDEPS            += ../../linux_arm_gcc/bin/libexample-glueDebug.a ../../linux_arm_gcc/bin/libexample-commonDebug.a ../../linux_arm_gcc/bin/libbgfxDebug.a ../../linux_arm_gcc/bin/libbimg_decodeDebug.a ../../linux_arm_gcc/bin/libbimgDebug.a ../../linux_arm_gcc/bin/libbxDebug.a
+  LDDEPS             += ../../linux_arm_gcc/bin/libexample-glueDebug.a ../../linux_arm_gcc/bin/libexample-commonDebug.a ../../linux_arm_gcc/bin/libbgfxDebug.a ../../linux_arm_gcc/bin/libbimg_decodeDebug.a ../../linux_arm_gcc/bin/libbimgDebug.a ../../linux_arm_gcc/bin/libbxDebug.a
   LDRESP              =
   LIBS               += $(LDDEPS) -lrt -ldl -lX11 -lGL -lpthread
   EXTERNAL_LIBS      +=
@@ -131,8 +131,8 @@ ifeq ($(config),debug32)
 endif
 
 ifeq ($(config),release32)
-  OBJDIR              = ../../linux32_arm_gcc/obj/x32/Release/examples
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/x32/Release/examples
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/examplesRelease
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBX_CONFIG_DEBUG=0
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../bimg/include" -I"../../../include" -I"../../../3rdparty" -I"../../../examples/common" -I"../../../../bx/include"
@@ -143,9 +143,9 @@ ifeq ($(config),release32)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -L"../../linux32_arm_gcc/bin" -Wl,--gc-sections
-  LIBDEPS            += ../../linux32_arm_gcc/bin/libexample-glueRelease.a ../../linux32_arm_gcc/bin/libexample-commonRelease.a ../../linux32_arm_gcc/bin/libbgfxRelease.a ../../linux32_arm_gcc/bin/libbimg_decodeRelease.a ../../linux32_arm_gcc/bin/libbimgRelease.a ../../linux32_arm_gcc/bin/libbxRelease.a
-  LDDEPS             += ../../linux32_arm_gcc/bin/libexample-glueRelease.a ../../linux32_arm_gcc/bin/libexample-commonRelease.a ../../linux32_arm_gcc/bin/libbgfxRelease.a ../../linux32_arm_gcc/bin/libbimg_decodeRelease.a ../../linux32_arm_gcc/bin/libbimgRelease.a ../../linux32_arm_gcc/bin/libbxRelease.a
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -L"../../linux_arm_gcc/bin" -Wl,--gc-sections
+  LIBDEPS            += ../../linux_arm_gcc/bin/libexample-glueRelease.a ../../linux_arm_gcc/bin/libexample-commonRelease.a ../../linux_arm_gcc/bin/libbgfxRelease.a ../../linux_arm_gcc/bin/libbimg_decodeRelease.a ../../linux_arm_gcc/bin/libbimgRelease.a ../../linux_arm_gcc/bin/libbxRelease.a
+  LDDEPS             += ../../linux_arm_gcc/bin/libexample-glueRelease.a ../../linux_arm_gcc/bin/libexample-commonRelease.a ../../linux_arm_gcc/bin/libbgfxRelease.a ../../linux_arm_gcc/bin/libbimg_decodeRelease.a ../../linux_arm_gcc/bin/libbimgRelease.a ../../linux_arm_gcc/bin/libbxRelease.a
   LDRESP              =
   LIBS               += $(LDDEPS) -lrt -ldl -lX11 -lGL -lpthread
   EXTERNAL_LIBS      +=
@@ -219,8 +219,8 @@ ifeq ($(config),release32)
 endif
 
 ifeq ($(config),debug64)
-  OBJDIR              = ../../linux32_arm_gcc/obj/x64/Debug/examples
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/x64/Debug/examples
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/examplesDebug
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBX_CONFIG_DEBUG=1
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../bimg/include" -I"../../../include" -I"../../../3rdparty" -I"../../../examples/common" -I"../../../../bx/include"
@@ -231,9 +231,9 @@ ifeq ($(config),debug64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -L"../../linux32_arm_gcc/bin" -Wl,--gc-sections
-  LIBDEPS            += ../../linux32_arm_gcc/bin/libexample-glueDebug.a ../../linux32_arm_gcc/bin/libexample-commonDebug.a ../../linux32_arm_gcc/bin/libbgfxDebug.a ../../linux32_arm_gcc/bin/libbimg_decodeDebug.a ../../linux32_arm_gcc/bin/libbimgDebug.a ../../linux32_arm_gcc/bin/libbxDebug.a
-  LDDEPS             += ../../linux32_arm_gcc/bin/libexample-glueDebug.a ../../linux32_arm_gcc/bin/libexample-commonDebug.a ../../linux32_arm_gcc/bin/libbgfxDebug.a ../../linux32_arm_gcc/bin/libbimg_decodeDebug.a ../../linux32_arm_gcc/bin/libbimgDebug.a ../../linux32_arm_gcc/bin/libbxDebug.a
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -L"../../linux_arm_gcc/bin" -Wl,--gc-sections
+  LIBDEPS            += ../../linux_arm_gcc/bin/libexample-glueDebug.a ../../linux_arm_gcc/bin/libexample-commonDebug.a ../../linux_arm_gcc/bin/libbgfxDebug.a ../../linux_arm_gcc/bin/libbimg_decodeDebug.a ../../linux_arm_gcc/bin/libbimgDebug.a ../../linux_arm_gcc/bin/libbxDebug.a
+  LDDEPS             += ../../linux_arm_gcc/bin/libexample-glueDebug.a ../../linux_arm_gcc/bin/libexample-commonDebug.a ../../linux_arm_gcc/bin/libbgfxDebug.a ../../linux_arm_gcc/bin/libbimg_decodeDebug.a ../../linux_arm_gcc/bin/libbimgDebug.a ../../linux_arm_gcc/bin/libbxDebug.a
   LDRESP              =
   LIBS               += $(LDDEPS) -lrt -ldl -lX11 -lGL -lpthread
   EXTERNAL_LIBS      +=
@@ -304,8 +304,8 @@ ifeq ($(config),debug64)
 endif
 
 ifeq ($(config),release64)
-  OBJDIR              = ../../linux32_arm_gcc/obj/x64/Release/examples
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/x64/Release/examples
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/examplesRelease
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBX_CONFIG_DEBUG=0
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../bimg/include" -I"../../../include" -I"../../../3rdparty" -I"../../../examples/common" -I"../../../../bx/include"
@@ -316,9 +316,9 @@ ifeq ($(config),release64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -L"../../linux32_arm_gcc/bin" -Wl,--gc-sections
-  LIBDEPS            += ../../linux32_arm_gcc/bin/libexample-glueRelease.a ../../linux32_arm_gcc/bin/libexample-commonRelease.a ../../linux32_arm_gcc/bin/libbgfxRelease.a ../../linux32_arm_gcc/bin/libbimg_decodeRelease.a ../../linux32_arm_gcc/bin/libbimgRelease.a ../../linux32_arm_gcc/bin/libbxRelease.a
-  LDDEPS             += ../../linux32_arm_gcc/bin/libexample-glueRelease.a ../../linux32_arm_gcc/bin/libexample-commonRelease.a ../../linux32_arm_gcc/bin/libbgfxRelease.a ../../linux32_arm_gcc/bin/libbimg_decodeRelease.a ../../linux32_arm_gcc/bin/libbimgRelease.a ../../linux32_arm_gcc/bin/libbxRelease.a
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -L"../../linux_arm_gcc/bin" -Wl,--gc-sections
+  LIBDEPS            += ../../linux_arm_gcc/bin/libexample-glueRelease.a ../../linux_arm_gcc/bin/libexample-commonRelease.a ../../linux_arm_gcc/bin/libbgfxRelease.a ../../linux_arm_gcc/bin/libbimg_decodeRelease.a ../../linux_arm_gcc/bin/libbimgRelease.a ../../linux_arm_gcc/bin/libbxRelease.a
+  LDDEPS             += ../../linux_arm_gcc/bin/libexample-glueRelease.a ../../linux_arm_gcc/bin/libexample-commonRelease.a ../../linux_arm_gcc/bin/libbgfxRelease.a ../../linux_arm_gcc/bin/libbimg_decodeRelease.a ../../linux_arm_gcc/bin/libbimgRelease.a ../../linux_arm_gcc/bin/libbxRelease.a
   LDRESP              =
   LIBS               += $(LDDEPS) -lrt -ldl -lX11 -lGL -lpthread
   EXTERNAL_LIBS      +=
@@ -392,8 +392,8 @@ ifeq ($(config),release64)
 endif
 
 ifeq ($(config),debug)
-  OBJDIR              = ../../linux32_arm_gcc/obj/Debug/examples
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/Debug/examples
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/examplesDebug
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBX_CONFIG_DEBUG=1
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../bimg/include" -I"../../../include" -I"../../../3rdparty" -I"../../../examples/common" -I"../../../../bx/include"
@@ -404,9 +404,9 @@ ifeq ($(config),debug)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -Wshadow -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -L"../../linux32_arm_gcc/bin" -Wl,--gc-sections
-  LIBDEPS            += ../../linux32_arm_gcc/bin/libexample-glueDebug.a ../../linux32_arm_gcc/bin/libexample-commonDebug.a ../../linux32_arm_gcc/bin/libbgfxDebug.a ../../linux32_arm_gcc/bin/libbimg_decodeDebug.a ../../linux32_arm_gcc/bin/libbimgDebug.a ../../linux32_arm_gcc/bin/libbxDebug.a
-  LDDEPS             += ../../linux32_arm_gcc/bin/libexample-glueDebug.a ../../linux32_arm_gcc/bin/libexample-commonDebug.a ../../linux32_arm_gcc/bin/libbgfxDebug.a ../../linux32_arm_gcc/bin/libbimg_decodeDebug.a ../../linux32_arm_gcc/bin/libbimgDebug.a ../../linux32_arm_gcc/bin/libbxDebug.a
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -L"../../linux_arm_gcc/bin" -Wl,--gc-sections
+  LIBDEPS            += ../../linux_arm_gcc/bin/libexample-glueDebug.a ../../linux_arm_gcc/bin/libexample-commonDebug.a ../../linux_arm_gcc/bin/libbgfxDebug.a ../../linux_arm_gcc/bin/libbimg_decodeDebug.a ../../linux_arm_gcc/bin/libbimgDebug.a ../../linux_arm_gcc/bin/libbxDebug.a
+  LDDEPS             += ../../linux_arm_gcc/bin/libexample-glueDebug.a ../../linux_arm_gcc/bin/libexample-commonDebug.a ../../linux_arm_gcc/bin/libbgfxDebug.a ../../linux_arm_gcc/bin/libbimg_decodeDebug.a ../../linux_arm_gcc/bin/libbimgDebug.a ../../linux_arm_gcc/bin/libbxDebug.a
   LDRESP              =
   LIBS               += $(LDDEPS) -lrt -ldl -lX11 -lGL -lpthread
   EXTERNAL_LIBS      +=
@@ -477,8 +477,8 @@ ifeq ($(config),debug)
 endif
 
 ifeq ($(config),release)
-  OBJDIR              = ../../linux32_arm_gcc/obj/Release/examples
-  TARGETDIR           = ../../linux32_arm_gcc/bin
+  OBJDIR              = ../../linux_arm_gcc/obj/Release/examples
+  TARGETDIR           = ../../linux_arm_gcc/bin
   TARGET              = $(TARGETDIR)/examplesRelease
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBX_CONFIG_DEBUG=0
   INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../bimg/include" -I"../../../include" -I"../../../3rdparty" -I"../../../examples/common" -I"../../../../bx/include"
@@ -489,9 +489,9 @@ ifeq ($(config),release)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -Wshadow -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Werror -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux32_arm_gcc" -L"." -L"../../linux32_arm_gcc/bin" -Wl,--gc-sections
-  LIBDEPS            += ../../linux32_arm_gcc/bin/libexample-glueRelease.a ../../linux32_arm_gcc/bin/libexample-commonRelease.a ../../linux32_arm_gcc/bin/libbgfxRelease.a ../../linux32_arm_gcc/bin/libbimg_decodeRelease.a ../../linux32_arm_gcc/bin/libbimgRelease.a ../../linux32_arm_gcc/bin/libbxRelease.a
-  LDDEPS             += ../../linux32_arm_gcc/bin/libexample-glueRelease.a ../../linux32_arm_gcc/bin/libexample-commonRelease.a ../../linux32_arm_gcc/bin/libbgfxRelease.a ../../linux32_arm_gcc/bin/libbimg_decodeRelease.a ../../linux32_arm_gcc/bin/libbimgRelease.a ../../linux32_arm_gcc/bin/libbxRelease.a
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/linux_arm_gcc" -L"." -L"../../linux_arm_gcc/bin" -Wl,--gc-sections
+  LIBDEPS            += ../../linux_arm_gcc/bin/libexample-glueRelease.a ../../linux_arm_gcc/bin/libexample-commonRelease.a ../../linux_arm_gcc/bin/libbgfxRelease.a ../../linux_arm_gcc/bin/libbimg_decodeRelease.a ../../linux_arm_gcc/bin/libbimgRelease.a ../../linux_arm_gcc/bin/libbxRelease.a
+  LDDEPS             += ../../linux_arm_gcc/bin/libexample-glueRelease.a ../../linux_arm_gcc/bin/libexample-commonRelease.a ../../linux_arm_gcc/bin/libbgfxRelease.a ../../linux_arm_gcc/bin/libbimg_decodeRelease.a ../../linux_arm_gcc/bin/libbimgRelease.a ../../linux_arm_gcc/bin/libbxRelease.a
   LDRESP              =
   LIBS               += $(LDDEPS) -lrt -ldl -lX11 -lGL -lpthread
   EXTERNAL_LIBS      +=
