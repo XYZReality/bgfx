@@ -59,7 +59,7 @@ function bgfxProjectBase(_kind, _defines)
 				"-shared",
 			}
 
-		configuration { "linux-*" }
+		configuration { "linux-* or orin" }
 			buildoptions {
 				"-fPIC",
 			}
@@ -112,6 +112,16 @@ function bgfxProjectBase(_kind, _defines)
 			path.join(BGFX_DIR, "3rdparty/directx-headers/include/directx"),
 			path.join(BGFX_DIR, "3rdparty/directx-headers/include"),
 			path.join(BGFX_DIR, "3rdparty/directx-headers/include/wsl/stubs"),
+		}
+
+	configuration { "orin" }
+		includedirs {
+			path.join(BGFX_DIR, "3rdparty/directx-headers/include/directx"),
+			path.join(BGFX_DIR, "3rdparty/directx-headers/include"),
+			path.join(BGFX_DIR, "3rdparty/directx-headers/include/wsl/stubs"),
+			path.join(BGFX_DIR, "3rdparty/khronos"),
+			path.join(BGFX_DIR, "3rdparty"),
+			path.join(BIMG_DIR, "include"),
 		}
 
 	configuration { "vs* or mingw*", "not durango" }

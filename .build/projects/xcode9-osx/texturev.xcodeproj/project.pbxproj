@@ -1,0 +1,633 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		60563D17CC1C9A3315782896 /* fs_texture.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FA97A785BBC7AD104A657BE /* fs_texture.bin.h */; };
+		E030118F4C4D0380152570ED /* fs_texture_3d.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F4F8DD07BF8F4FFA48E107F /* fs_texture_3d.bin.h */; };
+		CB492834B71E70E7E0CDAFE3 /* fs_texture_array.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA1EA3AA6B292E12F042521 /* fs_texture_array.bin.h */; };
+		2E4D1B339A340629A32208A5 /* fs_texture_cube.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = DD56450BC9EA3AB332AF9467 /* fs_texture_cube.bin.h */; };
+		5A22960446F7DDB76FA61DB4 /* fs_texture_cube2.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = 52613FABBE72E75147C47991 /* fs_texture_cube2.bin.h */; };
+		D6B002ED4298EDE24B86EF5E /* fs_texture_msdf.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = 85D1ED1E7165E3C6DA293D7B /* fs_texture_msdf.bin.h */; };
+		CC0C3136B8B66645A1876E60 /* fs_texture_sdf.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = DB733FAA473A9CC690952A29 /* fs_texture_sdf.bin.h */; };
+		DDDB5B0CC959ACA5B2516A3D /* texturev.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5DA68C461F5CB65AA17DCF9 /* texturev.cpp */; };
+		3E6193D92AF5888193B9E235 /* vs_texture.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DF1A834F961ABADC2802536 /* vs_texture.bin.h */; };
+		FFEE3CB06BD627A674C42922 /* vs_texture_cube.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E52E55BFAE5DA0363AA34B8 /* vs_texture_cube.bin.h */; };
+		815C2D5CEDC5C2BE76097169 /* libexample-commonDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A25155428E27DC3F77D1F692 /* libexample-commonDebug.a */; };
+		326054301EF796E5C7AB0DE6 /* libbimg_decodeDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 212A48348DBDA9E296A41999 /* libbimg_decodeDebug.a */; };
+		D74D16D9433501CF4C23034B /* libbimgDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A9D582723DCB2ADB0125DF /* libbimgDebug.a */; };
+		B88AFEE824C65EAC2DBBDB3B /* libbgfxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C6BBC6B32E82941C9A96AA /* libbgfxDebug.a */; };
+		AB5B0F3C17226C58607DFABA /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 032A075AEF3C07B39826E49F /* libbxDebug.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B1705D86770755B906A57F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00149A44EC40E67515228986 /* example-common.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D8CE35A09FB38DA52E4F3D9;
+			remoteInfo = "libexample-commonDebug.a";
+		};
+		55B9EF62411260E66A0C4280 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00149A44EC40E67515228986 /* example-common.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E3DC407FCF2D2CC1F8911A83;
+			remoteInfo = "libexample-commonDebug.a";
+		};
+		E1AE520C4D792467967F238C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46D42920B2F23DEDFBBF43FF /* bimg_decode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7D6367F06989315752CFB622;
+			remoteInfo = "libbimg_decodeDebug.a";
+		};
+		5B00EBE8C7CABC4310D1BB68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46D42920B2F23DEDFBBF43FF /* bimg_decode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C35735362F701C60F81CACF9;
+			remoteInfo = "libbimg_decodeDebug.a";
+		};
+		0F56C9F6FBC08902A4DCEE67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D43E9008C07D3A84690017B6 /* bimg.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5ACAB1E8C601FA7FCF0B5EA3;
+			remoteInfo = "libbimgDebug.a";
+		};
+		A922F735958DB7413EA91CA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D43E9008C07D3A84690017B6 /* bimg.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 00D72F0FECD05861D53DEF71;
+			remoteInfo = "libbimgDebug.a";
+		};
+		40394F812CA40F8DD5BF74F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 058122C0F1BFCC3B9A42A96D /* bgfx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02DC17D86E13606F771DC492;
+			remoteInfo = "libbgfxDebug.a";
+		};
+		DA057DC0C6703DCC6F8CA231 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 058122C0F1BFCC3B9A42A96D /* bgfx.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A853C66B944DEFBD7DBA85CE;
+			remoteInfo = "libbgfxDebug.a";
+		};
+		E8871323D45C5BD6FD0B9BD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDAAAC9ED95314CE02EA2F4D /* bx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D5D335834140F17D0A3489DB;
+			remoteInfo = "libbxDebug.a";
+		};
+		42C0CDEE2E9515A25744559E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDAAAC9ED95314CE02EA2F4D /* bx.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B1D4BC607ACD48FB0CAE88A;
+			remoteInfo = "libbxDebug.a";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FAB572B6667A71A62FE0A170 /* common.sh */ = {isa = PBXFileReference; lastKnownFileType = text; name = "common.sh"; path = "common.sh"; sourceTree = "<group>"; };
+		6FA97A785BBC7AD104A657BE /* fs_texture.bin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "fs_texture.bin.h"; path = "fs_texture.bin.h"; sourceTree = "<group>"; };
+		58937248C4ADD5E90DD0E57D /* fs_texture.sc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "fs_texture.sc"; path = "fs_texture.sc"; sourceTree = "<group>"; };
+		8F4F8DD07BF8F4FFA48E107F /* fs_texture_3d.bin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "fs_texture_3d.bin.h"; path = "fs_texture_3d.bin.h"; sourceTree = "<group>"; };
+		38EE2D4AA45E30C36D7DAA4B /* fs_texture_3d.sc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "fs_texture_3d.sc"; path = "fs_texture_3d.sc"; sourceTree = "<group>"; };
+		3AA1EA3AA6B292E12F042521 /* fs_texture_array.bin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "fs_texture_array.bin.h"; path = "fs_texture_array.bin.h"; sourceTree = "<group>"; };
+		83F0CA406F993270982F4EEF /* fs_texture_array.sc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "fs_texture_array.sc"; path = "fs_texture_array.sc"; sourceTree = "<group>"; };
+		DD56450BC9EA3AB332AF9467 /* fs_texture_cube.bin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "fs_texture_cube.bin.h"; path = "fs_texture_cube.bin.h"; sourceTree = "<group>"; };
+		C6B0D28B32EC324F3BE1AFDE /* fs_texture_cube.sc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "fs_texture_cube.sc"; path = "fs_texture_cube.sc"; sourceTree = "<group>"; };
+		52613FABBE72E75147C47991 /* fs_texture_cube2.bin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "fs_texture_cube2.bin.h"; path = "fs_texture_cube2.bin.h"; sourceTree = "<group>"; };
+		12AA0C61FE52749027E98F0F /* fs_texture_cube2.sc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "fs_texture_cube2.sc"; path = "fs_texture_cube2.sc"; sourceTree = "<group>"; };
+		85D1ED1E7165E3C6DA293D7B /* fs_texture_msdf.bin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "fs_texture_msdf.bin.h"; path = "fs_texture_msdf.bin.h"; sourceTree = "<group>"; };
+		6EEC0414DA2765D7E31CE266 /* fs_texture_msdf.sc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "fs_texture_msdf.sc"; path = "fs_texture_msdf.sc"; sourceTree = "<group>"; };
+		DB733FAA473A9CC690952A29 /* fs_texture_sdf.bin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "fs_texture_sdf.bin.h"; path = "fs_texture_sdf.bin.h"; sourceTree = "<group>"; };
+		44A66F9C3024C035191C7ECD /* fs_texture_sdf.sc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "fs_texture_sdf.sc"; path = "fs_texture_sdf.sc"; sourceTree = "<group>"; };
+		FA6284B5662783A52F8DB36F /* makefile */ = {isa = PBXFileReference; lastKnownFileType = text; name = "makefile"; path = "makefile"; sourceTree = "<group>"; };
+		F5DA68C461F5CB65AA17DCF9 /* texturev.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "texturev.cpp"; path = "texturev.cpp"; sourceTree = "<group>"; };
+		37B71F09A31CB38F2CF55468 /* varying.def.sc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "varying.def.sc"; path = "varying.def.sc"; sourceTree = "<group>"; };
+		8DF1A834F961ABADC2802536 /* vs_texture.bin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "vs_texture.bin.h"; path = "vs_texture.bin.h"; sourceTree = "<group>"; };
+		36A09211220859DF8B736DF5 /* vs_texture.sc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "vs_texture.sc"; path = "vs_texture.sc"; sourceTree = "<group>"; };
+		0E52E55BFAE5DA0363AA34B8 /* vs_texture_cube.bin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "vs_texture_cube.bin.h"; path = "vs_texture_cube.bin.h"; sourceTree = "<group>"; };
+		9711FC2B034D5CEF0C42D97E /* vs_texture_cube.sc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "vs_texture_cube.sc"; path = "vs_texture_cube.sc"; sourceTree = "<group>"; };
+		FC4372E7E83D9B39D1AA314A /* texturevDebug */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "texturevDebug"; path = "texturevDebug"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00149A44EC40E67515228986 /* example-common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "example-common.xcodeproj"; path = "example-common.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		46D42920B2F23DEDFBBF43FF /* bimg_decode.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg_decode.xcodeproj"; path = "bimg_decode.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		D43E9008C07D3A84690017B6 /* bimg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg.xcodeproj"; path = "bimg.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		058122C0F1BFCC3B9A42A96D /* bgfx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bgfx.xcodeproj"; path = "bgfx.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		EDAAAC9ED95314CE02EA2F4D /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A4F09CF868A69928F7FE621 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				815C2D5CEDC5C2BE76097169 /* libexample-commonDebug.a in Frameworks */,
+				326054301EF796E5C7AB0DE6 /* libbimg_decodeDebug.a in Frameworks */,
+				D74D16D9433501CF4C23034B /* libbimgDebug.a in Frameworks */,
+				B88AFEE824C65EAC2DBBDB3B /* libbgfxDebug.a in Frameworks */,
+				AB5B0F3C17226C58607DFABA /* libbxDebug.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5642661CC2AE21178BA2B974 /* texturev */ = {
+			isa = PBXGroup;
+			children = (
+				C1003C79ADE4FCCE1645F721 /* tools */,
+				1B8CCE780786F7CAF0F28DDB /* Products */,
+				32559FB61E4FC80807BC5E19 /* Projects */,
+			);
+			name = "texturev";
+			path = ".";
+			sourceTree = "<group>";
+		};
+		C1003C79ADE4FCCE1645F721 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				385002EEA45D30D42D442CBF /* texturev */,
+			);
+			name = "tools";
+			path = "../../../tools";
+			sourceTree = "<group>";
+		};
+		385002EEA45D30D42D442CBF /* texturev */ = {
+			isa = PBXGroup;
+			children = (
+				FAB572B6667A71A62FE0A170 /* common.sh */,
+				6FA97A785BBC7AD104A657BE /* fs_texture.bin.h */,
+				58937248C4ADD5E90DD0E57D /* fs_texture.sc */,
+				8F4F8DD07BF8F4FFA48E107F /* fs_texture_3d.bin.h */,
+				38EE2D4AA45E30C36D7DAA4B /* fs_texture_3d.sc */,
+				3AA1EA3AA6B292E12F042521 /* fs_texture_array.bin.h */,
+				83F0CA406F993270982F4EEF /* fs_texture_array.sc */,
+				DD56450BC9EA3AB332AF9467 /* fs_texture_cube.bin.h */,
+				C6B0D28B32EC324F3BE1AFDE /* fs_texture_cube.sc */,
+				52613FABBE72E75147C47991 /* fs_texture_cube2.bin.h */,
+				12AA0C61FE52749027E98F0F /* fs_texture_cube2.sc */,
+				85D1ED1E7165E3C6DA293D7B /* fs_texture_msdf.bin.h */,
+				6EEC0414DA2765D7E31CE266 /* fs_texture_msdf.sc */,
+				DB733FAA473A9CC690952A29 /* fs_texture_sdf.bin.h */,
+				44A66F9C3024C035191C7ECD /* fs_texture_sdf.sc */,
+				FA6284B5662783A52F8DB36F /* makefile */,
+				F5DA68C461F5CB65AA17DCF9 /* texturev.cpp */,
+				37B71F09A31CB38F2CF55468 /* varying.def.sc */,
+				8DF1A834F961ABADC2802536 /* vs_texture.bin.h */,
+				36A09211220859DF8B736DF5 /* vs_texture.sc */,
+				0E52E55BFAE5DA0363AA34B8 /* vs_texture_cube.bin.h */,
+				9711FC2B034D5CEF0C42D97E /* vs_texture_cube.sc */,
+			);
+			name = "texturev";
+			path = "texturev";
+			sourceTree = "<group>";
+		};
+		1B8CCE780786F7CAF0F28DDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC4372E7E83D9B39D1AA314A /* texturevDebug */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		32559FB61E4FC80807BC5E19 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				00149A44EC40E67515228986 /* example-common.xcodeproj */,
+				46D42920B2F23DEDFBBF43FF /* bimg_decode.xcodeproj */,
+				D43E9008C07D3A84690017B6 /* bimg.xcodeproj */,
+				058122C0F1BFCC3B9A42A96D /* bgfx.xcodeproj */,
+				EDAAAC9ED95314CE02EA2F4D /* bx.xcodeproj */,
+			);
+			name = "Projects";
+			path = ".";
+			sourceTree = "<group>";
+		};
+		BAFC142626E827872FC12E00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A25155428E27DC3F77D1F692 /* libexample-commonDebug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C003D4B0AC3020E2D511C3F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				212A48348DBDA9E296A41999 /* libbimg_decodeDebug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0EE618507AA3C186036EADEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86A9D582723DCB2ADB0125DF /* libbimgDebug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FA7E6C08B648FF7142F7B5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7C6BBC6B32E82941C9A96AA /* libbgfxDebug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07CDB97B73B4A4717CA2A6ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				032A075AEF3C07B39826E49F /* libbxDebug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		62A416D1CE10D2CB97046A29 /* texturev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76AA65C0E2E5C583EBDA4213 /* Build configuration list for PBXNativeTarget "texturev" */;
+			buildPhases = (
+				B8C6F16F240252332DF7CEC2 /* Resources */,
+				10A97D1F7CE4DDE285D95A72 /* Sources */,
+				1A4F09CF868A69928F7FE621 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26FC945F92E7A7C09BC0AE39 /* PBXTargetDependency */,
+				0CB60609F8E2523A21C4F54A /* PBXTargetDependency */,
+				BA5D13F7261BBC2DAFE5A795 /* PBXTargetDependency */,
+				CB1EE16737DC899EC0A67506 /* PBXTargetDependency */,
+				F31F1EBB5F0709B168F50A2D /* PBXTargetDependency */,
+			);
+			name = "texturev";
+			productInstallPath = "$(HOME)/bin";
+			productName = "texturev";
+			productReference = FC4372E7E83D9B39D1AA314A /* texturevDebug */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		__RootObject_ /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "texturev" */;
+			compatibilityVersion = "Xcode 8.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 5642661CC2AE21178BA2B974 /* texturev */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BAFC142626E827872FC12E00 /* Products */;
+					ProjectRef = 00149A44EC40E67515228986 /* example-common.xcodeproj */;
+				},
+				{
+					ProductGroup = C003D4B0AC3020E2D511C3F2 /* Products */;
+					ProjectRef = 46D42920B2F23DEDFBBF43FF /* bimg_decode.xcodeproj */;
+				},
+				{
+					ProductGroup = 0EE618507AA3C186036EADEE /* Products */;
+					ProjectRef = D43E9008C07D3A84690017B6 /* bimg.xcodeproj */;
+				},
+				{
+					ProductGroup = 1FA7E6C08B648FF7142F7B5F /* Products */;
+					ProjectRef = 058122C0F1BFCC3B9A42A96D /* bgfx.xcodeproj */;
+				},
+				{
+					ProductGroup = 07CDB97B73B4A4717CA2A6ED /* Products */;
+					ProjectRef = EDAAAC9ED95314CE02EA2F4D /* bx.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				62A416D1CE10D2CB97046A29 /* texturevDebug */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A25155428E27DC3F77D1F692 /* libexample-commonDebug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../../scripts/libexample-commonDebug.a";
+			remoteRef = 7B1705D86770755B906A57F5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		212A48348DBDA9E296A41999 /* libbimg_decodeDebug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../../../bimg/scripts/libbimg_decodeDebug.a";
+			remoteRef = E1AE520C4D792467967F238C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		86A9D582723DCB2ADB0125DF /* libbimgDebug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../../../bimg/scripts/libbimgDebug.a";
+			remoteRef = 0F56C9F6FBC08902A4DCEE67 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C7C6BBC6B32E82941C9A96AA /* libbgfxDebug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../../scripts/libbgfxDebug.a";
+			remoteRef = 40394F812CA40F8DD5BF74F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		032A075AEF3C07B39826E49F /* libbxDebug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "../../../../bx/scripts/libbxDebug.a";
+			remoteRef = E8871323D45C5BD6FD0B9BD2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B8C6F16F240252332DF7CEC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10A97D1F7CE4DDE285D95A72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDDB5B0CC959ACA5B2516A3D /* texturev.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin PBXTargetDependency section */
+		26FC945F92E7A7C09BC0AE39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libexample-commonDebug.a";
+			targetProxy = 55B9EF62411260E66A0C4280 /* PBXContainerItemProxy */;
+		};
+		0CB60609F8E2523A21C4F54A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libbimg_decodeDebug.a";
+			targetProxy = 5B00EBE8C7CABC4310D1BB68 /* PBXContainerItemProxy */;
+		};
+		BA5D13F7261BBC2DAFE5A795 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libbimgDebug.a";
+			targetProxy = A922F735958DB7413EA91CA7 /* PBXContainerItemProxy */;
+		};
+		CB1EE16737DC899EC0A67506 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libbgfxDebug.a";
+			targetProxy = DA057DC0C6703DCC6F8CA231 /* PBXContainerItemProxy */;
+		};
+		F31F1EBB5F0709B168F50A2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libbxDebug.a";
+			targetProxy = 42C0CDEE2E9515A25744559E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		32C991F51EEF5B5C0735E127 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../scripts;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = texturevDebug;
+			};
+			name = Debug;
+		};
+		EC5484D7D8A56F19010A5EDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = ../../../scripts;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = texturevRelease;
+			};
+			name = Release;
+		};
+		08AC4566F492075E9DE36D7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					__STDC_LIMIT_MACROS,
+					__STDC_FORMAT_MACROS,
+					__STDC_CONSTANT_MACROS,
+					_DEBUG,
+					"BX_CONFIG_DEBUG=1",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../../bx/include/compat/osx,
+					../../../../bimg/include,
+					../../../include,
+					../../../3rdparty,
+					../../../examples/common,
+					../../../../bx/include,
+				);
+				OBJROOT = obj/Debug/texturev;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-fomit-frame-pointer",
+					"-Wshadow",
+					"-Wfatal-errors",
+					"-Wunused-value",
+					"-Wundef",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-ffast-math",
+					"-fomit-frame-pointer",
+					"-Wshadow",
+					"-Wfatal-errors",
+					"-Wunused-value",
+					"-Wundef",
+				);
+				OTHER_LDFLAGS = (
+					"-framework Cocoa",
+					"-framework IOKit",
+					"-framework Metal",
+					"-framework OpenGL",
+					"-framework QuartzCore",
+				);
+				SDKROOT = macosx;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = ../../../scripts;
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Debug;
+		};
+		C330D81AAF82AF0A98A1EC1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					__STDC_LIMIT_MACROS,
+					__STDC_FORMAT_MACROS,
+					__STDC_CONSTANT_MACROS,
+					NDEBUG,
+					"BX_CONFIG_DEBUG=0",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../../../bx/include/compat/osx,
+					../../../../bimg/include,
+					../../../include,
+					../../../3rdparty,
+					../../../examples/common,
+					../../../../bx/include,
+				);
+				OBJROOT = obj/Release/texturev;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ffast-math",
+					"-fomit-frame-pointer",
+					"-Wshadow",
+					"-Wfatal-errors",
+					"-Wunused-value",
+					"-Wundef",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-ffast-math",
+					"-fomit-frame-pointer",
+					"-Wshadow",
+					"-Wfatal-errors",
+					"-Wunused-value",
+					"-Wundef",
+				);
+				OTHER_LDFLAGS = (
+					"-framework Cocoa",
+					"-framework IOKit",
+					"-framework Metal",
+					"-framework OpenGL",
+					"-framework QuartzCore",
+				);
+				SDKROOT = macosx;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				SYMROOT = ../../../scripts;
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		76AA65C0E2E5C583EBDA4213 /* Build configuration list for PBXNativeTarget "texturevDebug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32C991F51EEF5B5C0735E127 /* Debug */,
+				EC5484D7D8A56F19010A5EDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Debug";
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "texturev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08AC4566F492075E9DE36D7B /* Debug */,
+				C330D81AAF82AF0A98A1EC1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Debug";
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = __RootObject_ /* Project object */;
+}

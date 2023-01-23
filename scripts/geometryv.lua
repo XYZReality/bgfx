@@ -126,7 +126,7 @@ project ("geometryv")
 	configuration { "wasm*" }
 		kind "ConsoleApp"
 
-	configuration { "linux-* or freebsd" }
+	configuration { "linux-* or freebsd or orin" }
 		links {
 			"X11",
 			"GL",

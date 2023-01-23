@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  IgnorableNamespaces="uap mp">
+  <Identity
+    Name="2510A7A5-917C-62A0-5A70-FAFDC69B8408"
+    Publisher="CN=Publisher"
+    Version="1.0.0.0" />
+  <mp:PhoneIdentity
+    PhoneProductId="2510A7A5-917C-62A0-5A70-FAFDC69B8408"
+    PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <Properties>
+    <DisplayName>example-17-drawstress</DisplayName>
+    <PublisherDisplayName>PublisherDisplayName</PublisherDisplayName>
+    <Logo>example-17-drawstress\StoreLogo.png</Logo>
+    <Description>example-17-drawstress</Description>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10069.0" MaxVersionTested="10.0.10069.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="en-us"/>
+  </Resources>
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="example-17-drawstress.App">
+      <uap:VisualElements
+        DisplayName="example-17-drawstress"
+        Square150x150Logo="example-17-drawstress\Logo.png"
+        Square44x44Logo="example-17-drawstress\SmallLogo.png"
+        Description="example-17-drawstress"
+        BackgroundColor="transparent">
+        <uap:SplashScreen Image="example-17-drawstress\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+</Package>

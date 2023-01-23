@@ -11,7 +11,12 @@ else
 ifeq ($(UNAME),$(filter $(UNAME),FreeBSD GNU/kFreeBSD))
 OS=bsd
 else
-OS=linux
+PLATFORM := $(shell uname -p)
+ifeq ($(PLATFORM),aarch64)
+OS:=linux-arm
+else
+OS:=linux
+endif
 endif
 endif
 
@@ -29,7 +34,7 @@ endif
 # $(info $(OS))
 
 BX_DIR?=../bx
-GENIE?=$(BX_DIR)/tools/bin/$(OS)/genie $(EXTRA_GENIE_ARGS)
+GENIE:=$(BX_DIR)/tools/bin/$(OS)/genie $(EXTRA_GENIE_ARGS)
 NINJA?=$(BX_DIR)/tools/bin/$(OS)/ninja
 
 .PHONY: help
@@ -40,8 +45,8 @@ clean: ## Clean all intermediate files.
 	@mkdir .build
 
 projgen: ## Generate project files for all configurations.
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib                       vs2017
-	$(GENIE) --with-tools --with-combined-examples                   --vs=winstore100      vs2017
+	$(GENIE) --with-tools --with-combined-examples --with-shared-lib                       vs2022
+	$(GENIE) --with-tools --with-combined-examples                   --vs=winstore100      vs2022
 	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=mingw-gcc       gmake
 	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=linux-gcc       gmake
 	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=osx-x64         gmake
@@ -59,6 +64,8 @@ projgen: ## Generate project files for all configurations.
 	$(GENIE)              --with-combined-examples                   --gcc=ios-simulator   gmake
 	$(GENIE)              --with-combined-examples                   --gcc=ios-simulator64 gmake
 	$(GENIE)              --with-combined-examples                   --gcc=rpi             gmake
+	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=linux-arm-gcc   gmake
+	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=orin            gmake
 
 idl: ## Generate code from IDL.
 	@echo Generating code from IDL.
@@ -119,6 +126,22 @@ linux-debug64: .build/projects/gmake-linux ## Build - Linux x64 Debug
 linux-release64: .build/projects/gmake-linux ## Build - Linux x64 Release
 	$(MAKE) -R -C .build/projects/gmake-linux config=release64
 linux: linux-debug64 linux-release64 ## Build - Linux x86/x64 Debug and Release
+
+.build/projects/gmake-linux-arm-gcc:
+	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=linux-arm-gcc gmake
+linux-arm-debug64: .build/projects/gmake-linux-arm-gcc ## Build - Linux ARM Debug
+	$(MAKE) -R -C .build/projects/gmake-linux-arm-gcc config=debug64
+linux-arm-release64: .build/projects/gmake-linux-arm-gcc ## Build - Linux ARM Release
+	$(MAKE) -R -C .build/projects/gmake-linux-arm-gcc config=release64
+linux-arm: linux-arm-debug64 linux-arm-release64 ## Build - Linux ARM Debug and Release
+
+.build/projects/gmake-orin:
+	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=orin gmake
+orin-debug64: .build/projects/gmake-orin ## Build - nVidia Orin Debug
+	$(MAKE) -R -C .build/projects/gmake-orin config=debug64
+orin-release64: .build/projects/gmake-orin ## Build - nVidia Orin Release
+	$(MAKE) -R -C .build/projects/gmake-orin config=release64
+orin: orin-debug64 orin-release64 ## Build - nVidia Orin Debug and Release
 
 .build/projects/gmake-freebsd:
 	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=freebsd gmake
@@ -245,6 +268,10 @@ build-darwin: osx-x64
 
 build-linux: linux-debug64 linux-release64
 
+build-linux-arm: linux-arm-debug64 linux-arm-release64
+
+orin: orin-debug64 orin-release64
+
 build-windows: mingw-gcc
 
 build: build-$(OS)
@@ -285,12 +312,21 @@ BUILD_TOOLS_CONFIG=release64
 BUILD_TOOLS_SUFFIX=Release
 EXE=
 else
+ifeq ($(PLATFORM),aarch64)
+OS=linux
+BUILD_PROJECT_DIR=gmake-linux-arm-gcc
+BUILD_OUTPUT_DIR=linux64_gcc_arm
+BUILD_TOOLS_CONFIG=release64
+BUILD_TOOLS_SUFFIX=Release
+EXE=
+else
 OS=linux
 BUILD_PROJECT_DIR=gmake-linux
 BUILD_OUTPUT_DIR=linux64_gcc
 BUILD_TOOLS_CONFIG=release64
 BUILD_TOOLS_SUFFIX=Release
 EXE=
+endif
 endif
 endif
 else
