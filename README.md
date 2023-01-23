@@ -97,7 +97,7 @@ $ make orin
 ```
 
 Based on the CPU architecture of the machine you are building this on, it will generate the binaries in either 
-**bgfxroot/bgfx/.build/linux64_gcc** or **bgfxroot/bgfx/.build/linux32_arm_gcc** or **bgfxroot/bgfx/.build/orin** folder.
+**bgfxroot/bgfx/.build/linux64_gcc** or **bgfxroot/bgfx/.build/linux_arm_gcc** or **bgfxroot/bgfx/.build/orin** folder.
 
 [License (BSD 2-clause)](https://bkaradzic.github.io/bgfx/license.html)
 -----------------------------------------------------------------------
