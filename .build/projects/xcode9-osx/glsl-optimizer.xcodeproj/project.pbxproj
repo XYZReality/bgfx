@@ -841,8 +841,8 @@
 				OBJROOT = "obj/Debug/glsl-optimizer";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
@@ -855,8 +855,8 @@
 					"-Wno-deprecated-register",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
@@ -929,8 +929,8 @@
 				OBJROOT = "obj/Release/glsl-optimizer";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
@@ -943,8 +943,8 @@
 					"-Wno-deprecated-register",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",

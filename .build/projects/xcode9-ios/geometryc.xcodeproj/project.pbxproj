@@ -374,15 +374,15 @@
 				OBJROOT = "../../ios-arm/obj/Debug/geometryc";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
@@ -451,15 +451,15 @@
 				OBJROOT = "../../ios-arm/obj/Release/geometryc";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
