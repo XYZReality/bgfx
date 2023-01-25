@@ -54,9 +54,9 @@ ifeq ($(config),debug32)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -arch arm64
   LIBDEPS            +=
@@ -96,9 +96,9 @@ ifeq ($(config),release32)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -arch arm64
   LIBDEPS            +=
@@ -138,9 +138,9 @@ ifeq ($(config),debug64)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -arch arm64
   LIBDEPS            +=
@@ -180,9 +180,9 @@ ifeq ($(config),release64)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -arch arm64
   LIBDEPS            +=
@@ -222,9 +222,9 @@ ifeq ($(config),debug)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -arch arm64
   LIBDEPS            +=
@@ -264,9 +264,9 @@ ifeq ($(config),release)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef -Wno-type-limits
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -arch arm64
   LIBDEPS            +=

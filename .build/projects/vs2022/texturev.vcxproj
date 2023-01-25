@@ -109,7 +109,6 @@
       <WarningLevel>Level4</WarningLevel>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -149,7 +148,6 @@
       <WarningLevel>Level4</WarningLevel>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -190,7 +188,6 @@
       <WarningLevel>Level4</WarningLevel>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -233,7 +230,6 @@
       <WarningLevel>Level4</WarningLevel>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -261,33 +257,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\tools\texturev\fs_texture_msdf.bin.h" />
-    <ClInclude Include="..\..\..\tools\texturev\vs_texture.bin.h" />
     <ClInclude Include="..\..\..\tools\texturev\fs_texture_cube.bin.h" />
-    <ClInclude Include="..\..\..\tools\texturev\fs_texture_array.bin.h" />
-    <ClInclude Include="..\..\..\tools\texturev\fs_texture_cube2.bin.h" />
-    <ClInclude Include="..\..\..\tools\texturev\vs_texture_cube.bin.h" />
+    <ClInclude Include="..\..\..\tools\texturev\vs_texture.bin.h" />
     <ClInclude Include="..\..\..\tools\texturev\fs_texture_sdf.bin.h" />
-    <ClInclude Include="..\..\..\tools\texturev\fs_texture.bin.h" />
+    <ClInclude Include="..\..\..\tools\texturev\fs_texture_msdf.bin.h" />
+    <ClInclude Include="..\..\..\tools\texturev\fs_texture_array.bin.h" />
+    <ClInclude Include="..\..\..\tools\texturev\vs_texture_cube.bin.h" />
     <ClInclude Include="..\..\..\tools\texturev\fs_texture_3d.bin.h" />
+    <ClInclude Include="..\..\..\tools\texturev\fs_texture.bin.h" />
+    <ClInclude Include="..\..\..\tools\texturev\fs_texture_cube2.bin.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\tools\texturev\texturev.cpp">
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\tools\texturev\fs_texture_array.sc" />
-    <None Include="..\..\..\tools\texturev\common.sh" />
     <None Include="..\..\..\tools\texturev\varying.def.sc" />
-    <None Include="..\..\..\tools\texturev\fs_texture_3d.sc" />
-    <None Include="..\..\..\tools\texturev\vs_texture.sc" />
-    <None Include="..\..\..\tools\texturev\makefile" />
     <None Include="..\..\..\tools\texturev\vs_texture_cube.sc" />
-    <None Include="..\..\..\tools\texturev\fs_texture.sc" />
-    <None Include="..\..\..\tools\texturev\fs_texture_msdf.sc" />
-    <None Include="..\..\..\tools\texturev\fs_texture_sdf.sc" />
     <None Include="..\..\..\tools\texturev\fs_texture_cube.sc" />
+    <None Include="..\..\..\tools\texturev\fs_texture_3d.sc" />
+    <None Include="..\..\..\tools\texturev\fs_texture_sdf.sc" />
+    <None Include="..\..\..\tools\texturev\vs_texture.sc" />
+    <None Include="..\..\..\tools\texturev\fs_texture.sc" />
     <None Include="..\..\..\tools\texturev\fs_texture_cube2.sc" />
+    <None Include="..\..\..\tools\texturev\fs_texture_msdf.sc" />
+    <None Include="..\..\..\tools\texturev\fs_texture_array.sc" />
+    <None Include="..\..\..\tools\texturev\makefile" />
+    <None Include="..\..\..\tools\texturev\common.sh" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="bx.vcxproj">

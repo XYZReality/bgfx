@@ -473,7 +473,6 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -504,15 +503,15 @@
 				OBJROOT = "../../ios-arm/obj/Debug/example-17-drawstress";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
@@ -563,7 +562,6 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
@@ -594,15 +592,15 @@
 				OBJROOT = "../../ios-arm/obj/Release/example-17-drawstress";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
