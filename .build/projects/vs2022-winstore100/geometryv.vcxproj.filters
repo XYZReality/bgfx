@@ -12,21 +12,21 @@
     <None Include="..\..\..\tools\geometryv\varying.def.sc">
       <Filter>tools\geometryv</Filter>
     </None>
+    <None Include="..\..\..\tools\geometryv\fs_mesh.sc">
+      <Filter>tools\geometryv</Filter>
+    </None>
     <None Include="..\..\..\tools\geometryv\vs_mesh.sc">
       <Filter>tools\geometryv</Filter>
     </None>
     <None Include="..\..\..\tools\geometryv\makefile">
       <Filter>tools\geometryv</Filter>
     </None>
-    <None Include="..\..\..\tools\geometryv\fs_mesh.sc">
-      <Filter>tools\geometryv</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\tools\geometryv\vs_mesh.bin.h">
+    <ClInclude Include="..\..\..\tools\geometryv\fs_mesh.bin.h">
       <Filter>tools\geometryv</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\tools\geometryv\fs_mesh.bin.h">
+    <ClInclude Include="..\..\..\tools\geometryv\vs_mesh.bin.h">
       <Filter>tools\geometryv</Filter>
     </ClInclude>
   </ItemGroup>

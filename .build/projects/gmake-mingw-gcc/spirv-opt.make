@@ -54,9 +54,9 @@ ifeq ($(config),debug32)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/win32_mingw-gcc" -Wl,--gc-sections -static -static-libgcc -static-libstdc++
   LIBDEPS            +=
@@ -300,9 +300,9 @@ ifeq ($(config),release32)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m32 -mstackrealign -Wno-switch -Wno-misleading-indentation
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/win32_mingw-gcc" -Wl,--gc-sections -static -static-libgcc -static-libstdc++
   LIBDEPS            +=
@@ -546,9 +546,9 @@ ifeq ($(config),debug64)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/win64_mingw-gcc" -Wl,--gc-sections -static -static-libgcc -static-libstdc++
   LIBDEPS            +=
@@ -792,9 +792,9 @@ ifeq ($(config),release64)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -m64 -Wno-switch -Wno-misleading-indentation
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/win64_mingw-gcc" -Wl,--gc-sections -static -static-libgcc -static-libstdc++
   LIBDEPS            +=
@@ -1038,9 +1038,9 @@ ifeq ($(config),debug)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -Wl,--gc-sections -static -static-libgcc -static-libstdc++
   LIBDEPS            +=
@@ -1284,9 +1284,9 @@ ifeq ($(config),release)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wshadow -Wunused-value -fdata-sections -ffunction-sections -msse4.2 -Wundef -Wno-switch -Wno-misleading-indentation
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -Wl,--gc-sections -static -static-libgcc -static-libstdc++
   LIBDEPS            +=

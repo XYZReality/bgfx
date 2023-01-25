@@ -36,40 +36,40 @@
     <ClInclude Include="..\..\..\..\bimg\include\bimg\encode.h">
       <Filter>bimg\include\bimg</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\bimg\include\bimg\bimg.h">
-      <Filter>bimg\include\bimg</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\bimg\include\bimg\decode.h">
       <Filter>bimg\include\bimg</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\bimg\include\bimg\bimg.h">
+      <Filter>bimg\include\bimg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_vecmathlib_sse_4.h">
+      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_internal.h">
+      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_diagnostic_trace.h">
-      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_vecmathlib_common_4.h">
-      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_vecmathlib_neon_4.h">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_vecmathlib.h">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_vecmathlib_common_4.h">
+      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_vecmathlib_avx2_8.h">
+      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_mathlib.h">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_vecmathlib_sse_4.h">
+    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_vecmathlib_neon_4.h">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_internal_entry.h">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_vecmathlib_none_4.h">
-      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_internal.h">
-      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_vecmathlib_avx2_8.h">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\bimg\3rdparty\tinyexr\deps\miniz\miniz.h">
@@ -83,34 +83,49 @@
     <ClCompile Include="..\..\..\..\bimg\src\image_gnf.cpp">
       <Filter>bimg\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_ideal_endpoints_and_weights.cpp">
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_partition_tables.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_percentile_tables.cpp">
-      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_platform_isa_detection.cpp">
-      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_compute_variance.cpp">
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_symbolic_physical.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_weight_align.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_partition_tables.cpp">
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_ideal_endpoints_and_weights.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_mathlib_softfloat.cpp">
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_compress_symbolic.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_weight_quant_xfer_tables.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_color_quantize.cpp">
+      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_find_best_partitioning.cpp">
+      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_entry.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_image.cpp">
+      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_quantization.cpp">
+      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_compute_variance.cpp">
+      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_decompress_symbolic.cpp">
+      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_mathlib.cpp">
+      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_averages_and_directions.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_pick_best_endpoint_format.cpp">
@@ -119,37 +134,22 @@
     <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_diagnostic_trace.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_compress_symbolic.cpp">
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_block_sizes.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_averages_and_directions.cpp">
-      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_find_best_partitioning.cpp">
-      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_quantization.cpp">
-      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_color_unquantize.cpp">
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_percentile_tables.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_integer_sequence.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_block_sizes.cpp">
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_mathlib_softfloat.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_image.cpp">
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_platform_isa_detection.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_symbolic_physical.cpp">
-      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_color_quantize.cpp">
-      <Filter>bimg\3rdparty\astc-encoder\source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_decompress_symbolic.cpp">
+    <ClCompile Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_color_unquantize.cpp">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\bimg\3rdparty\tinyexr\deps\miniz\miniz.c">

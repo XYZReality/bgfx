@@ -176,16 +176,16 @@
     <ClInclude Include="..\..\..\examples\40-svt\vt.h">
       <Filter>examples\40-svt</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\examples\46-fsr\cs_fsr.h">
+    <ClInclude Include="..\..\..\examples\46-fsr\fsr.h">
       <Filter>examples\46-fsr</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\examples\46-fsr\fsr.h">
+    <ClInclude Include="..\..\..\examples\46-fsr\ffx_a.h">
       <Filter>examples\46-fsr</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\examples\46-fsr\ffx_fsr1.h">
       <Filter>examples\46-fsr</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\examples\46-fsr\ffx_a.h">
+    <ClInclude Include="..\..\..\examples\46-fsr\cs_fsr.h">
       <Filter>examples\46-fsr</Filter>
     </ClInclude>
   </ItemGroup>
@@ -256,10 +256,10 @@
     <ClCompile Include="..\..\..\examples\22-windows\windows.cpp">
       <Filter>examples\22-windows</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\examples\23-vectordisplay\vectordisplay.cpp">
+    <ClCompile Include="..\..\..\examples\23-vectordisplay\main.cpp">
       <Filter>examples\23-vectordisplay</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\examples\23-vectordisplay\main.cpp">
+    <ClCompile Include="..\..\..\examples\23-vectordisplay\vectordisplay.cpp">
       <Filter>examples\23-vectordisplay</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\examples\24-nbody\nbody.cpp">
@@ -307,10 +307,10 @@
     <ClCompile Include="..\..\..\examples\39-assao\assao.cpp">
       <Filter>examples\39-assao</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\examples\40-svt\vt.cpp">
+    <ClCompile Include="..\..\..\examples\40-svt\svt.cpp">
       <Filter>examples\40-svt</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\examples\40-svt\svt.cpp">
+    <ClCompile Include="..\..\..\examples\40-svt\vt.cpp">
       <Filter>examples\40-svt</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\examples\41-tess\tess.cpp">
@@ -331,10 +331,10 @@
     <ClCompile Include="..\..\..\examples\45-bokeh\bokeh.cpp">
       <Filter>examples\45-bokeh</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\examples\46-fsr\fsr.cpp">
+    <ClCompile Include="..\..\..\examples\46-fsr\app.cpp">
       <Filter>examples\46-fsr</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\examples\46-fsr\app.cpp">
+    <ClCompile Include="..\..\..\examples\46-fsr\fsr.cpp">
       <Filter>examples\46-fsr</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\examples\47-pixelformats\pixelformats.cpp">

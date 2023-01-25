@@ -54,9 +54,9 @@ ifeq ($(config),debug32)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-arm64/bin" -arch arm64 -framework Cocoa -framework IOKit -framework Metal -framework OpenGL -framework QuartzCore
   LIBDEPS            += ../../osx-arm64/bin/libexample-commonDebug.a ../../osx-arm64/bin/libbimg_decodeDebug.a ../../osx-arm64/bin/libbimgDebug.a ../../osx-arm64/bin/libbgfxDebug.a ../../osx-arm64/bin/libbxDebug.a
@@ -87,9 +87,9 @@ ifeq ($(config),release32)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-arm64/bin" -arch arm64 -framework Cocoa -framework IOKit -framework Metal -framework OpenGL -framework QuartzCore
   LIBDEPS            += ../../osx-arm64/bin/libexample-commonRelease.a ../../osx-arm64/bin/libbimg_decodeRelease.a ../../osx-arm64/bin/libbimgRelease.a ../../osx-arm64/bin/libbgfxRelease.a ../../osx-arm64/bin/libbxRelease.a
@@ -120,9 +120,9 @@ ifeq ($(config),debug64)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-arm64/bin" -arch arm64 -framework Cocoa -framework IOKit -framework Metal -framework OpenGL -framework QuartzCore
   LIBDEPS            += ../../osx-arm64/bin/libexample-commonDebug.a ../../osx-arm64/bin/libbimg_decodeDebug.a ../../osx-arm64/bin/libbimgDebug.a ../../osx-arm64/bin/libbgfxDebug.a ../../osx-arm64/bin/libbxDebug.a
@@ -153,9 +153,9 @@ ifeq ($(config),release64)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-arm64/bin" -arch arm64 -framework Cocoa -framework IOKit -framework Metal -framework OpenGL -framework QuartzCore
   LIBDEPS            += ../../osx-arm64/bin/libexample-commonRelease.a ../../osx-arm64/bin/libbimg_decodeRelease.a ../../osx-arm64/bin/libbimgRelease.a ../../osx-arm64/bin/libbgfxRelease.a ../../osx-arm64/bin/libbxRelease.a
@@ -186,9 +186,9 @@ ifeq ($(config),debug)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-arm64/bin" -arch arm64 -framework Cocoa -framework IOKit -framework Metal -framework OpenGL -framework QuartzCore
   LIBDEPS            += ../../osx-arm64/bin/libexample-commonDebug.a ../../osx-arm64/bin/libbimg_decodeDebug.a ../../osx-arm64/bin/libbimgDebug.a ../../osx-arm64/bin/libbgfxDebug.a ../../osx-arm64/bin/libbxDebug.a
@@ -219,9 +219,9 @@ ifeq ($(config),release)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch arm64 -Wno-error=unused-command-line-argument -Wno-unused-command-line-argument -Wfatal-errors -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-arm64/bin" -arch arm64 -framework Cocoa -framework IOKit -framework Metal -framework OpenGL -framework QuartzCore
   LIBDEPS            += ../../osx-arm64/bin/libexample-commonRelease.a ../../osx-arm64/bin/libbimg_decodeRelease.a ../../osx-arm64/bin/libbimgRelease.a ../../osx-arm64/bin/libbgfxRelease.a ../../osx-arm64/bin/libbxRelease.a

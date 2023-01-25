@@ -154,7 +154,6 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -195,7 +194,6 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -236,7 +234,6 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -276,7 +273,6 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -319,7 +315,6 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -362,7 +357,6 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <LanguageStandard>stdcpp14</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -393,10 +387,10 @@
     <ClInclude Include="..\..\..\examples\20-nanovg\blendish.h" />
     <ClInclude Include="..\..\..\examples\23-vectordisplay\vectordisplay.h" />
     <ClInclude Include="..\..\..\examples\40-svt\vt.h" />
-    <ClInclude Include="..\..\..\examples\46-fsr\cs_fsr.h" />
     <ClInclude Include="..\..\..\examples\46-fsr\fsr.h" />
-    <ClInclude Include="..\..\..\examples\46-fsr\ffx_fsr1.h" />
     <ClInclude Include="..\..\..\examples\46-fsr\ffx_a.h" />
+    <ClInclude Include="..\..\..\examples\46-fsr\ffx_fsr1.h" />
+    <ClInclude Include="..\..\..\examples\46-fsr\cs_fsr.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\examples\00-helloworld\helloworld.cpp">
@@ -443,9 +437,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\examples\22-windows\windows.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\examples\23-vectordisplay\vectordisplay.cpp">
-    </ClCompile>
     <ClCompile Include="..\..\..\examples\23-vectordisplay\main.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\examples\23-vectordisplay\vectordisplay.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\examples\24-nbody\nbody.cpp">
     </ClCompile>
@@ -477,9 +471,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\examples\39-assao\assao.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\examples\40-svt\vt.cpp">
-    </ClCompile>
     <ClCompile Include="..\..\..\examples\40-svt\svt.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\examples\40-svt\vt.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\examples\41-tess\tess.cpp">
     </ClCompile>
@@ -494,9 +488,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\examples\45-bokeh\bokeh.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\examples\46-fsr\fsr.cpp">
-    </ClCompile>
     <ClCompile Include="..\..\..\examples\46-fsr\app.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\examples\46-fsr\fsr.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\examples\47-pixelformats\pixelformats.cpp">
     </ClCompile>

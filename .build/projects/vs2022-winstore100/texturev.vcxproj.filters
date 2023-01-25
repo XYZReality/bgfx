@@ -9,69 +9,69 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\tools\texturev\fs_texture_array.sc">
-      <Filter>tools\texturev</Filter>
-    </None>
-    <None Include="..\..\..\tools\texturev\common.sh">
-      <Filter>tools\texturev</Filter>
-    </None>
     <None Include="..\..\..\tools\texturev\varying.def.sc">
-      <Filter>tools\texturev</Filter>
-    </None>
-    <None Include="..\..\..\tools\texturev\fs_texture_3d.sc">
-      <Filter>tools\texturev</Filter>
-    </None>
-    <None Include="..\..\..\tools\texturev\vs_texture.sc">
-      <Filter>tools\texturev</Filter>
-    </None>
-    <None Include="..\..\..\tools\texturev\makefile">
       <Filter>tools\texturev</Filter>
     </None>
     <None Include="..\..\..\tools\texturev\vs_texture_cube.sc">
       <Filter>tools\texturev</Filter>
     </None>
-    <None Include="..\..\..\tools\texturev\fs_texture.sc">
+    <None Include="..\..\..\tools\texturev\fs_texture_cube.sc">
       <Filter>tools\texturev</Filter>
     </None>
-    <None Include="..\..\..\tools\texturev\fs_texture_msdf.sc">
+    <None Include="..\..\..\tools\texturev\fs_texture_3d.sc">
       <Filter>tools\texturev</Filter>
     </None>
     <None Include="..\..\..\tools\texturev\fs_texture_sdf.sc">
       <Filter>tools\texturev</Filter>
     </None>
-    <None Include="..\..\..\tools\texturev\fs_texture_cube.sc">
+    <None Include="..\..\..\tools\texturev\vs_texture.sc">
+      <Filter>tools\texturev</Filter>
+    </None>
+    <None Include="..\..\..\tools\texturev\fs_texture.sc">
       <Filter>tools\texturev</Filter>
     </None>
     <None Include="..\..\..\tools\texturev\fs_texture_cube2.sc">
       <Filter>tools\texturev</Filter>
     </None>
+    <None Include="..\..\..\tools\texturev\fs_texture_msdf.sc">
+      <Filter>tools\texturev</Filter>
+    </None>
+    <None Include="..\..\..\tools\texturev\fs_texture_array.sc">
+      <Filter>tools\texturev</Filter>
+    </None>
+    <None Include="..\..\..\tools\texturev\makefile">
+      <Filter>tools\texturev</Filter>
+    </None>
+    <None Include="..\..\..\tools\texturev\common.sh">
+      <Filter>tools\texturev</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\tools\texturev\fs_texture_msdf.bin.h">
+    <ClInclude Include="..\..\..\tools\texturev\fs_texture_cube.bin.h">
       <Filter>tools\texturev</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\tools\texturev\vs_texture.bin.h">
       <Filter>tools\texturev</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\tools\texturev\fs_texture_cube.bin.h">
+    <ClInclude Include="..\..\..\tools\texturev\fs_texture_sdf.bin.h">
+      <Filter>tools\texturev</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\tools\texturev\fs_texture_msdf.bin.h">
       <Filter>tools\texturev</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\tools\texturev\fs_texture_array.bin.h">
       <Filter>tools\texturev</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\tools\texturev\fs_texture_cube2.bin.h">
-      <Filter>tools\texturev</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\tools\texturev\vs_texture_cube.bin.h">
       <Filter>tools\texturev</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\tools\texturev\fs_texture_sdf.bin.h">
+    <ClInclude Include="..\..\..\tools\texturev\fs_texture_3d.bin.h">
       <Filter>tools\texturev</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\tools\texturev\fs_texture.bin.h">
       <Filter>tools\texturev</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\tools\texturev\fs_texture_3d.bin.h">
+    <ClInclude Include="..\..\..\tools\texturev\fs_texture_cube2.bin.h">
       <Filter>tools\texturev</Filter>
     </ClInclude>
   </ItemGroup>

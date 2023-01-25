@@ -54,9 +54,9 @@ ifeq ($(config),debug32)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-x64/bin" -L"." -arch x86_64
   LIBDEPS            += ../../osx-x64/bin/libbimg_decodeDebug.a ../../osx-x64/bin/libbimg_encodeDebug.a ../../osx-x64/bin/libbimgDebug.a ../../osx-x64/bin/libbxDebug.a
@@ -87,9 +87,9 @@ ifeq ($(config),release32)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-x64/bin" -L"." -arch x86_64
   LIBDEPS            += ../../osx-x64/bin/libbimg_decodeRelease.a ../../osx-x64/bin/libbimg_encodeRelease.a ../../osx-x64/bin/libbimgRelease.a ../../osx-x64/bin/libbxRelease.a
@@ -120,9 +120,9 @@ ifeq ($(config),debug64)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-x64/bin" -L"." -arch x86_64
   LIBDEPS            += ../../osx-x64/bin/libbimg_decodeDebug.a ../../osx-x64/bin/libbimg_encodeDebug.a ../../osx-x64/bin/libbimgDebug.a ../../osx-x64/bin/libbxDebug.a
@@ -153,9 +153,9 @@ ifeq ($(config),release64)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-x64/bin" -L"." -arch x86_64
   LIBDEPS            += ../../osx-x64/bin/libbimg_decodeRelease.a ../../osx-x64/bin/libbimg_encodeRelease.a ../../osx-x64/bin/libbimgRelease.a ../../osx-x64/bin/libbxRelease.a
@@ -186,9 +186,9 @@ ifeq ($(config),debug)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-x64/bin" -L"." -arch x86_64
   LIBDEPS            += ../../osx-x64/bin/libbimg_decodeDebug.a ../../osx-x64/bin/libbimg_encodeDebug.a ../../osx-x64/bin/libbimgDebug.a ../../osx-x64/bin/libbxDebug.a
@@ -219,9 +219,9 @@ ifeq ($(config),release)
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-rtti -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -arch x86_64 -msse4.2 -target x86_64-apple-macos10.11 -Wfatal-errors -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   ALL_LDFLAGS        += $(LDFLAGS) -L"../../osx-x64/bin" -L"." -arch x86_64
   LIBDEPS            += ../../osx-x64/bin/libbimg_decodeRelease.a ../../osx-x64/bin/libbimg_encodeRelease.a ../../osx-x64/bin/libbimgRelease.a ../../osx-x64/bin/libbxRelease.a
