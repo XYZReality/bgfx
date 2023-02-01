@@ -365,170 +365,170 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\ShHandle.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\ResourceLimits.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\InfoSink.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\glslang_c_shader_types.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\Common.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\SpirvIntrinsics.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\BaseTypes.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\arrays.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\glslang_c_interface.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\Types.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\PoolAlloc.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\InitializeGlobals.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\ConstantUnion.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\intermediate.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\localintermediate.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\propagateNoContraction.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\gl_types.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\ScanContext.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\glslang_tab.cpp.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\SymbolTable.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Scan.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\ParseHelper.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\attribute.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\LiveTraverser.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\reflection.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\parseVersions.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\pch.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\RemoveTree.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Versions.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Initialize.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\iomapper.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\PpContext.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\PpTokens.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Public\ResourceLimits.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Public\ShaderLang.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Public\resource_limits_c.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslTokenStream.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslGrammar.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslScanContext.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslAttributes.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\pch.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslTokens.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslParseHelper.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslGrammar.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslOpMap.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslParseables.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslParseHelper.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslScanContext.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslTokens.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslTokenStream.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\HLSL\pch.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\arrays.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\BaseTypes.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\Common.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\ConstantUnion.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\glslang_c_interface.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\glslang_c_shader_types.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\InfoSink.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\InitializeGlobals.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\intermediate.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\PoolAlloc.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\ResourceLimits.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\ShHandle.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\SpirvIntrinsics.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Include\Types.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\attribute.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\glslang_tab.cpp.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\gl_types.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Initialize.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\iomapper.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\LiveTraverser.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\localintermediate.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\ParseHelper.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\parseVersions.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\pch.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\propagateNoContraction.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\reflection.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\RemoveTree.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Scan.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\ScanContext.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\SymbolTable.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Versions.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\PpContext.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\PpTokens.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\glslang\OSDependent\osinclude.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Public\ResourceLimits.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Public\resource_limits_c.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\glslang\Public\ShaderLang.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\bitutils.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\disassemble.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\doc.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\GLSL.ext.AMD.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\GLSL.ext.ARM.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\GLSL.ext.EXT.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\GLSL.ext.KHR.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\GLSL.ext.NV.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\GLSL.std.450.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\GlslangToSpv.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\hex_float.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\doc.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\GLSL.ext.AMD.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\bitutils.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\SpvBuilder.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\GLSL.ext.EXT.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\Logger.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\NonSemanticDebugPrintf.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\NonSemanticShaderDebugInfo100.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\SpvTools.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\disassemble.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\GlslangToSpv.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\SpvBuilder.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\spvIR.h" />
-    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\GLSL.ext.ARM.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\SPVRemapper.h" />
+    <ClInclude Include="..\..\..\3rdparty\glslang\SPIRV\SpvTools.h" />
     <ClInclude Include="..\..\..\3rdparty\glslang\OGLCompilersDLL\InitializeDll.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\CInterface\glslang_c_interface.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Initialize.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\GenericCodeGen\CodeGen.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Intermediate.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\GenericCodeGen\Link.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\ParseContextBase.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslAttributes.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Constant.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslGrammar.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\IntermTraverse.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslOpMap.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\intermOut.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslParseables.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\limits.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\propagateNoContraction.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\glslang_tab.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\SpirvIntrinsics.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Scan.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\linkValidate.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\SymbolTable.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Versions.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\ShaderLang.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\reflection.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\ParseHelper.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\attribute.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\InfoSink.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\parseConst.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\PoolAlloc.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\RemoveTree.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\iomapper.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\PpContext.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\PpScanner.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\Pp.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\PpAtom.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\PpTokens.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslParseHelper.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslScanContext.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslTokenStream.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslOpMap.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\linkValidate.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslGrammar.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\attribute.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslAttributes.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Constant.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslParseHelper.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\glslang_tab.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslParseables.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\InfoSink.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Initialize.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Intermediate.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\intermOut.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\IntermTraverse.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\iomapper.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\limits.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\parseConst.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\ParseContextBase.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\ParseHelper.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\PoolAlloc.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\propagateNoContraction.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\reflection.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\RemoveTree.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Scan.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\ShaderLang.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\SpirvIntrinsics.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\SymbolTable.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Versions.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\Pp.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\PpAtom.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\PpContext.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\PpScanner.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\preprocessor\PpTokens.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\OSDependent\Windows\ossource.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\GenericCodeGen\CodeGen.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\GenericCodeGen\Link.cpp">
-    </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\hlsl\stub.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\SpvBuilder.cpp">
+    <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\disassemble.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\doc.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\GlslangToSpv.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\InReadableOrder.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\Logger.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\SpvBuilder.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\SpvPostProcess.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\SPVRemapper.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\SpvTools.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\InReadableOrder.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\Logger.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\disassemble.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\GlslangToSpv.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\SPIRV\CInterface\spirv_c_interface.cpp">
     </ClCompile>

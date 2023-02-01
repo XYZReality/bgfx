@@ -50,7 +50,7 @@ ifeq ($(config),debug32)
   TARGETDIR           = ../../orin/bin
   TARGET              = $(TARGETDIR)/libbgfxDebug.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBX_CONFIG_DEBUG=1
-  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../opt/vc/include" -I"../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
+  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../../opt/vc/include" -I"../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
@@ -58,7 +58,7 @@ ifeq ($(config),debug32)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../opt/vc/lib" -L"." -L"../../orin/bin" -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../../opt/vc/lib" -L"." -L"../../orin/bin" -Wl,--gc-sections
   LIBDEPS            += ../../orin/bin/libbxDebug.a
   LDDEPS             += ../../orin/bin/libbxDebug.a
   LDRESP              =
@@ -106,7 +106,7 @@ ifeq ($(config),release32)
   TARGETDIR           = ../../orin/bin
   TARGET              = $(TARGETDIR)/libbgfxRelease.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBX_CONFIG_DEBUG=0
-  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../opt/vc/include" -I"../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
+  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../../opt/vc/include" -I"../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
@@ -114,7 +114,7 @@ ifeq ($(config),release32)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../opt/vc/lib" -L"." -L"../../orin/bin" -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../../opt/vc/lib" -L"." -L"../../orin/bin" -Wl,--gc-sections
   LIBDEPS            += ../../orin/bin/libbxRelease.a
   LDDEPS             += ../../orin/bin/libbxRelease.a
   LDRESP              =
@@ -162,7 +162,7 @@ ifeq ($(config),debug64)
   TARGETDIR           = ../../orin/bin
   TARGET              = $(TARGETDIR)/libbgfxDebug.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBX_CONFIG_DEBUG=1
-  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../opt/vc/include" -I"../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
+  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../../opt/vc/include" -I"../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
@@ -170,7 +170,7 @@ ifeq ($(config),debug64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../opt/vc/lib" -L"." -L"../../orin/bin" -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../../opt/vc/lib" -L"." -L"../../orin/bin" -Wl,--gc-sections
   LIBDEPS            += ../../orin/bin/libbxDebug.a
   LDDEPS             += ../../orin/bin/libbxDebug.a
   LDRESP              =
@@ -218,7 +218,7 @@ ifeq ($(config),release64)
   TARGETDIR           = ../../orin/bin
   TARGET              = $(TARGETDIR)/libbgfxRelease.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBX_CONFIG_DEBUG=0
-  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../opt/vc/include" -I"../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
+  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../../opt/vc/include" -I"../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
@@ -226,7 +226,7 @@ ifeq ($(config),release64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../opt/vc/lib" -L"." -L"../../orin/bin" -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../../opt/vc/lib" -L"." -L"../../orin/bin" -Wl,--gc-sections
   LIBDEPS            += ../../orin/bin/libbxRelease.a
   LDDEPS             += ../../orin/bin/libbxRelease.a
   LDRESP              =
@@ -274,7 +274,7 @@ ifeq ($(config),debug)
   TARGETDIR           = ../../orin/bin
   TARGET              = $(TARGETDIR)/libbgfxDebug.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBX_CONFIG_DEBUG=1
-  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../opt/vc/include" -I"../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
+  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../../opt/vc/include" -I"../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
@@ -282,7 +282,7 @@ ifeq ($(config),debug)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../opt/vc/lib" -L"." -L"../../orin/bin" -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../../opt/vc/lib" -L"." -L"../../orin/bin" -Wl,--gc-sections
   LIBDEPS            += ../../orin/bin/libbxDebug.a
   LDDEPS             += ../../orin/bin/libbxDebug.a
   LDRESP              =
@@ -330,7 +330,7 @@ ifeq ($(config),release)
   TARGETDIR           = ../../orin/bin
   TARGET              = $(TARGETDIR)/libbgfxRelease.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBX_CONFIG_DEBUG=0
-  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../opt/vc/include" -I"../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
+  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../../opt/vc/include" -I"../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../3rdparty" -I"../../../../bimg/include" -I"../../../../bx/include" -I"../../../3rdparty/directx-headers/include/directx" -I"../../../3rdparty/directx-headers/include" -I"../../../3rdparty/directx-headers/include/wsl/stubs" -I"../../../3rdparty/khronos" -I"../../../include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
@@ -338,7 +338,7 @@ ifeq ($(config),release)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../opt/vc/lib" -L"." -L"../../orin/bin" -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../../opt/vc/lib" -L"." -L"../../orin/bin" -Wl,--gc-sections
   LIBDEPS            += ../../orin/bin/libbxRelease.a
   LDDEPS             += ../../orin/bin/libbxRelease.a
   LDRESP              =

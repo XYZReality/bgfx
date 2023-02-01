@@ -725,8 +725,8 @@
 				OBJROOT = obj/Debug/glslang;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -750,8 +750,8 @@
 					"-Wno-deprecated-register",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -835,8 +835,8 @@
 				OBJROOT = obj/Release/glslang;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -860,8 +860,8 @@
 					"-Wno-deprecated-register",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-fomit-frame-pointer",
 					"-ffast-math",
+					"-fomit-frame-pointer",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",

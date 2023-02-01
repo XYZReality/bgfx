@@ -265,10 +265,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\tools\geometryv\varying.def.sc" />
     <None Include="..\..\..\tools\geometryv\fs_mesh.sc" />
-    <None Include="..\..\..\tools\geometryv\vs_mesh.sc" />
     <None Include="..\..\..\tools\geometryv\makefile" />
+    <None Include="..\..\..\tools\geometryv\varying.def.sc" />
+    <None Include="..\..\..\tools\geometryv\vs_mesh.sc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="bx.vcxproj">
