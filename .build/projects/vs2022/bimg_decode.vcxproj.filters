@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\bimg\include\bimg\encode.h">
+    <ClInclude Include="..\..\..\..\bimg\include\bimg\bimg.h">
       <Filter>bimg\include\bimg</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\bimg\include\bimg\decode.h">
       <Filter>bimg\include\bimg</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\bimg\include\bimg\bimg.h">
+    <ClInclude Include="..\..\..\..\bimg\include\bimg\encode.h">
       <Filter>bimg\include\bimg</Filter>
     </ClInclude>
   </ItemGroup>

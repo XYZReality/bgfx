@@ -381,35 +381,35 @@
     <ClInclude Include="..\..\..\src\vertexlayout.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\indexgenerator.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\overdrawoptimizer.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\indexcodec.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\vcacheanalyzer.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\simplifier.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\overdrawanalyzer.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\vertexfilter.cpp">
+    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\allocator.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\clusterizer.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\stripifier.cpp">
+    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\indexcodec.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\allocator.cpp">
+    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\indexgenerator.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\overdrawanalyzer.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\overdrawoptimizer.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\simplifier.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\spatialorder.cpp">
     </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\stripifier.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\vcacheanalyzer.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\vcacheoptimizer.cpp">
+    </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\vertexcodec.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\vfetchoptimizer.cpp">
+    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\vertexfilter.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\vfetchanalyzer.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\vcacheoptimizer.cpp">
+    <ClCompile Include="..\..\..\3rdparty\meshoptimizer\src\vfetchoptimizer.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\src\vertexlayout.cpp">
     </ClCompile>

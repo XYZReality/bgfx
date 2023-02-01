@@ -365,9 +365,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\bimg\include\bimg\encode.h" />
-    <ClInclude Include="..\..\..\..\bimg\include\bimg\decode.h" />
     <ClInclude Include="..\..\..\..\bimg\include\bimg\bimg.h" />
+    <ClInclude Include="..\..\..\..\bimg\include\bimg\decode.h" />
+    <ClInclude Include="..\..\..\..\bimg\include\bimg\encode.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\bimg\src\image_decode.cpp">

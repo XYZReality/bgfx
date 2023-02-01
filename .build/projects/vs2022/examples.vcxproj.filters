@@ -176,7 +176,7 @@
     <ClInclude Include="..\..\..\examples\40-svt\vt.h">
       <Filter>examples\40-svt</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\examples\46-fsr\fsr.h">
+    <ClInclude Include="..\..\..\examples\46-fsr\cs_fsr.h">
       <Filter>examples\46-fsr</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\examples\46-fsr\ffx_a.h">
@@ -185,7 +185,7 @@
     <ClInclude Include="..\..\..\examples\46-fsr\ffx_fsr1.h">
       <Filter>examples\46-fsr</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\examples\46-fsr\cs_fsr.h">
+    <ClInclude Include="..\..\..\examples\46-fsr\fsr.h">
       <Filter>examples\46-fsr</Filter>
     </ClInclude>
   </ItemGroup>

@@ -50,7 +50,7 @@ ifeq ($(config),debug32)
   TARGETDIR           = ../../rpi/bin
   TARGET              = $(TARGETDIR)/libbxDebug.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -D__VCCOREVER__=0x04000000 -D__STDC_VERSION__=199901L -DBX_CONFIG_DEBUG=1
-  INCLUDES           += -I"../../../../../../../../opt/vc/include" -I"../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
+  INCLUDES           += -I"../../../../../../../../../opt/vc/include" -I"../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
@@ -58,7 +58,7 @@ ifeq ($(config),debug32)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -104,7 +104,7 @@ ifeq ($(config),release32)
   TARGETDIR           = ../../rpi/bin
   TARGET              = $(TARGETDIR)/libbxRelease.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -D__VCCOREVER__=0x04000000 -D__STDC_VERSION__=199901L -DBX_CONFIG_DEBUG=0
-  INCLUDES           += -I"../../../../../../../../opt/vc/include" -I"../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
+  INCLUDES           += -I"../../../../../../../../../opt/vc/include" -I"../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
@@ -112,7 +112,7 @@ ifeq ($(config),release32)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -158,7 +158,7 @@ ifeq ($(config),debug64)
   TARGETDIR           = ../../rpi/bin
   TARGET              = $(TARGETDIR)/libbxDebug.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -D__VCCOREVER__=0x04000000 -D__STDC_VERSION__=199901L -DBX_CONFIG_DEBUG=1
-  INCLUDES           += -I"../../../../../../../../opt/vc/include" -I"../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
+  INCLUDES           += -I"../../../../../../../../../opt/vc/include" -I"../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
@@ -166,7 +166,7 @@ ifeq ($(config),debug64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -212,7 +212,7 @@ ifeq ($(config),release64)
   TARGETDIR           = ../../rpi/bin
   TARGET              = $(TARGETDIR)/libbxRelease.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -D__VCCOREVER__=0x04000000 -D__STDC_VERSION__=199901L -DBX_CONFIG_DEBUG=0
-  INCLUDES           += -I"../../../../../../../../opt/vc/include" -I"../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
+  INCLUDES           += -I"../../../../../../../../../opt/vc/include" -I"../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
@@ -220,7 +220,7 @@ ifeq ($(config),release64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -266,7 +266,7 @@ ifeq ($(config),debug)
   TARGETDIR           = ../../rpi/bin
   TARGET              = $(TARGETDIR)/libbxDebug.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -D__VCCOREVER__=0x04000000 -D__STDC_VERSION__=199901L -DBX_CONFIG_DEBUG=1
-  INCLUDES           += -I"../../../../../../../../opt/vc/include" -I"../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
+  INCLUDES           += -I"../../../../../../../../../opt/vc/include" -I"../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
@@ -274,7 +274,7 @@ ifeq ($(config),debug)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
@@ -320,7 +320,7 @@ ifeq ($(config),release)
   TARGETDIR           = ../../rpi/bin
   TARGET              = $(TARGETDIR)/libbxRelease.a
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -D__VCCOREVER__=0x04000000 -D__STDC_VERSION__=199901L -DBX_CONFIG_DEBUG=0
-  INCLUDES           += -I"../../../../../../../../opt/vc/include" -I"../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
+  INCLUDES           += -I"../../../../../../../../../opt/vc/include" -I"../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
@@ -328,7 +328,7 @@ ifeq ($(config),release)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =

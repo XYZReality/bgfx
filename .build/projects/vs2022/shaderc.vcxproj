@@ -259,33 +259,33 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\tools\shaderc\shaderc.h" />
     <ClInclude Include="..\..\..\src\vertexlayout.h" />
+    <ClInclude Include="..\..\..\src\shader.h" />
     <ClInclude Include="..\..\..\src\shader_dx9bc.h" />
     <ClInclude Include="..\..\..\src\shader_dxbc.h" />
     <ClInclude Include="..\..\..\src\shader_spirv.h" />
-    <ClInclude Include="..\..\..\src\shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\tools\shaderc\shaderc.cpp">
-    </ClCompile>
-    <ClCompile Include="..\..\..\tools\shaderc\shaderc_metal.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\tools\shaderc\shaderc_glsl.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\tools\shaderc\shaderc_hlsl.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\tools\shaderc\shaderc_spirv.cpp">
+    <ClCompile Include="..\..\..\tools\shaderc\shaderc_metal.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\tools\shaderc\shaderc_pssl.cpp">
     </ClCompile>
+    <ClCompile Include="..\..\..\tools\shaderc\shaderc_spirv.cpp">
+    </ClCompile>
     <ClCompile Include="..\..\..\src\vertexlayout.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\src\shader_dxbc.cpp">
+    <ClCompile Include="..\..\..\src\shader.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\src\shader_dx9bc.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\src\shader_spirv.cpp">
+    <ClCompile Include="..\..\..\src\shader_dxbc.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\src\shader.cpp">
+    <ClCompile Include="..\..\..\src\shader_spirv.cpp">
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

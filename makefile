@@ -48,7 +48,7 @@ projgen: ## Generate project files for all configurations.
 	$(GENIE) --with-tools --with-combined-examples --with-shared-lib                       vs2022
 	$(GENIE) --with-tools --with-combined-examples                   --vs=winstore100      vs2022
 	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=mingw-gcc       gmake
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=linux-gcc       gmake
+	$(GENIE)                                       --with-shared-lib --gcc=linux-gcc       gmake
 	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=osx-x64         gmake
 	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=osx-arm64       gmake
 	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --xcode=osx           xcode9
@@ -64,8 +64,8 @@ projgen: ## Generate project files for all configurations.
 	$(GENIE)              --with-combined-examples                   --gcc=ios-simulator   gmake
 	$(GENIE)              --with-combined-examples                   --gcc=ios-simulator64 gmake
 	$(GENIE)              --with-combined-examples                   --gcc=rpi             gmake
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=linux-arm-gcc   gmake
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=orin            gmake
+	$(GENIE)                                       --with-shared-lib --gcc=linux-arm-gcc   gmake
+	$(GENIE)                                       --with-shared-lib --gcc=orin            gmake
 
 idl: ## Generate code from IDL.
 	@echo Generating code from IDL.
