@@ -495,20 +495,46 @@ namespace entry
 							{
 								XKeyEvent& xkey = event.xkey;
 								KeySym keysym = XLookupKeysym(&xkey, 0);
+								Key::Enum key = fromXk(keysym);
+								WindowHandle handle = findHandle(xkey.window);
+
 								switch (keysym)
 								{
-								case XK_Meta_L:    setModifier(Modifier::LeftMeta,   KeyPress == event.type); break;
-								case XK_Meta_R:    setModifier(Modifier::RightMeta,  KeyPress == event.type); break;
-								case XK_Control_L: setModifier(Modifier::LeftCtrl,   KeyPress == event.type); break;
-								case XK_Control_R: setModifier(Modifier::RightCtrl,  KeyPress == event.type); break;
-								case XK_Shift_L:   setModifier(Modifier::LeftShift,  KeyPress == event.type); break;
-								case XK_Shift_R:   setModifier(Modifier::RightShift, KeyPress == event.type); break;
-								case XK_Alt_L:     setModifier(Modifier::LeftAlt,    KeyPress == event.type); break;
-								case XK_Alt_R:     setModifier(Modifier::RightAlt,   KeyPress == event.type); break;
+								case XK_Meta_L:
+									setModifier(Modifier::LeftMeta,   KeyPress == event.type);
+									m_eventQueue.postKeyEvent(handle, key, m_modifiers, KeyPress == event.type);
+									break;
+								case XK_Meta_R:
+									setModifier(Modifier::RightMeta,  KeyPress == event.type);
+									m_eventQueue.postKeyEvent(handle, key, m_modifiers, KeyPress == event.type);
+									break;
+								case XK_Control_L:
+									setModifier(Modifier::LeftCtrl,   KeyPress == event.type);
+									m_eventQueue.postKeyEvent(handle, key, m_modifiers, KeyPress == event.type);
+									break;
+								case XK_Control_R:
+									setModifier(Modifier::RightCtrl,  KeyPress == event.type);
+									m_eventQueue.postKeyEvent(handle, key, m_modifiers, KeyPress == event.type);
+									break;
+								case XK_Shift_L:
+									setModifier(Modifier::LeftShift,  KeyPress == event.type);
+									m_eventQueue.postKeyEvent(handle, key, m_modifiers, KeyPress == event.type);
+									break;
+								case XK_Shift_R:
+									setModifier(Modifier::RightShift, KeyPress == event.type);
+									m_eventQueue.postKeyEvent(handle, key, m_modifiers, KeyPress == event.type);
+									break;
+								case XK_Alt_L:
+									setModifier(Modifier::LeftAlt,    KeyPress == event.type);
+									m_eventQueue.postKeyEvent(handle, key, m_modifiers, KeyPress == event.type);
+									break;
+								case XK_Alt_R:
+									setModifier(Modifier::RightAlt,   KeyPress == event.type);
+									m_eventQueue.postKeyEvent(handle, key, m_modifiers, KeyPress == event.type);
+									break;
 
 								default:
 									{
-										WindowHandle handle = findHandle(xkey.window);
 										if (KeyPress == event.type)
 										{
 											Status status = 0;
@@ -529,7 +555,6 @@ namespace entry
 											}
 										}
 
-										Key::Enum key = fromXk(keysym);
 										if (Key::None != key)
 										{
 											m_eventQueue.postKeyEvent(handle, key, m_modifiers, KeyPress == event.type);
