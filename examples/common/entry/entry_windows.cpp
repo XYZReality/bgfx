@@ -505,7 +505,9 @@ namespace entry
 			mte.m_argc = _argc;
 			mte.m_argv = _argv;
 
+			#if BGFX_CONFIG_MULTITHREADED
 			bgfx::renderFrame();
+			#endif
 
 			bx::Thread thread;
 			thread.init(mte.threadFunc, &mte);
@@ -518,7 +520,9 @@ namespace entry
 
 			while (!m_exit)
 			{
+				#if BGFX_CONFIG_MULTITHREADED
 				bgfx::renderFrame();
+				#endif
 
 				s_xinput.update(m_eventQueue);
 				WaitForInputIdle(GetCurrentProcess(), 16);
@@ -530,7 +534,9 @@ namespace entry
 				}
 			}
 
+			#if BGFX_CONFIG_MULTITHREADED
 			while (bgfx::RenderFrame::NoContext != bgfx::renderFrame() ) {};
+			#endif
 
 			thread.shutdown();
 
