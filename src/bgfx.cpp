@@ -1512,14 +1512,14 @@ namespace bgfx
 		1,
 	};
 
-	void UniformBuffer::writeUniform(UniformType::Enum _type, uint16_t _loc, const void* _value, uint16_t _num)
+	void UniformBuffer::writeUniform(UniformType::Enum _type, bgfx_handle _loc, const void* _value, uint16_t _num)
 	{
 		uint32_t opcode = encodeOpcode(_type, _loc, _num, true);
 		write(opcode);
 		write(_value, g_uniformTypeSize[_type]*_num);
 	}
 
-	void UniformBuffer::writeUniformHandle(UniformType::Enum _type, uint16_t _loc, UniformHandle _handle, uint16_t _num)
+	void UniformBuffer::writeUniformHandle(UniformType::Enum _type, bgfx_handle _loc, UniformHandle _handle, uint16_t _num)
 	{
 		uint32_t opcode = encodeOpcode(_type, _loc, _num, false);
 		write(opcode);
@@ -1976,7 +1976,7 @@ namespace bgfx
 			BX_PLACEMENT_NEW(&m_encoder[ii], EncoderImpl);
 		}
 
-		uint16_t idx = m_encoderHandle->alloc();
+		bgfx_handle idx = m_encoderHandle->alloc();
 		BX_ASSERT(0 == idx, "Internal encoder handle is not 0 (idx %d).", idx); BX_UNUSED(idx);
 		m_encoder[0].begin(m_submit, 0);
 		m_encoder0 = BX_ENABLED(BGFX_CONFIG_ENCODER_API_ONLY)
@@ -2126,7 +2126,7 @@ namespace bgfx
 				, _handleAlloc.getNumHandles()                                        \
 				, _handleAlloc.getMaxHandles()                                        \
 				);                                                                    \
-			for (uint16_t ii = 0, num = _handleAlloc.getNumHandles(); ii < num; ++ii) \
+			for (bgfx_handle ii = 0, num = _handleAlloc.getNumHandles(); ii < num; ++ii) \
 			{                                                                         \
 				BX_TRACE("\t%3d: %4d", ii, _handleAlloc.getHandleAt(ii) );            \
 			}                                                                         \
@@ -2142,9 +2142,9 @@ namespace bgfx
 				, _handleAlloc.getNumHandles()                                        \
 				, _handleAlloc.getMaxHandles()                                        \
 				);                                                                    \
-			for (uint16_t ii = 0, num = _handleAlloc.getNumHandles(); ii < num; ++ii) \
+			for (bgfx_handle ii = 0, num = _handleAlloc.getNumHandles(); ii < num; ++ii) \
 			{                                                                         \
-				uint16_t idx = _handleAlloc.getHandleAt(ii);                          \
+				bgfx_handle idx = _handleAlloc.getHandleAt(ii);                          \
 				const _type& ref = _ref[idx]; BX_UNUSED(ref);                         \
 				BX_TRACE("\t%3d: %4d %s"                                              \
 					, ii                                                              \
@@ -2164,9 +2164,9 @@ namespace bgfx
 				, _handleAlloc.getNumHandles()                                        \
 				, _handleAlloc.getMaxHandles()                                        \
 				);                                                                    \
-			for (uint16_t ii = 0, num = _handleAlloc.getNumHandles(); ii < num; ++ii) \
+			for (bgfx_handle ii = 0, num = _handleAlloc.getNumHandles(); ii < num; ++ii) \
 			{                                                                         \
-				uint16_t idx = _handleAlloc.getHandleAt(ii);                          \
+				bgfx_handle idx = _handleAlloc.getHandleAt(ii);                          \
 				const _type& ref = _ref[idx]; BX_UNUSED(ref);                         \
 				BX_TRACE("\t%3d: %4d %s (count %d)"                                   \
 					, ii                                                              \
@@ -2196,19 +2196,19 @@ namespace bgfx
 
 	void Context::freeDynamicBuffers()
 	{
-		for (uint16_t ii = 0, num = m_numFreeDynamicIndexBufferHandles; ii < num; ++ii)
+		for (bgfx_handle ii = 0, num = m_numFreeDynamicIndexBufferHandles; ii < num; ++ii)
 		{
 			destroyDynamicIndexBufferInternal(m_freeDynamicIndexBufferHandle[ii]);
 		}
 		m_numFreeDynamicIndexBufferHandles = 0;
 
-		for (uint16_t ii = 0, num = m_numFreeDynamicVertexBufferHandles; ii < num; ++ii)
+		for (bgfx_handle ii = 0, num = m_numFreeDynamicVertexBufferHandles; ii < num; ++ii)
 		{
 			destroyDynamicVertexBufferInternal(m_freeDynamicVertexBufferHandle[ii]);
 		}
 		m_numFreeDynamicVertexBufferHandles = 0;
 
-		for (uint16_t ii = 0, num = m_numFreeOcclusionQueryHandles; ii < num; ++ii)
+		for (bgfx_handle ii = 0, num = m_numFreeOcclusionQueryHandles; ii < num; ++ii)
 		{
 			m_occlusionQueryHandle.free(m_freeOcclusionQueryHandle[ii].idx);
 		}
@@ -2217,42 +2217,42 @@ namespace bgfx
 
 	void Context::freeAllHandles(Frame* _frame)
 	{
-		for (uint16_t ii = 0, num = _frame->m_freeIndexBuffer.getNumQueued(); ii < num; ++ii)
+		for (bgfx_handle ii = 0, num = _frame->m_freeIndexBuffer.getNumQueued(); ii < num; ++ii)
 		{
 			m_indexBufferHandle.free(_frame->m_freeIndexBuffer.get(ii).idx);
 		}
 
-		for (uint16_t ii = 0, num = _frame->m_freeVertexBuffer.getNumQueued(); ii < num; ++ii)
+		for (bgfx_handle ii = 0, num = _frame->m_freeVertexBuffer.getNumQueued(); ii < num; ++ii)
 		{
 			destroyVertexBufferInternal(_frame->m_freeVertexBuffer.get(ii));
 		}
 
-		for (uint16_t ii = 0, num = _frame->m_freeVertexLayout.getNumQueued(); ii < num; ++ii)
+		for (bgfx_handle ii = 0, num = _frame->m_freeVertexLayout.getNumQueued(); ii < num; ++ii)
 		{
 			m_layoutHandle.free(_frame->m_freeVertexLayout.get(ii).idx);
 		}
 
-		for (uint16_t ii = 0, num = _frame->m_freeShader.getNumQueued(); ii < num; ++ii)
+		for (bgfx_handle ii = 0, num = _frame->m_freeShader.getNumQueued(); ii < num; ++ii)
 		{
 			m_shaderHandle.free(_frame->m_freeShader.get(ii).idx);
 		}
 
-		for (uint16_t ii = 0, num = _frame->m_freeProgram.getNumQueued(); ii < num; ++ii)
+		for (bgfx_handle ii = 0, num = _frame->m_freeProgram.getNumQueued(); ii < num; ++ii)
 		{
 			m_programHandle.free(_frame->m_freeProgram.get(ii).idx);
 		}
 
-		for (uint16_t ii = 0, num = _frame->m_freeTexture.getNumQueued(); ii < num; ++ii)
+		for (bgfx_handle ii = 0, num = _frame->m_freeTexture.getNumQueued(); ii < num; ++ii)
 		{
 			m_textureHandle.free(_frame->m_freeTexture.get(ii).idx);
 		}
 
-		for (uint16_t ii = 0, num = _frame->m_freeFrameBuffer.getNumQueued(); ii < num; ++ii)
+		for (bgfx_handle ii = 0, num = _frame->m_freeFrameBuffer.getNumQueued(); ii < num; ++ii)
 		{
 			m_frameBufferHandle.free(_frame->m_freeFrameBuffer.get(ii).idx);
 		}
 
-		for (uint16_t ii = 0, num = _frame->m_freeUniform.getNumQueued(); ii < num; ++ii)
+		for (bgfx_handle ii = 0, num = _frame->m_freeUniform.getNumQueued(); ii < num; ++ii)
 		{
 			m_uniformHandle.free(_frame->m_freeUniform.get(ii).idx);
 		}
@@ -2267,7 +2267,7 @@ namespace bgfx
 		{
 			bx::MutexScope scopeLock(m_encoderApiLock);
 
-			uint16_t idx = m_encoderHandle->alloc();
+			bgfx_handle idx = m_encoderHandle->alloc();
 			if (kInvalidHandle == idx)
 			{
 				return NULL;
@@ -2503,7 +2503,7 @@ namespace bgfx
 			}
 
 			UniformType::Enum type;
-			uint16_t loc;
+			bgfx_handle loc;
 			uint16_t num;
 			uint16_t copy;
 			UniformBuffer::decodeOpcode(opcode, type, loc, num, copy);

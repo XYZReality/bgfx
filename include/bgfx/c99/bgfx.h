@@ -22,8 +22,19 @@
 
 #include <bx/platform.h>
 
+#if BGFX_CONFIG_USE_32BIT_HANDLES
+typedef uint32_t bgfx_handle;
+#else
+typedef uint16_t bgfx_handle;
+#endif
+
 #if !defined(BGFX_INVALID_HANDLE)
+#if BGFX_CONFIG_USE_32BIT_HANDLES
+#   define BGFX_INVALID_HANDLE { UINT32_MAX }
+#else
 #   define BGFX_INVALID_HANDLE { UINT16_MAX }
+#endif
+
 #endif // !defined(BGFX_INVALID_HANDLE)
 
 #ifndef BGFX_SHARED_LIB_BUILD
@@ -452,29 +463,29 @@ typedef struct bgfx_callback_vtbl_s
 
 } bgfx_callback_vtbl_t;
 
-typedef struct bgfx_dynamic_index_buffer_handle_s { uint16_t idx; } bgfx_dynamic_index_buffer_handle_t;
+typedef struct bgfx_dynamic_index_buffer_handle_s { bgfx_handle idx; } bgfx_dynamic_index_buffer_handle_t;
 
-typedef struct bgfx_dynamic_vertex_buffer_handle_s { uint16_t idx; } bgfx_dynamic_vertex_buffer_handle_t;
+typedef struct bgfx_dynamic_vertex_buffer_handle_s { bgfx_handle idx; } bgfx_dynamic_vertex_buffer_handle_t;
 
-typedef struct bgfx_frame_buffer_handle_s { uint16_t idx; } bgfx_frame_buffer_handle_t;
+typedef struct bgfx_frame_buffer_handle_s { bgfx_handle idx; } bgfx_frame_buffer_handle_t;
 
-typedef struct bgfx_index_buffer_handle_s { uint16_t idx; } bgfx_index_buffer_handle_t;
+typedef struct bgfx_index_buffer_handle_s { bgfx_handle idx; } bgfx_index_buffer_handle_t;
 
-typedef struct bgfx_indirect_buffer_handle_s { uint16_t idx; } bgfx_indirect_buffer_handle_t;
+typedef struct bgfx_indirect_buffer_handle_s { bgfx_handle idx; } bgfx_indirect_buffer_handle_t;
 
-typedef struct bgfx_occlusion_query_handle_s { uint16_t idx; } bgfx_occlusion_query_handle_t;
+typedef struct bgfx_occlusion_query_handle_s { bgfx_handle idx; } bgfx_occlusion_query_handle_t;
 
-typedef struct bgfx_program_handle_s { uint16_t idx; } bgfx_program_handle_t;
+typedef struct bgfx_program_handle_s { bgfx_handle idx; } bgfx_program_handle_t;
 
-typedef struct bgfx_shader_handle_s { uint16_t idx; } bgfx_shader_handle_t;
+typedef struct bgfx_shader_handle_s { bgfx_handle idx; } bgfx_shader_handle_t;
 
-typedef struct bgfx_texture_handle_s { uint16_t idx; } bgfx_texture_handle_t;
+typedef struct bgfx_texture_handle_s { bgfx_handle idx; } bgfx_texture_handle_t;
 
-typedef struct bgfx_uniform_handle_s { uint16_t idx; } bgfx_uniform_handle_t;
+typedef struct bgfx_uniform_handle_s { bgfx_handle idx; } bgfx_uniform_handle_t;
 
-typedef struct bgfx_vertex_buffer_handle_s { uint16_t idx; } bgfx_vertex_buffer_handle_t;
+typedef struct bgfx_vertex_buffer_handle_s { bgfx_handle idx; } bgfx_vertex_buffer_handle_t;
 
-typedef struct bgfx_vertex_layout_handle_s { uint16_t idx; } bgfx_vertex_layout_handle_t;
+typedef struct bgfx_vertex_layout_handle_s { bgfx_handle idx; } bgfx_vertex_layout_handle_t;
 
 
 #define BGFX_HANDLE_IS_VALID(h) ((h).idx != UINT16_MAX)
@@ -870,17 +881,17 @@ typedef struct bgfx_stats_s
     uint32_t             numBlit;            /** Number of blit calls submitted.          */
     uint32_t             maxGpuLatency;      /** GPU driver latency.                      */
     uint32_t             gpuFrameNum;        /** Frame which generated gpuTimeBegin, gpuTimeEnd. */
-    uint16_t             numDynamicIndexBuffers; /** Number of used dynamic index buffers.    */
-    uint16_t             numDynamicVertexBuffers; /** Number of used dynamic vertex buffers.   */
-    uint16_t             numFrameBuffers;    /** Number of used frame buffers.            */
-    uint16_t             numIndexBuffers;    /** Number of used index buffers.            */
-    uint16_t             numOcclusionQueries; /** Number of used occlusion queries.        */
-    uint16_t             numPrograms;        /** Number of used programs.                 */
-    uint16_t             numShaders;         /** Number of used shaders.                  */
-    uint16_t             numTextures;        /** Number of used textures.                 */
-    uint16_t             numUniforms;        /** Number of used uniforms.                 */
-    uint16_t             numVertexBuffers;   /** Number of used vertex buffers.           */
-    uint16_t             numVertexLayouts;   /** Number of used vertex layouts.           */
+    bgfx_handle          numDynamicIndexBuffers; /** Number of used dynamic index buffers.    */
+    bgfx_handle          numDynamicVertexBuffers; /** Number of used dynamic vertex buffers.   */
+    bgfx_handle          numFrameBuffers;    /** Number of used frame buffers.            */
+    bgfx_handle          numIndexBuffers;    /** Number of used index buffers.            */
+    bgfx_handle          numOcclusionQueries; /** Number of used occlusion queries.        */
+    bgfx_handle          numPrograms;        /** Number of used programs.                 */
+    bgfx_handle          numShaders;         /** Number of used shaders.                  */
+    bgfx_handle          numTextures;        /** Number of used textures.                 */
+    bgfx_handle          numUniforms;        /** Number of used uniforms.                 */
+    bgfx_handle          numVertexBuffers;   /** Number of used vertex buffers.           */
+    bgfx_handle          numVertexLayouts;   /** Number of used vertex layouts.           */
     int64_t              textureMemoryUsed;  /** Estimate of texture memory used.         */
     int64_t              rtMemoryUsed;       /** Estimate of render target memory used.   */
     int32_t              transientVbUsed;    /** Amount of transient vertex buffer used.  */

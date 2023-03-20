@@ -55,7 +55,7 @@ namespace bgfx
 
 		const Frame* m_frame;
 		BlitKey  m_key;
-		uint16_t m_item;
+		bgfx_handle m_item;
 	};
 
 	struct ViewState
@@ -72,9 +72,9 @@ namespace bgfx
 		void reset(Frame* _frame)
 		{
 			m_alphaRef = 0.0f;
-			m_invViewCached = UINT16_MAX;
-			m_invProjCached = UINT16_MAX;
-			m_invViewProjCached = UINT16_MAX;
+			m_invViewCached = bgfx::kInvalidHandle;
+			m_invProjCached = bgfx::kInvalidHandle;
+			m_invViewProjCached = bgfx::kInvalidHandle;
 
 			m_view = m_viewTmp;
 
@@ -92,7 +92,7 @@ namespace bgfx
 			}
 		}
 
-		template<uint16_t mtxRegs, typename RendererContext, typename Program, typename Draw>
+		template<bgfx_handle mtxRegs, typename RendererContext, typename Program, typename Draw>
 		void setPredefined(RendererContext* _renderer, uint16_t _view, const Program& _program, const Frame* _frame, const Draw& _draw)
 		{
 			const FrameCache& frameCache = _frame->m_frameCache;
@@ -285,26 +285,26 @@ namespace bgfx
 		Matrix4  m_invProj;
 		Matrix4  m_invViewProj;
 		float    m_alphaRef;
-		uint16_t m_invViewCached;
-		uint16_t m_invProjCached;
-		uint16_t m_invViewProjCached;
+		bgfx_handle m_invViewCached;
+		bgfx_handle m_invProjCached;
+		bgfx_handle m_invViewProjCached;
 	};
 
-	template <typename Ty, uint16_t MaxHandleT>
+	template <typename Ty, bgfx_handle MaxHandleT>
 	class StateCacheLru
 	{
 	public:
-		Ty* add(uint64_t _key, const Ty& _value, uint16_t _parent)
+		Ty* add(uint64_t _key, const Ty& _value, bgfx_handle _parent)
 		{
-			uint16_t handle = m_alloc.alloc();
-			if (UINT16_MAX == handle)
+			bgfx_handle handle = m_alloc.alloc();
+			if (bgfx::kInvalidHandle == handle)
 			{
-				uint16_t back = m_alloc.getBack();
+				bgfx_handle back = m_alloc.getBack();
 				invalidate(back);
 				handle = m_alloc.alloc();
 			}
 
-			BX_ASSERT(UINT16_MAX != handle, "Failed to find handle.");
+			BX_ASSERT(bgfx::kInvalidHandle != handle, "Failed to find handle.");
 
 			Data& data = m_data[handle];
 			data.m_hash   = _key;
@@ -320,7 +320,7 @@ namespace bgfx
 			HashMap::iterator it = m_hashMap.find(_key);
 			if (it != m_hashMap.end() )
 			{
-				uint16_t handle = it->second;
+				bgfx_handle handle = it->second;
 				m_alloc.touch(handle);
 				return bx::addressOf(m_data[handle].m_value);
 			}
@@ -333,14 +333,14 @@ namespace bgfx
 			HashMap::iterator it = m_hashMap.find(_key);
 			if (it != m_hashMap.end() )
 			{
-				uint16_t handle = it->second;
+				bgfx_handle handle = it->second;
 				m_alloc.free(handle);
 				m_hashMap.erase(it);
 				release(m_data[handle].m_value);
 			}
 		}
 
-		void invalidate(uint16_t _handle)
+		void invalidate(bgfx_handle _handle)
 		{
 			if (m_alloc.isValid(_handle) )
 			{
@@ -351,11 +351,11 @@ namespace bgfx
 			}
 		}
 
-		void invalidateWithParent(uint16_t _parent)
+		void invalidateWithParent(bgfx_handle _parent)
 		{
-			for (uint16_t ii = 0; ii < m_alloc.getNumHandles();)
+			for (bgfx_handle ii = 0; ii < m_alloc.getNumHandles();)
 			{
-				uint16_t handle = m_alloc.getHandleAt(ii);
+				bgfx_handle handle = m_alloc.getHandleAt(ii);
 				Data& data = m_data[handle];
 
 				if (data.m_parent == _parent)
@@ -373,9 +373,9 @@ namespace bgfx
 
 		void invalidate()
 		{
-			for (uint16_t ii = 0, num = m_alloc.getNumHandles(); ii < num; ++ii)
+			for (bgfx_handle ii = 0, num = m_alloc.getNumHandles(); ii < num; ++ii)
 			{
-				uint16_t handle = m_alloc.getHandleAt(ii);
+				bgfx_handle handle = m_alloc.getHandleAt(ii);
 				Data& data = m_data[handle];
 				release(data.m_value);
 			}
@@ -390,14 +390,14 @@ namespace bgfx
 		}
 
 	private:
-		typedef stl::unordered_map<uint64_t, uint16_t> HashMap;
+		typedef stl::unordered_map<uint64_t, bgfx_handle> HashMap;
 		HashMap m_hashMap;
 		bx::HandleAllocLruT<MaxHandleT> m_alloc;
 		struct Data
 		{
 			uint64_t m_hash;
 			Ty m_value;
-			uint16_t m_parent;
+			bgfx_handle m_parent;
 		};
 
 		Data m_data[MaxHandleT];
@@ -406,13 +406,13 @@ namespace bgfx
 	class StateCache
 	{
 	public:
-		void add(uint64_t _key, uint16_t _value)
+		void add(uint64_t _key, bgfx_handle _value)
 		{
 			invalidate(_key);
 			m_hashMap.insert(stl::make_pair(_key, _value) );
 		}
 
-		uint16_t find(uint64_t _key)
+		bgfx_handle find(uint64_t _key)
 		{
 			HashMap::iterator it = m_hashMap.find(_key);
 			if (it != m_hashMap.end() )
@@ -420,7 +420,7 @@ namespace bgfx
 				return it->second;
 			}
 
-			return UINT16_MAX;
+			return bgfx::kInvalidHandle;
 		}
 
 		void invalidate(uint64_t _key)
@@ -443,7 +443,7 @@ namespace bgfx
 		}
 
 	private:
-		typedef stl::unordered_map<uint64_t, uint16_t> HashMap;
+		typedef stl::unordered_map<uint64_t, bgfx_handle> HashMap;
 		HashMap m_hashMap;
 	};
 

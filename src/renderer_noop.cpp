@@ -223,7 +223,7 @@ namespace bgfx { namespace noop
 		{
 		}
 
-		void updateUniform(uint16_t /*_loc*/, const void* /*_data*/, uint32_t /*_size*/) override
+		void updateUniform(bgfx_handle /*_loc*/, const void* /*_data*/, uint32_t /*_size*/) override
 		{
 		}
 

@@ -1975,7 +1975,7 @@ namespace bgfx { namespace d3d12
 				}
 			}
 
-			uint16_t denseIdx = m_numWindows++;
+			bgfx_handle denseIdx = m_numWindows++;
 			m_windows[denseIdx] = _handle;
 			m_frameBuffers[_handle.idx].create(denseIdx, _nwh, _width, _height, _format, _depthFormat);
 		}
@@ -1989,8 +1989,8 @@ namespace bgfx { namespace d3d12
 				finishAll(true);
 			}
 
-			uint16_t denseIdx = frameBuffer.destroy();
-			if (UINT16_MAX != denseIdx)
+			bgfx_handle denseIdx = frameBuffer.destroy();
+			if (bgfx::kInvalidHandle != denseIdx)
 			{
 				--m_numWindows;
 				if (m_numWindows > 1)
@@ -2104,7 +2104,7 @@ namespace bgfx { namespace d3d12
 				);
 		}
 
-		void updateUniform(uint16_t _loc, const void* _data, uint32_t _size) override
+		void updateUniform(bgfx_handle _loc, const void* _data, uint32_t _size) override
 		{
 			bx::memCopy(m_uniforms[_loc], _data, _size);
 		}
@@ -2215,7 +2215,7 @@ namespace bgfx { namespace d3d12
 
 			TextureD3D12& texture = m_textures[_blitter.m_texture.idx];
 			uint32_t samplerFlags[] = { uint32_t(texture.m_flags & BGFX_SAMPLER_BITS_MASK) };
-			uint16_t samplerStateIdx = getSamplerState(samplerFlags, BX_COUNTOF(samplerFlags), NULL);
+			uint32_t samplerStateIdx = getSamplerState(samplerFlags, BX_COUNTOF(samplerFlags), NULL);
 			m_commandList->SetGraphicsRootDescriptorTable(Rdt::Sampler, m_samplerAllocator.get(samplerStateIdx) );
 			D3D12_GPU_DESCRIPTOR_HANDLE srvHandle;
 			scratchBuffer.allocSrv(srvHandle, texture);
@@ -3333,15 +3333,15 @@ namespace bgfx { namespace d3d12
 			return pso;
 		}
 
-		uint16_t getSamplerState(const uint32_t* _flags, uint32_t _num, const float _palette[][4])
+		uint32_t getSamplerState(const uint32_t* _flags, uint32_t _num, const float _palette[][4])
 		{
 			bx::HashMurmur2A murmur;
 			murmur.begin();
 			murmur.add(_flags, _num * sizeof(uint32_t) );
 			uint32_t hash = murmur.end();
 
-			uint16_t sampler = m_samplerStateCache.find(hash);
-			if (UINT16_MAX == sampler)
+			uint32_t sampler = m_samplerStateCache.find(hash);
+			if (UINT32_MAX == sampler)
 			{
 				sampler = m_samplerAllocator.alloc(_flags, _num, _palette);
 				m_samplerStateCache.add(hash, sampler);
@@ -3369,7 +3369,7 @@ namespace bgfx { namespace d3d12
 				}
 
 				UniformType::Enum type;
-				uint16_t loc;
+				uint32_t loc;
 				uint16_t num;
 				uint16_t copy;
 				UniformBuffer::decodeOpcode(opcode, type, loc, num, copy);
@@ -3838,7 +3838,7 @@ namespace bgfx { namespace d3d12
 		m_gpuHandle.ptr += m_incrementSize;
 	}
 
-	void DescriptorAllocatorD3D12::create(D3D12_DESCRIPTOR_HEAP_TYPE _type, uint16_t _maxDescriptors, uint16_t _numDescriptorsPerBlock)
+	void DescriptorAllocatorD3D12::create(D3D12_DESCRIPTOR_HEAP_TYPE _type, uint32_t _maxDescriptors, uint32_t _numDescriptorsPerBlock)
 	{
 		m_handleAlloc = bx::createHandleAlloc(g_allocator, _maxDescriptors);
 		m_numDescriptorsPerBlock = _numDescriptorsPerBlock;
@@ -3868,9 +3868,9 @@ namespace bgfx { namespace d3d12
 		DX_RELEASE(m_heap, 0);
 	}
 
-	uint16_t DescriptorAllocatorD3D12::alloc(ID3D12Resource* _ptr, const D3D12_SHADER_RESOURCE_VIEW_DESC* _desc)
+	uint32_t DescriptorAllocatorD3D12::alloc(ID3D12Resource* _ptr, const D3D12_SHADER_RESOURCE_VIEW_DESC* _desc)
 	{
-		uint16_t idx = m_handleAlloc->alloc();
+		uint32_t idx = m_handleAlloc->alloc();
 
 		D3D12_CPU_DESCRIPTOR_HANDLE cpuHandle = { m_cpuHandle.ptr + idx * m_incrementSize };
 
@@ -3883,9 +3883,9 @@ namespace bgfx { namespace d3d12
 		return idx;
 	}
 
-	uint16_t DescriptorAllocatorD3D12::alloc(const uint32_t* _flags, uint32_t _num, const float _palette[][4])
+	bgfx_handle DescriptorAllocatorD3D12::alloc(const uint32_t* _flags, uint32_t _num, const float _palette[][4])
 	{
-		uint16_t idx = m_handleAlloc->alloc();
+		bgfx_handle idx = m_handleAlloc->alloc();
 
 		ID3D12Device* device   = s_renderD3D12->m_device;
 		uint32_t maxAnisotropy = s_renderD3D12->m_maxAnisotropy;
@@ -3941,19 +3941,19 @@ namespace bgfx { namespace d3d12
 		return idx;
 	}
 
-	void DescriptorAllocatorD3D12::free(uint16_t _idx)
+	void DescriptorAllocatorD3D12::free(bgfx_handle _idx)
 	{
 		m_handleAlloc->free(_idx);
 	}
 
 	void DescriptorAllocatorD3D12::reset()
 	{
-		uint16_t max = m_handleAlloc->getMaxHandles();
+		bgfx_handle max = m_handleAlloc->getMaxHandles();
 		bx::destroyHandleAlloc(g_allocator, m_handleAlloc);
 		m_handleAlloc = bx::createHandleAlloc(g_allocator, max);
 	}
 
-	D3D12_GPU_DESCRIPTOR_HANDLE DescriptorAllocatorD3D12::get(uint16_t _idx)
+	D3D12_GPU_DESCRIPTOR_HANDLE DescriptorAllocatorD3D12::get(bgfx_handle _idx)
 	{
 		D3D12_GPU_DESCRIPTOR_HANDLE gpuHandle = { m_gpuHandle.ptr + _idx * m_numDescriptorsPerBlock * m_incrementSize };
 		return gpuHandle;
@@ -4231,11 +4231,11 @@ namespace bgfx { namespace d3d12
 
 				const Stream& stream = _draw.m_stream[idx];
 
-				uint16_t handle = stream.m_handle.idx;
+				bgfx_handle handle = stream.m_handle.idx;
 				VertexBufferD3D12& vb = s_renderD3D12->m_vertexBuffers[handle];
 				vb.setState(_commandList, D3D12_RESOURCE_STATE_GENERIC_READ);
 
-				const uint16_t layoutIdx = !isValid(vb.m_layoutHandle) ? stream.m_layoutHandle.idx : vb.m_layoutHandle.idx;
+				const bgfx_handle layoutIdx = !isValid(vb.m_layoutHandle) ? stream.m_layoutHandle.idx : vb.m_layoutHandle.idx;
 				const VertexLayout& layout = s_renderD3D12->m_vertexLayouts[layoutIdx];
 				uint32_t stride = layout.m_stride;
 
@@ -5607,7 +5607,7 @@ namespace bgfx { namespace d3d12
 		postReset();
 	}
 
-	void FrameBufferD3D12::create(uint16_t _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat)
+	void FrameBufferD3D12::create(bgfx_handle _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat)
 	{
 		BX_UNUSED(_nwh, _width, _height, _format, _depthFormat);
 
@@ -5658,7 +5658,7 @@ namespace bgfx { namespace d3d12
 		m_num      = 1;
 	}
 
-	uint16_t FrameBufferD3D12::destroy()
+	bgfx_handle FrameBufferD3D12::destroy()
 	{
 		DX_RELEASE(m_swapChain, 0);
 
@@ -5668,8 +5668,8 @@ namespace bgfx { namespace d3d12
 
 		m_depth.idx = bgfx::kInvalidHandle;
 
-		uint16_t denseIdx = m_denseIdx;
-		m_denseIdx = UINT16_MAX;
+		bgfx_handle denseIdx = m_denseIdx;
+		m_denseIdx = bgfx::kInvalidHandle;
 
 		return denseIdx;
 	}
@@ -6204,7 +6204,7 @@ namespace bgfx { namespace d3d12
 	struct Bind
 	{
 		D3D12_GPU_DESCRIPTOR_HANDLE m_srvHandle;
-		uint16_t m_samplerStateIdx;
+		bgfx_handle m_samplerStateIdx;
 	};
 
 	void RendererContextD3D12::submitBlit(BlitState& _bs, uint16_t _view)
@@ -6377,7 +6377,7 @@ namespace bgfx { namespace d3d12
 // 		bool wireframe = !!(_render->m_debug&BGFX_DEBUG_WIREFRAME);
 // 		setDebugWireframe(wireframe);
 
-		uint16_t currentSamplerStateIdx = kInvalidHandle;
+		bgfx_handle currentSamplerStateIdx = kInvalidHandle;
 		ProgramHandle currentProgram    = BGFX_INVALID_HANDLE;
 		uint32_t currentBindHash        = 0;
 		bool     hasPredefined          = false;
@@ -6684,7 +6684,7 @@ namespace bgfx { namespace d3d12
 
 						if (NULL != bindCached)
 						{
-							uint16_t samplerStateIdx = bindCached->m_samplerStateIdx;
+							bgfx_handle samplerStateIdx = bindCached->m_samplerStateIdx;
 							if (samplerStateIdx != currentSamplerStateIdx)
 							{
 								currentSamplerStateIdx = samplerStateIdx;
@@ -6866,9 +6866,9 @@ namespace bgfx { namespace d3d12
 							currentState.m_stream[idx].m_handle       = draw.m_stream[idx].m_handle;
 							currentState.m_stream[idx].m_startVertex  = draw.m_stream[idx].m_startVertex;
 
-							uint16_t handle = draw.m_stream[idx].m_handle.idx;
+							bgfx_handle handle = draw.m_stream[idx].m_handle.idx;
 							const VertexBufferD3D12& vb = m_vertexBuffers[handle];
-							const uint16_t layoutIdx = isValid(draw.m_stream[idx].m_layoutHandle)
+							const bgfx_handle layoutIdx = isValid(draw.m_stream[idx].m_layoutHandle)
 								? draw.m_stream[idx].m_layoutHandle.idx
 								: vb.m_layoutHandle.idx;
 							const VertexLayout& layout = m_vertexLayouts[layoutIdx];
@@ -6998,7 +6998,7 @@ namespace bgfx { namespace d3d12
 
 						if (NULL != bindCached)
 						{
-							uint16_t samplerStateIdx = bindCached->m_samplerStateIdx;
+							bgfx_handle samplerStateIdx = bindCached->m_samplerStateIdx;
 							if (samplerStateIdx != currentSamplerStateIdx)
 							{
 								currentSamplerStateIdx = samplerStateIdx;

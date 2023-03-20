@@ -12,9 +12,15 @@
 
 #include "defines.h"
 
+#if BGFX_CONFIG_USE_32BIT_HANDLES
+typedef uint32_t bgfx_handle;
+#else
+typedef uint16_t bgfx_handle;
+#endif
+
 ///
 #define BGFX_HANDLE(_name)                                                           \
-	struct _name { uint16_t idx; };                                                  \
+	struct _name { bgfx_handle idx; };                                                  \
 	inline bool isValid(_name _handle) { return bgfx::kInvalidHandle != _handle.idx; }
 
 #define BGFX_INVALID_HANDLE { bgfx::kInvalidHandle }
@@ -403,7 +409,11 @@ namespace bgfx
 		};
 	};
 
-	static const uint16_t kInvalidHandle = UINT16_MAX;
+#if BGFX_CONFIG_USE_32BIT_HANDLES
+	static constexpr bgfx_handle kInvalidHandle = UINT32_MAX;
+#else
+	static constexpr bgfx_handle kInvalidHandle = UINT16_MAX;
+#endif
 
 	BGFX_HANDLE(DynamicIndexBufferHandle)
 	BGFX_HANDLE(DynamicVertexBufferHandle)
@@ -696,7 +706,7 @@ namespace bgfx
 		{
 			Limits();
 
-			uint16_t maxEncoders;       //!< Maximum number of encoder threads.
+			bgfx_handle maxEncoders;       //!< Maximum number of encoder threads.
 			uint32_t minResourceCbSize; //!< Minimum resource command buffer size.
 			uint32_t transientVbSize;   //!< Maximum transient vertex buffer size.
 			uint32_t transientIbSize;   //!< Maximum transient index buffer size.
@@ -996,17 +1006,17 @@ namespace bgfx
 		uint32_t maxGpuLatency;             //!< GPU driver latency.
 		uint32_t gpuFrameNum;               //<! Frame which generated gpuTimeBegin, gpuTimeEnd.
 
-		uint16_t numDynamicIndexBuffers;    //!< Number of used dynamic index buffers.
-		uint16_t numDynamicVertexBuffers;   //!< Number of used dynamic vertex buffers.
-		uint16_t numFrameBuffers;           //!< Number of used frame buffers.
-		uint16_t numIndexBuffers;           //!< Number of used index buffers.
-		uint16_t numOcclusionQueries;       //!< Number of used occlusion queries.
-		uint16_t numPrograms;               //!< Number of used programs.
-		uint16_t numShaders;                //!< Number of used shaders.
-		uint16_t numTextures;               //!< Number of used textures.
-		uint16_t numUniforms;               //!< Number of used uniforms.
-		uint16_t numVertexBuffers;          //!< Number of used vertex buffers.
-		uint16_t numVertexLayouts;          //!< Number of used vertex layouts.
+		bgfx_handle numDynamicIndexBuffers; //!< Number of used dynamic index buffers.
+		bgfx_handle numDynamicVertexBuffers;//!< Number of used dynamic vertex buffers.
+		bgfx_handle numFrameBuffers;        //!< Number of used frame buffers.
+		bgfx_handle numIndexBuffers;        //!< Number of used index buffers.
+		bgfx_handle numOcclusionQueries;    //!< Number of used occlusion queries.
+		bgfx_handle numPrograms;            //!< Number of used programs.
+		bgfx_handle numShaders;             //!< Number of used shaders.
+		bgfx_handle numTextures;            //!< Number of used textures.
+		bgfx_handle numUniforms;            //!< Number of used uniforms.
+		bgfx_handle numVertexBuffers;       //!< Number of used vertex buffers.
+		bgfx_handle numVertexLayouts;       //!< Number of used vertex layouts.
 
 		int64_t textureMemoryUsed;          //!< Estimate of texture memory used.
 		int64_t rtMemoryUsed;               //!< Estimate of render target memory used.

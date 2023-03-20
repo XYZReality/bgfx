@@ -166,15 +166,15 @@ namespace bgfx { namespace d3d12
 		{
 		}
 
-		void create(D3D12_DESCRIPTOR_HEAP_TYPE _type, uint16_t _maxDescriptors, uint16_t _numDescriptorsPerBlock = 1);
+		void create(D3D12_DESCRIPTOR_HEAP_TYPE _type, bgfx_handle _maxDescriptors, bgfx_handle _numDescriptorsPerBlock = 1);
 		void destroy();
 
-		uint16_t alloc(ID3D12Resource* _ptr, const D3D12_SHADER_RESOURCE_VIEW_DESC* _desc);
-		uint16_t alloc(const uint32_t* _flags, uint32_t _num, const float _palette[][4]);
-		void free(uint16_t _handle);
+		bgfx_handle alloc(ID3D12Resource* _ptr, const D3D12_SHADER_RESOURCE_VIEW_DESC* _desc);
+		bgfx_handle alloc(const uint32_t* _flags, uint32_t _num, const float _palette[][4]);
+		void free(bgfx_handle _handle);
 		void reset();
 
-		D3D12_GPU_DESCRIPTOR_HANDLE get(uint16_t _handle);
+		D3D12_GPU_DESCRIPTOR_HANDLE get(uint32_t _handle);
 
 		ID3D12DescriptorHeap* getHeap()
 		{
@@ -187,7 +187,7 @@ namespace bgfx { namespace d3d12
 		D3D12_CPU_DESCRIPTOR_HANDLE m_cpuHandle;
 		D3D12_GPU_DESCRIPTOR_HANDLE m_gpuHandle;
 		uint32_t m_incrementSize;
-		uint16_t m_numDescriptorsPerBlock;
+		bgfx_handle m_numDescriptorsPerBlock;
 	};
 
 	struct BufferD3D12
@@ -367,8 +367,8 @@ namespace bgfx { namespace d3d12
 		}
 
 		void create(uint8_t _num, const Attachment* _attachment);
-		void create(uint16_t _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat);
-		uint16_t destroy();
+		void create(bgfx_handle _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat);
+		bgfx_handle destroy();
 		HRESULT present(uint32_t _syncInterval, uint32_t _flags);
 		void preReset();
 		void postReset();
@@ -382,7 +382,7 @@ namespace bgfx { namespace d3d12
 		void* m_nwh;
 		uint32_t m_width;
 		uint32_t m_height;
-		uint16_t m_denseIdx;
+		bgfx_handle m_denseIdx;
 		uint8_t m_num;
 		uint8_t m_numTh;
 		Attachment m_attachment[BGFX_CONFIG_MAX_FRAME_BUFFER_ATTACHMENTS];

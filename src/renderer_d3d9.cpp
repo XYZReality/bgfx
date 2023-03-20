@@ -1331,7 +1331,7 @@ namespace bgfx { namespace d3d9
 				);
 		}
 
-		void updateUniform(uint16_t _loc, const void* _data, uint32_t _size) override
+		void updateUniform(bgfx_handle _loc, const void* _data, uint32_t _size) override
 		{
 			bx::memCopy(m_uniforms[_loc], _data, _size);
 		}
@@ -1893,7 +1893,7 @@ namespace bgfx { namespace d3d9
 				}
 
 				UniformType::Enum type;
-				uint16_t loc;
+				bgfx_handle loc;
 				uint16_t num;
 				uint16_t copy;
 				UniformBuffer::decodeOpcode(opcode, type, loc, num, copy);
@@ -4275,9 +4275,9 @@ namespace bgfx { namespace d3d9
 						currentState.m_stream[idx].m_handle       = draw.m_stream[idx].m_handle;
 						currentState.m_stream[idx].m_startVertex  = draw.m_stream[idx].m_startVertex;
 
-						const uint16_t handle = draw.m_stream[idx].m_handle.idx;
+						const bgfx_handle handle = draw.m_stream[idx].m_handle.idx;
 						const VertexBufferD3D9& vb = m_vertexBuffers[handle];
-						const uint16_t layoutIdx = isValid(draw.m_stream[idx].m_layoutHandle)
+						const bgfx_handle layoutIdx = isValid(draw.m_stream[idx].m_layoutHandle)
 							? draw.m_stream[idx].m_layoutHandle.idx
 							: vb.m_layoutHandle.idx;
 						const VertexLayout& layout = m_vertexLayouts[layoutIdx];
@@ -4321,7 +4321,7 @@ namespace bgfx { namespace d3d9
 				{
 					currentState.m_indexBuffer = draw.m_indexBuffer;
 
-					uint16_t handle = draw.m_indexBuffer.idx;
+					bgfx_handle handle = draw.m_indexBuffer.idx;
 					if (kInvalidHandle != handle)
 					{
 						const IndexBufferD3D9& ib = m_indexBuffers[handle];

@@ -10,6 +10,7 @@
 #include <bx/bx.h>
 #include <bx/filepath.h>
 #include <bx/string.h>
+#include <bgfx/bgfx.h>
 
 namespace bx { struct FileReaderI; struct FileWriterI; struct AllocatorI; }
 
@@ -37,8 +38,8 @@ extern "C" int _main_(int _argc, char** _argv);
 
 ///
 #define ENTRY_HANDLE(_name)                                                \
-	struct _name { uint16_t idx; };                                        \
-	inline bool isValid(_name _handle) { return UINT16_MAX != _handle.idx; }
+	struct _name { bgfx_handle idx; };                                        \
+	inline bool isValid(_name _handle) { return bgfx::kInvalidHandle != _handle.idx; }
 
 namespace entry
 {

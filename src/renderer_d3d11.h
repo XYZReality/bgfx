@@ -339,8 +339,8 @@ namespace bgfx { namespace d3d11
 		}
 
 		void create(uint8_t _num, const Attachment* _attachment);
-		void create(uint16_t _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat);
-		uint16_t destroy();
+		void create(bgfx_handle _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat);
+		bgfx_handle destroy();
 		void preReset(bool _force = false);
 		void postReset();
 		void resolve();
@@ -358,7 +358,7 @@ namespace bgfx { namespace d3d11
 		uint32_t m_height;
 
 		Attachment m_attachment[BGFX_CONFIG_MAX_FRAME_BUFFER_ATTACHMENTS];
-		uint16_t m_denseIdx;
+		bgfx_handle m_denseIdx;
 		uint8_t m_num;
 		uint8_t m_numTh;
 		uint8_t m_numUav;

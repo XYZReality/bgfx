@@ -481,7 +481,7 @@ VK_DESTROY_FUNC(DescriptorSet);
 		uint8_t m_numTextures;
 
 		uint32_t m_uniformBinding;
-		uint16_t m_numBindings;
+		bgfx_handle m_numBindings;
 		VkDescriptorSetLayoutBinding m_bindings[2 * BGFX_CONFIG_MAX_TEXTURE_SAMPLERS + 1];
 
 		bool m_oldBindingModel;
@@ -760,8 +760,8 @@ VK_DESTROY_FUNC(DescriptorSet);
 		}
 
 		void create(uint8_t _num, const Attachment* _attachment);
-		VkResult create(uint16_t _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format = TextureFormat::Count, TextureFormat::Enum _depthFormat = TextureFormat::Count);
-		uint16_t destroy();
+		VkResult create(bgfx_handle _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format = TextureFormat::Count, TextureFormat::Enum _depthFormat = TextureFormat::Count);
+		bgfx_handle destroy();
 
 		void update(VkCommandBuffer _commandBuffer, const Resolution& _resolution);
 
@@ -779,7 +779,7 @@ VK_DESTROY_FUNC(DescriptorSet);
 		TextureHandle m_depth;
 		uint32_t m_width;
 		uint32_t m_height;
-		uint16_t m_denseIdx;
+		bgfx_handle m_denseIdx;
 		uint8_t m_num;
 		uint8_t m_numTh;
 		Attachment m_attachment[BGFX_CONFIG_MAX_FRAME_BUFFER_ATTACHMENTS];

@@ -1935,15 +1935,15 @@ namespace bgfx { namespace d3d11
 				}
 			}
 
-			uint16_t denseIdx = m_numWindows++;
+			bgfx_handle denseIdx = m_numWindows++;
 			m_windows[denseIdx] = _handle;
 			m_frameBuffers[_handle.idx].create(denseIdx, _nwh, _width, _height, _format, _depthFormat);
 		}
 
 		void destroyFrameBuffer(FrameBufferHandle _handle) override
 		{
-			uint16_t denseIdx = m_frameBuffers[_handle.idx].destroy();
-			if (UINT16_MAX != denseIdx)
+			bgfx_handle denseIdx = m_frameBuffers[_handle.idx].destroy();
+			if (bgfx::kInvalidHandle != denseIdx)
 			{
 				--m_numWindows;
 				if (m_numWindows > 1)
@@ -2071,7 +2071,7 @@ namespace bgfx { namespace d3d11
 				);
 		}
 
-		void updateUniform(uint16_t _loc, const void* _data, uint32_t _size) override
+		void updateUniform(bgfx_handle _loc, const void* _data, uint32_t _size) override
 		{
 			bx::memCopy(m_uniforms[_loc], _data, _size);
 		}
@@ -3375,7 +3375,7 @@ namespace bgfx { namespace d3d11
 				}
 
 				UniformType::Enum type;
-				uint16_t loc;
+				bgfx_handle loc;
 				uint16_t num;
 				uint16_t copy;
 				UniformBuffer::decodeOpcode(opcode, type, loc, num, copy);
@@ -3571,7 +3571,7 @@ namespace bgfx { namespace d3d11
 
 		bool m_needPresent;
 		bool m_lost;
-		uint16_t m_numWindows;
+		bgfx_handle m_numWindows;
 		FrameBufferHandle m_windows[BGFX_CONFIG_MAX_FRAME_BUFFERS];
 
 		ID3D11Device*              m_device;
@@ -4831,7 +4831,7 @@ namespace bgfx { namespace d3d11
 		if (0 != (_flags & BGFX_SAMPLER_SAMPLE_STENCIL) )
 		{
 			ts.m_srv[_stage] = s_renderD3D11->getCachedSrv(
-				  TextureHandle{ uint16_t(this - s_renderD3D11->m_textures) }
+				  TextureHandle{ bgfx_handle(this - s_renderD3D11->m_textures) }
 				, 0
 				, false
 				, true
@@ -4875,7 +4875,7 @@ namespace bgfx { namespace d3d11
 
 	TextureHandle TextureD3D11::getHandle() const
 	{
-		TextureHandle handle = { (uint16_t)(this - s_renderD3D11->m_textures) };
+		TextureHandle handle = { (bgfx_handle)(this - s_renderD3D11->m_textures) };
 		return handle;
 	}
 
@@ -4907,7 +4907,7 @@ namespace bgfx { namespace d3d11
 		m_dsv       = NULL;
 		m_swapChain = NULL;
 
-		m_denseIdx = UINT16_MAX;
+		m_denseIdx = bgfx::kInvalidHandle;
 		m_numTh    = _num;
 		m_needPresent = false;
 		bx::memCopy(m_attachment, _attachment, _num*sizeof(Attachment) );
@@ -4915,7 +4915,7 @@ namespace bgfx { namespace d3d11
 		postReset();
 	}
 
-	void FrameBufferD3D11::create(uint16_t _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat)
+	void FrameBufferD3D11::create(bgfx_handle _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat)
 	{
 		SwapChainDesc scd;
 		bx::memCopy(&scd, &s_renderD3D11->m_scd, sizeof(SwapChainDesc) );
@@ -4975,7 +4975,7 @@ namespace bgfx { namespace d3d11
 		m_num      = 1;
 	}
 
-	uint16_t FrameBufferD3D11::destroy()
+	bgfx_handle FrameBufferD3D11::destroy()
 	{
 		preReset(true);
 
@@ -4986,8 +4986,8 @@ namespace bgfx { namespace d3d11
 		m_numTh = 0;
 		m_needPresent = false;
 
-		uint16_t denseIdx = m_denseIdx;
-		m_denseIdx = UINT16_MAX;
+		bgfx_handle denseIdx = m_denseIdx;
+		m_denseIdx = bgfx::kInvalidHandle;
 
 		return denseIdx;
 	}
@@ -5275,7 +5275,7 @@ namespace bgfx { namespace d3d11
 	void FrameBufferD3D11::set()
 	{
 		s_renderD3D11->m_deviceCtx->OMSetRenderTargets(m_num, m_rtv, m_dsv);
-		m_needPresent = UINT16_MAX != m_denseIdx;
+		m_needPresent = bgfx::kInvalidHandle != m_denseIdx;
 		s_renderD3D11->m_currentColor        = m_rtv[0];
 		s_renderD3D11->m_currentDepthStencil = m_dsv;
 	}
@@ -5874,7 +5874,7 @@ namespace bgfx { namespace d3d11
 						const VertexBufferD3D11& vb = m_vertexBuffers[compute.m_indirectBuffer.idx];
 						ID3D11Buffer* ptr = vb.m_ptr;
 
-						uint32_t numDrawIndirect = UINT16_MAX == compute.m_numIndirect
+						uint32_t numDrawIndirect = bgfx::kInvalidHandle == compute.m_numIndirect
 							? vb.m_size/BGFX_CONFIG_DRAW_INDIRECT_STRIDE
 							: compute.m_numIndirect
 							;
@@ -6229,9 +6229,9 @@ namespace bgfx { namespace d3d11
 							currentState.m_stream[idx].m_handle       = draw.m_stream[idx].m_handle;
 							currentState.m_stream[idx].m_startVertex  = draw.m_stream[idx].m_startVertex;
 
-							const uint16_t handle = draw.m_stream[idx].m_handle.idx;
+							const bgfx_handle handle = draw.m_stream[idx].m_handle.idx;
 							const VertexBufferD3D11& vb = m_vertexBuffers[handle];
-							const uint16_t layoutIdx = isValid(draw.m_stream[idx].m_layoutHandle)
+							const bgfx_handle layoutIdx = isValid(draw.m_stream[idx].m_layoutHandle)
 								? draw.m_stream[idx].m_layoutHandle.idx
 								: vb.m_layoutHandle.idx;
 							const VertexLayout& layout = m_vertexLayouts[layoutIdx];
@@ -6293,7 +6293,7 @@ namespace bgfx { namespace d3d11
 					currentState.m_indexBuffer = draw.m_indexBuffer;
 					currentState.m_submitFlags = draw.m_submitFlags;
 
-					uint16_t handle = draw.m_indexBuffer.idx;
+					bgfx_handle handle = draw.m_indexBuffer.idx;
 					if (kInvalidHandle != handle)
 					{
 						const IndexBufferD3D11& ib = m_indexBuffers[handle];
@@ -6329,7 +6329,7 @@ namespace bgfx { namespace d3d11
 
 						if (isValid(draw.m_indexBuffer) )
 						{
-							numDrawIndirect = UINT16_MAX == draw.m_numIndirect
+							numDrawIndirect = bgfx::kInvalidHandle == draw.m_numIndirect
 								? vb.m_size/BGFX_CONFIG_DRAW_INDIRECT_STRIDE
 								: draw.m_numIndirect
 								;
@@ -6343,7 +6343,7 @@ namespace bgfx { namespace d3d11
 						}
 						else
 						{
-							numDrawIndirect = UINT16_MAX == draw.m_numIndirect
+							numDrawIndirect = bgfx::kInvalidHandle == draw.m_numIndirect
 								? vb.m_size/BGFX_CONFIG_DRAW_INDIRECT_STRIDE
 								: draw.m_numIndirect
 								;

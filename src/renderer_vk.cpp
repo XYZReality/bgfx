@@ -1916,7 +1916,7 @@ VK_IMPORT_DEVICE
 						m_swapchainFormats[ii] = TextureFormat::Enum(ii);
 					}
 
-					result = m_backBuffer.create(UINT16_MAX, g_platformData.nwh, m_resolution.width, m_resolution.height, m_resolution.format);
+					result = m_backBuffer.create(bgfx::kInvalidHandle, g_platformData.nwh, m_resolution.width, m_resolution.height, m_resolution.format);
 
 					if (VK_SUCCESS != result)
 					{
@@ -2178,7 +2178,7 @@ VK_IMPORT_DEVICE
 		{
 			int64_t start = bx::getHPCounter();
 
-			for (uint16_t ii = 0; ii < m_numWindows; ++ii)
+			for (bgfx_handle ii = 0; ii < m_numWindows; ++ii)
 			{
 				FrameBufferVK& fb = isValid(m_windows[ii])
 					? m_frameBuffers[m_windows[ii].idx]
@@ -2384,7 +2384,7 @@ VK_IMPORT_DEVICE
 				}
 			}
 
-			uint16_t denseIdx = m_numWindows++;
+			bgfx_handle denseIdx = m_numWindows++;
 			m_windows[denseIdx] = _handle;
 			VK_CHECK(m_frameBuffers[_handle.idx].create(denseIdx, _nwh, _width, _height, _format, _depthFormat) );
 		}
@@ -2398,8 +2398,8 @@ VK_IMPORT_DEVICE
 				setFrameBuffer(BGFX_INVALID_HANDLE, false);
 			}
 
-			uint16_t denseIdx = frameBuffer.destroy();
-			if (UINT16_MAX != denseIdx)
+			bgfx_handle denseIdx = frameBuffer.destroy();
+			if (bgfx::kInvalidHandle != denseIdx)
 			{
 				--m_numWindows;
 				if (m_numWindows > 1)
@@ -2484,7 +2484,7 @@ VK_IMPORT_DEVICE
 				);
 		}
 
-		void updateUniform(uint16_t _loc, const void* _data, uint32_t _size) override
+		void updateUniform(bgfx_handle _loc, const void* _data, uint32_t _size) override
 		{
 			bx::memCopy(m_uniforms[_loc], _data, _size);
 		}
@@ -4106,7 +4106,7 @@ VK_IMPORT_DEVICE
 				}
 
 				UniformType::Enum type;
-				uint16_t loc;
+				bgfx_handle loc;
 				uint16_t num;
 				uint16_t copy;
 				UniformBuffer::decodeOpcode(opcode, type, loc, num, copy);
@@ -4429,7 +4429,7 @@ VK_IMPORT_DEVICE
 		FrameBufferVK m_backBuffer;
 		TextureFormat::Enum m_swapchainFormats[TextureFormat::Count];
 
-		uint16_t m_numWindows;
+		bgfx_handle m_numWindows;
 		FrameBufferHandle m_windows[BGFX_CONFIG_MAX_FRAME_BUFFERS];
 		int64_t m_presentElapsed;
 
@@ -5222,11 +5222,11 @@ VK_DESTROY
 
 				if (NULL != m_fsh)
 				{
-					for (uint16_t ii = 0; ii < m_fsh->m_numBindings; ii++)
+					for (bgfx_handle ii = 0; ii < m_fsh->m_numBindings; ii++)
 					{
 						const VkDescriptorSetLayoutBinding& fsBinding = m_fsh->m_bindings[ii];
-						uint16_t vsBindingIdx = UINT16_MAX;
-						for (uint16_t jj = 0; jj < m_vsh->m_numBindings; jj++)
+						bgfx_handle vsBindingIdx = bgfx::kInvalidHandle;
+						for (bgfx_handle jj = 0; jj < m_vsh->m_numBindings; jj++)
 						{
 							if (fsBinding.binding == bindings[jj].binding)
 							{
@@ -5234,7 +5234,7 @@ VK_DESTROY
 								break;
 							}
 						}
-						if (UINT16_MAX != vsBindingIdx)
+						if (bgfx::kInvalidHandle != vsBindingIdx)
 						{
 							BX_ASSERT(
 								  bindings[vsBindingIdx].descriptorType == fsBinding.descriptorType
@@ -7482,7 +7482,7 @@ VK_DESTROY
 		postReset();
 	}
 
-	VkResult FrameBufferVK::create(uint16_t _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat)
+	VkResult FrameBufferVK::create(bgfx_handle _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat)
 	{
 		VkResult result = VK_SUCCESS;
 
@@ -7490,7 +7490,7 @@ VK_DESTROY
 		resolution.format = TextureFormat::Count == _format ? resolution.format : _format;
 		resolution.width  = _width;
 		resolution.height = _height;
-		if (_denseIdx != UINT16_MAX)
+		if (_denseIdx != bgfx::kInvalidHandle)
 		{
 			resolution.reset &= ~BGFX_RESET_MSAA_MASK;
 		}
@@ -7636,7 +7636,7 @@ VK_DESTROY
 		m_needResolve = false;
 	}
 
-	uint16_t FrameBufferVK::destroy()
+	bgfx_handle FrameBufferVK::destroy()
 	{
 		preReset();
 
@@ -7653,8 +7653,8 @@ VK_DESTROY
 
 		m_needResolve = false;
 
-		uint16_t denseIdx = m_denseIdx;
-		m_denseIdx = UINT16_MAX;
+		bgfx_handle denseIdx = m_denseIdx;
+		m_denseIdx = bgfx::kInvalidHandle;
 		return denseIdx;
 	}
 
@@ -7972,7 +7972,7 @@ VK_DESTROY
 
 		while (bs0.hasItem(_view) )
 		{
-			uint16_t item = bs0.m_item;
+			bgfx_handle item = bs0.m_item;
 
 			const BlitItem& blit = bs0.advance();
 
@@ -8070,7 +8070,7 @@ VK_DESTROY
 
 		while (_bs.hasItem(_view) )
 		{
-			uint16_t item = _bs.m_item;
+			bgfx_handle item = _bs.m_item;
 
 			const BlitItem& blit = _bs.advance();
 
@@ -8505,7 +8505,7 @@ VK_DESTROY
 
 							const VertexBufferHandle handle = draw.m_stream[idx].m_handle;
 							const VertexBufferVK& vb = m_vertexBuffers[handle.idx];
-							const uint16_t decl = isValid(draw.m_stream[idx].m_layoutHandle)
+							const bgfx_handle decl = isValid(draw.m_stream[idx].m_layoutHandle)
 								? draw.m_stream[idx].m_layoutHandle.idx
 								: vb.m_layoutHandle.idx
 								;

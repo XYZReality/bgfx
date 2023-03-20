@@ -3502,14 +3502,14 @@ namespace bgfx { namespace gl
 
 		void createFrameBuffer(FrameBufferHandle _handle, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat) override
 		{
-			uint16_t denseIdx = m_numWindows++;
+			bgfx_handle denseIdx = m_numWindows++;
 			m_windows[denseIdx] = _handle;
 			m_frameBuffers[_handle.idx].create(denseIdx, _nwh, _width, _height, _format, _depthFormat);
 		}
 
 		void destroyFrameBuffer(FrameBufferHandle _handle) override
 		{
-			uint16_t denseIdx = m_frameBuffers[_handle.idx].destroy();
+			bgfx_handle denseIdx = m_frameBuffers[_handle.idx].destroy();
 			if (UINT16_MAX != denseIdx)
 			{
 				--m_numWindows;
@@ -3599,7 +3599,7 @@ namespace bgfx { namespace gl
 				);
 		}
 
-		void updateUniform(uint16_t _loc, const void* _data, uint32_t _size) override
+		void updateUniform(uint32_t _loc, const void* _data, uint32_t _size) override
 		{
 			bx::memCopy(m_uniforms[_loc], _data, _size);
 		}
@@ -4407,7 +4407,7 @@ namespace bgfx { namespace gl
 				}
 
 				UniformType::Enum type;
-				uint16_t ignore;
+				bgfx_handle ignore;
 				uint16_t num;
 				uint16_t copy;
 				UniformBuffer::decodeOpcode(opcode, type, ignore, num, copy);
@@ -7139,7 +7139,7 @@ namespace bgfx { namespace gl
 		}
 	}
 
-	void FrameBufferGL::create(uint16_t _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat)
+	void FrameBufferGL::create(bgfx_handle _denseIdx, void* _nwh, uint32_t _width, uint32_t _height, TextureFormat::Enum _format, TextureFormat::Enum _depthFormat)
 	{
 		BX_UNUSED(_format, _depthFormat);
 		m_swapChain = s_renderGL->m_glctx.createSwapChain(_nwh);
@@ -7150,7 +7150,7 @@ namespace bgfx { namespace gl
 		m_needPresent = false;
 	}
 
-	uint16_t FrameBufferGL::destroy()
+	bgfx_handle FrameBufferGL::destroy()
 	{
 		if (0 != m_fbo[0])
 		{
@@ -7165,7 +7165,7 @@ namespace bgfx { namespace gl
 		}
 
 		bx::memSet(m_fbo, 0, sizeof(m_fbo) );
-		uint16_t denseIdx = m_denseIdx;
+		bgfx_handle denseIdx = m_denseIdx;
 		m_denseIdx = UINT16_MAX;
 		m_needPresent = false;
 		m_numTh = 0;
@@ -8328,7 +8328,7 @@ namespace bgfx { namespace gl
 										idx         += ntz;
 
 										const VertexBufferGL& vb = m_vertexBuffers[draw.m_stream[idx].m_handle.idx];
-										const uint16_t decl = isValid(draw.m_stream[idx].m_layoutHandle)
+										const bgfx_handle decl = isValid(draw.m_stream[idx].m_layoutHandle)
 											? draw.m_stream[idx].m_layoutHandle.idx
 											: vb.m_layoutHandle.idx;
 										GL_CHECK(glBindBuffer(GL_ARRAY_BUFFER, vb.m_id) );
@@ -8362,7 +8362,7 @@ namespace bgfx { namespace gl
 								idx         += ntz;
 
 								const VertexBufferGL& vb = m_vertexBuffers[draw.m_stream[idx].m_handle.idx];
-								uint16_t decl = !isValid(vb.m_layoutHandle) ? draw.m_stream[idx].m_layoutHandle.idx : vb.m_layoutHandle.idx;
+								bgfx_handle decl = !isValid(vb.m_layoutHandle) ? draw.m_stream[idx].m_layoutHandle.idx : vb.m_layoutHandle.idx;
 								const VertexLayout& layout = m_vertexLayouts[decl];
 
 								numVertices = bx::uint32_min(numVertices, vb.m_size/layout.m_stride);
