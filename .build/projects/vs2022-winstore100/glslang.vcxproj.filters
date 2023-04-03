@@ -278,9 +278,6 @@
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslTokenStream.cpp">
       <Filter>3rdparty\glslang\glslang\HLSL</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\linkValidate.cpp">
-      <Filter>3rdparty\glslang\glslang\MachineIndependent</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\attribute.cpp">
       <Filter>3rdparty\glslang\glslang\MachineIndependent</Filter>
     </ClCompile>
@@ -309,6 +306,9 @@
       <Filter>3rdparty\glslang\glslang\MachineIndependent</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\limits.cpp">
+      <Filter>3rdparty\glslang\glslang\MachineIndependent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\linkValidate.cpp">
       <Filter>3rdparty\glslang\glslang\MachineIndependent</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\parseConst.cpp">

@@ -27,19 +27,10 @@
 		location = "container:"
 		name = "examples">
 		<FileRef
-			location = "group:example-17-drawstress.xcodeproj">
-		</FileRef>
-		<FileRef
-			location = "group:example-25-c99.xcodeproj">
-		</FileRef>
-		<FileRef
 			location = "group:example-common.xcodeproj">
 		</FileRef>
 		<FileRef
 			location = "group:example-glue.xcodeproj">
-		</FileRef>
-		<FileRef
-			location = "group:examples.xcodeproj">
 		</FileRef>
 	</Group>
 	<Group

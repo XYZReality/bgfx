@@ -272,8 +272,8 @@
 				OBJROOT = "obj/Debug/spirv-cross";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -281,8 +281,8 @@
 					"-Wno-type-limits",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -346,8 +346,8 @@
 				OBJROOT = "obj/Release/spirv-cross";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -355,8 +355,8 @@
 					"-Wno-type-limits",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",

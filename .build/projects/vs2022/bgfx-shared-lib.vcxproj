@@ -266,7 +266,6 @@
     <ClInclude Include="..\..\..\include\bgfx\embedded_shader.h" />
     <ClInclude Include="..\..\..\include\bgfx\platform.h" />
     <ClInclude Include="..\..\..\include\bgfx\c99\bgfx.h" />
-    <ClInclude Include="..\..\..\src\renderer_d3d12.h" />
     <ClInclude Include="..\..\..\src\bgfx_p.h" />
     <ClInclude Include="..\..\..\src\charset.h" />
     <ClInclude Include="..\..\..\src\config.h" />
@@ -284,6 +283,7 @@
     <ClInclude Include="..\..\..\src\renderer.h" />
     <ClInclude Include="..\..\..\src\renderer_d3d.h" />
     <ClInclude Include="..\..\..\src\renderer_d3d11.h" />
+    <ClInclude Include="..\..\..\src\renderer_d3d12.h" />
     <ClInclude Include="..\..\..\src\renderer_d3d9.h" />
     <ClInclude Include="..\..\..\src\renderer_gl.h" />
     <ClInclude Include="..\..\..\src\renderer_mtl.h" />
@@ -298,8 +298,6 @@
     <ClInclude Include="..\..\..\src\vertexlayout.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\glcontext_glx.cpp">
-    </ClCompile>
     <ClCompile Include="..\..\..\src\amalgamated.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -313,6 +311,8 @@
     <ClCompile Include="..\..\..\src\dxgi.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\src\glcontext_egl.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\glcontext_glx.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\src\glcontext_html5.cpp">
     </ClCompile>

@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		67F84191538C3739BC5091ED /* texturec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F622A0656293A2DE2BB21C67 /* texturec.cpp */; };
-		683F010FD407CF929D98D7A4 /* libbimg_decodeDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 771C7E3163F1C5E48CA005E1 /* libbimg_decodeDebug.a */; };
+		85894137F1510FBBBAE217CD /* libbimg_decodeDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7460D36460351B1889E45A14 /* libbimg_decodeDebug.a */; };
 		CF538ADCBB2911DAA4D32B2D /* libbimg_encodeDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E14B823EA86FA3F331B30C4 /* libbimg_encodeDebug.a */; };
-		CD1E0D7DB9C774ACE25D902B /* libbimgDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C31BA0508974D8C916FEF64 /* libbimgDebug.a */; };
-		E6268CDFD2398C387B236925 /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 551286AFC1A1479ACA9D28B2 /* libbxDebug.a */; };
+		8A3F577576E8BEA49F7EDA23 /* libbimgDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A850A1A50DE4272EE68500 /* libbimgDebug.a */; };
+		63F46C1C4F076D75F8F04962 /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B23DE4FA1ECDA5E527C986FD /* libbxDebug.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		543942DEC0031439090A135E /* PBXContainerItemProxy */ = {
+		F19605DD5D61D737A667D65C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B99B5B4125BA6F0E6E877520 /* bimg_decode.xcodeproj */;
+			containerPortal = 56ACBDC6C2CAD1930B98D7A5 /* bimg_decode.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 7D6367F06989315752CFB622;
 			remoteInfo = "libbimg_decodeDebug.a";
 		};
-		CE8ADABA3A55AC15835BAB3A /* PBXContainerItemProxy */ = {
+		6BE89DB9D7B26F1420B96E39 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B99B5B4125BA6F0E6E877520 /* bimg_decode.xcodeproj */;
+			containerPortal = 56ACBDC6C2CAD1930B98D7A5 /* bimg_decode.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = C35735362F701C60F81CACF9;
 			remoteInfo = "libbimg_decodeDebug.a";
@@ -43,30 +43,30 @@
 			remoteGlobalIDString = 6D1E0A3AD936F163A2E380FD;
 			remoteInfo = "libbimg_encodeDebug.a";
 		};
-		E20B343ECE76F449779259AF /* PBXContainerItemProxy */ = {
+		1F30D86F0B9B987BB4B6FDE0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3E484E882A87F803D309D535 /* bimg.xcodeproj */;
+			containerPortal = 7B7F04E667BEAE6110418B93 /* bimg.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5ACAB1E8C601FA7FCF0B5EA3;
 			remoteInfo = "libbimgDebug.a";
 		};
-		13F6342FFF60F53AA87C5AA0 /* PBXContainerItemProxy */ = {
+		B9FC05AFA567C6BA4E832B20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3E484E882A87F803D309D535 /* bimg.xcodeproj */;
+			containerPortal = 7B7F04E667BEAE6110418B93 /* bimg.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 00D72F0FECD05861D53DEF71;
 			remoteInfo = "libbimgDebug.a";
 		};
-		FBACA052E781E80510312802 /* PBXContainerItemProxy */ = {
+		F89D84BBE472CC6E0D220C6B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D751A57DC3FA0CADEC90282C /* bx.xcodeproj */;
+			containerPortal = D495FAB0C03E62E0E9D47D5F /* bx.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D5D335834140F17D0A3489DB;
 			remoteInfo = "libbxDebug.a";
 		};
-		55E55A1E41BAA2D16A69E2CD /* PBXContainerItemProxy */ = {
+		52D63E873EAB863A675AC636 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D751A57DC3FA0CADEC90282C /* bx.xcodeproj */;
+			containerPortal = D495FAB0C03E62E0E9D47D5F /* bx.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 1B1D4BC607ACD48FB0CAE88A;
 			remoteInfo = "libbxDebug.a";
@@ -76,10 +76,10 @@
 /* Begin PBXFileReference section */
 		F622A0656293A2DE2BB21C67 /* texturec.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "texturec.cpp"; path = "texturec.cpp"; sourceTree = "<group>"; };
 		09FDAD81F5F6D6D3DE636DE4 /* texturecDebug */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "texturecDebug"; path = "texturecDebug"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B99B5B4125BA6F0E6E877520 /* bimg_decode.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg_decode.xcodeproj"; path = "bimg_decode.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		56ACBDC6C2CAD1930B98D7A5 /* bimg_decode.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg_decode.xcodeproj"; path = "bimg_decode.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		20840A4D0C70A2BC75E6610F /* bimg_encode.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg_encode.xcodeproj"; path = "bimg_encode.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		3E484E882A87F803D309D535 /* bimg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg.xcodeproj"; path = "bimg.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		D751A57DC3FA0CADEC90282C /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		7B7F04E667BEAE6110418B93 /* bimg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg.xcodeproj"; path = "bimg.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		D495FAB0C03E62E0E9D47D5F /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +87,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				683F010FD407CF929D98D7A4 /* libbimg_decodeDebug.a in Frameworks */,
+				85894137F1510FBBBAE217CD /* libbimg_decodeDebug.a in Frameworks */,
 				CF538ADCBB2911DAA4D32B2D /* libbimg_encodeDebug.a in Frameworks */,
-				CD1E0D7DB9C774ACE25D902B /* libbimgDebug.a in Frameworks */,
-				E6268CDFD2398C387B236925 /* libbxDebug.a in Frameworks */,
+				8A3F577576E8BEA49F7EDA23 /* libbimgDebug.a in Frameworks */,
+				63F46C1C4F076D75F8F04962 /* libbxDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,19 +146,19 @@
 		74D4054160CE2E93493BC5A3 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				B99B5B4125BA6F0E6E877520 /* bimg_decode.xcodeproj */,
+				56ACBDC6C2CAD1930B98D7A5 /* bimg_decode.xcodeproj */,
 				20840A4D0C70A2BC75E6610F /* bimg_encode.xcodeproj */,
-				3E484E882A87F803D309D535 /* bimg.xcodeproj */,
-				D751A57DC3FA0CADEC90282C /* bx.xcodeproj */,
+				7B7F04E667BEAE6110418B93 /* bimg.xcodeproj */,
+				D495FAB0C03E62E0E9D47D5F /* bx.xcodeproj */,
 			);
 			name = "Projects";
 			path = ".";
 			sourceTree = "<group>";
 		};
-		D38BF2BEBFB83EF0E899E100 /* Products */ = {
+		D029C223BC560E55E537B165 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				771C7E3163F1C5E48CA005E1 /* libbimg_decodeDebug.a */,
+				7460D36460351B1889E45A14 /* libbimg_decodeDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,18 +171,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		81AD4A71ED6AF3A77635DF0F /* Products */ = {
+		1EBEACF68A7B552D13464195 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C31BA0508974D8C916FEF64 /* libbimgDebug.a */,
+				39A850A1A50DE4272EE68500 /* libbimgDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BA1BDD462603C83C2FF1C9B8 /* Products */ = {
+		17615880834843768C3645F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				551286AFC1A1479ACA9D28B2 /* libbxDebug.a */,
+				B23DE4FA1ECDA5E527C986FD /* libbxDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,10 +201,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				1F3E25170B6B7148344C1459 /* PBXTargetDependency */,
+				1CDCF47B080941AD31EAE3BD /* PBXTargetDependency */,
 				A6CC7B2A12974D855B9D4CAA /* PBXTargetDependency */,
-				E46BCFB8502978EFD9F36357 /* PBXTargetDependency */,
-				9D9B4CB7098337AD12713929 /* PBXTargetDependency */,
+				817C313EED39DA747604C6DC /* PBXTargetDependency */,
+				03B4BCBF6F9BA7B57889A931 /* PBXTargetDependency */,
 			);
 			name = "texturec";
 			productInstallPath = "$(HOME)/bin";
@@ -224,20 +224,20 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D38BF2BEBFB83EF0E899E100 /* Products */;
-					ProjectRef = B99B5B4125BA6F0E6E877520 /* bimg_decode.xcodeproj */;
+					ProductGroup = D029C223BC560E55E537B165 /* Products */;
+					ProjectRef = 56ACBDC6C2CAD1930B98D7A5 /* bimg_decode.xcodeproj */;
 				},
 				{
 					ProductGroup = 5A1A49D2C6E41A2D0FEB1952 /* Products */;
 					ProjectRef = 20840A4D0C70A2BC75E6610F /* bimg_encode.xcodeproj */;
 				},
 				{
-					ProductGroup = 81AD4A71ED6AF3A77635DF0F /* Products */;
-					ProjectRef = 3E484E882A87F803D309D535 /* bimg.xcodeproj */;
+					ProductGroup = 1EBEACF68A7B552D13464195 /* Products */;
+					ProjectRef = 7B7F04E667BEAE6110418B93 /* bimg.xcodeproj */;
 				},
 				{
-					ProductGroup = BA1BDD462603C83C2FF1C9B8 /* Products */;
-					ProjectRef = D751A57DC3FA0CADEC90282C /* bx.xcodeproj */;
+					ProductGroup = 17615880834843768C3645F2 /* Products */;
+					ProjectRef = D495FAB0C03E62E0E9D47D5F /* bx.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -248,11 +248,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		771C7E3163F1C5E48CA005E1 /* libbimg_decodeDebug.a */ = {
+		7460D36460351B1889E45A14 /* libbimg_decodeDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../ios-arm/bin/libbimg_decodeDebug.a";
-			remoteRef = 543942DEC0031439090A135E /* PBXContainerItemProxy */;
+			remoteRef = F19605DD5D61D737A667D65C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		7E14B823EA86FA3F331B30C4 /* libbimg_encodeDebug.a */ = {
@@ -262,18 +262,18 @@
 			remoteRef = BB986A5CA7B07511108055D6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9C31BA0508974D8C916FEF64 /* libbimgDebug.a */ = {
+		39A850A1A50DE4272EE68500 /* libbimgDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../ios-arm/bin/libbimgDebug.a";
-			remoteRef = E20B343ECE76F449779259AF /* PBXContainerItemProxy */;
+			remoteRef = 1F30D86F0B9B987BB4B6FDE0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		551286AFC1A1479ACA9D28B2 /* libbxDebug.a */ = {
+		B23DE4FA1ECDA5E527C986FD /* libbxDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../ios-arm/bin/libbxDebug.a";
-			remoteRef = FBACA052E781E80510312802 /* PBXContainerItemProxy */;
+			remoteRef = F89D84BBE472CC6E0D220C6B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -303,25 +303,25 @@
 /* End PBXVariantGroup section */
 
 /* Begin PBXTargetDependency section */
-		1F3E25170B6B7148344C1459 /* PBXTargetDependency */ = {
+		1CDCF47B080941AD31EAE3BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbimg_decodeDebug.a";
-			targetProxy = CE8ADABA3A55AC15835BAB3A /* PBXContainerItemProxy */;
+			targetProxy = 6BE89DB9D7B26F1420B96E39 /* PBXContainerItemProxy */;
 		};
 		A6CC7B2A12974D855B9D4CAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbimg_encodeDebug.a";
 			targetProxy = 35EA023921020EEE8AD1EDB2 /* PBXContainerItemProxy */;
 		};
-		E46BCFB8502978EFD9F36357 /* PBXTargetDependency */ = {
+		817C313EED39DA747604C6DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbimgDebug.a";
-			targetProxy = 13F6342FFF60F53AA87C5AA0 /* PBXContainerItemProxy */;
+			targetProxy = B9FC05AFA567C6BA4E832B20 /* PBXContainerItemProxy */;
 		};
-		9D9B4CB7098337AD12713929 /* PBXTargetDependency */ = {
+		03B4BCBF6F9BA7B57889A931 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbxDebug.a";
-			targetProxy = 55E55A1E41BAA2D16A69E2CD /* PBXContainerItemProxy */;
+			targetProxy = 52D63E873EAB863A675AC636 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

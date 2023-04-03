@@ -143,9 +143,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\bx\include\bx\math.h">
-      <Filter>bx\include\bx</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\bx\include\bx\allocator.h">
       <Filter>bx\include\bx</Filter>
     </ClInclude>
@@ -198,6 +195,9 @@
       <Filter>bx\include\bx</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\bx\include\bx\maputil.h">
+      <Filter>bx\include\bx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\bx\include\bx\math.h">
       <Filter>bx\include\bx</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\bx\include\bx\mpscqueue.h">

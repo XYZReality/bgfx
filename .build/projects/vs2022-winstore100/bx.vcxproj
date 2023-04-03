@@ -365,7 +365,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\bx\include\bx\math.h" />
     <ClInclude Include="..\..\..\..\bx\include\bx\allocator.h" />
     <ClInclude Include="..\..\..\..\bx\include\bx\bounds.h" />
     <ClInclude Include="..\..\..\..\bx\include\bx\bx.h" />
@@ -384,6 +383,7 @@
     <ClInclude Include="..\..\..\..\bx\include\bx\hash.h" />
     <ClInclude Include="..\..\..\..\bx\include\bx\macros.h" />
     <ClInclude Include="..\..\..\..\bx\include\bx\maputil.h" />
+    <ClInclude Include="..\..\..\..\bx\include\bx\math.h" />
     <ClInclude Include="..\..\..\..\bx\include\bx\mpscqueue.h" />
     <ClInclude Include="..\..\..\..\bx\include\bx\mutex.h" />
     <ClInclude Include="..\..\..\..\bx\include\bx\os.h" />

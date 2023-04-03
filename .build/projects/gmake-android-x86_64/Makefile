@@ -6,7 +6,7 @@ ifndef config
 endif
 export config
 
-PROJECTS := bgfx bgfx-shared-lib bimg bimg_decode bx example-17-drawstress example-25-c99 example-common example-glue examples
+PROJECTS := bgfx bgfx-shared-lib bimg bimg_decode bx
 
 .PHONY: all clean help $(PROJECTS)
 
@@ -32,37 +32,12 @@ bgfx-shared-lib: bimg bx
 	@echo "==== Building bgfx-shared-lib ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f bgfx-shared-lib.make
 
-example-glue: bx
-	@echo "==== Building example-glue ($(config)) ===="
-	@${MAKE} --no-print-directory -C . -f example-glue.make
-
-example-common: bx
-	@echo "==== Building example-common ($(config)) ===="
-	@${MAKE} --no-print-directory -C . -f example-common.make
-
-examples: example-glue example-common bgfx bimg_decode bimg bx
-	@echo "==== Building examples ($(config)) ===="
-	@${MAKE} --no-print-directory -C . -f examples.make
-
-example-17-drawstress: example-glue example-common bgfx bimg_decode bimg bx
-	@echo "==== Building example-17-drawstress ($(config)) ===="
-	@${MAKE} --no-print-directory -C . -f example-17-drawstress.make
-
-example-25-c99: example-glue example-common bgfx bimg_decode bimg bx
-	@echo "==== Building example-25-c99 ($(config)) ===="
-	@${MAKE} --no-print-directory -C . -f example-25-c99.make
-
 clean:
 	@${MAKE} --no-print-directory -C . -f bx.make clean
 	@${MAKE} --no-print-directory -C . -f bimg.make clean
 	@${MAKE} --no-print-directory -C . -f bimg_decode.make clean
 	@${MAKE} --no-print-directory -C . -f bgfx.make clean
 	@${MAKE} --no-print-directory -C . -f bgfx-shared-lib.make clean
-	@${MAKE} --no-print-directory -C . -f example-glue.make clean
-	@${MAKE} --no-print-directory -C . -f example-common.make clean
-	@${MAKE} --no-print-directory -C . -f examples.make clean
-	@${MAKE} --no-print-directory -C . -f example-17-drawstress.make clean
-	@${MAKE} --no-print-directory -C . -f example-25-c99.make clean
 
 help:
 	@echo "Usage: make [config=name] [target]"
@@ -83,10 +58,5 @@ help:
 	@echo "   bimg_decode"
 	@echo "   bgfx"
 	@echo "   bgfx-shared-lib"
-	@echo "   example-glue"
-	@echo "   example-common"
-	@echo "   examples"
-	@echo "   example-17-drawstress"
-	@echo "   example-25-c99"
 	@echo ""
 	@echo "For more information, see https://github.com/bkaradzic/genie"

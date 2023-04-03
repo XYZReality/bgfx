@@ -26,20 +26,20 @@
 		FD2D9FB0E9AA92F312289307 /* vertexlayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C5C3298B8159D424175B71C /* vertexlayout.cpp */; };
 		24CFC53E10219D2EF93FDA3E /* vertexlayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 5315ACDABF83015A086DBC59 /* vertexlayout.h */; };
 		5DC95330C98FB04C12EB3EAF /* geometryc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C0E12FE78211257210BEF43 /* geometryc.cpp */; };
-		CB42F5E7B755F540603FD22D /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEB7FCE867A41B98F7622D1 /* libbxDebug.a */; };
+		4810D6243423D67DDD0CB36A /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7716DE19E3A59F04ECA1801C /* libbxDebug.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3794FE982369464C4C188648 /* PBXContainerItemProxy */ = {
+		3485E201205A2AB549096AB1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3CD8538B2881BBBA5117D739 /* bx.xcodeproj */;
+			containerPortal = 391CA9BE25C510EE4E5B2C6D /* bx.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D5D335834140F17D0A3489DB;
 			remoteInfo = "libbxDebug.a";
 		};
-		91CCB8647DA10018A6504014 /* PBXContainerItemProxy */ = {
+		8EBD9CCD7A92E480A341247D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3CD8538B2881BBBA5117D739 /* bx.xcodeproj */;
+			containerPortal = 391CA9BE25C510EE4E5B2C6D /* bx.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 1B1D4BC607ACD48FB0CAE88A;
 			remoteInfo = "libbxDebug.a";
@@ -67,7 +67,7 @@
 		5315ACDABF83015A086DBC59 /* vertexlayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "vertexlayout.h"; path = "vertexlayout.h"; sourceTree = "<group>"; };
 		8C0E12FE78211257210BEF43 /* geometryc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "geometryc.cpp"; path = "geometryc.cpp"; sourceTree = "<group>"; };
 		841F5F6AF056A701F9600B25 /* geometrycDebug */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "geometrycDebug"; path = "geometrycDebug"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CD8538B2881BBBA5117D739 /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		391CA9BE25C510EE4E5B2C6D /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB42F5E7B755F540603FD22D /* libbxDebug.a in Frameworks */,
+				4810D6243423D67DDD0CB36A /* libbxDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,16 +176,16 @@
 		BB3281AD276AC94430742D68 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				3CD8538B2881BBBA5117D739 /* bx.xcodeproj */,
+				391CA9BE25C510EE4E5B2C6D /* bx.xcodeproj */,
 			);
 			name = "Projects";
 			path = ".";
 			sourceTree = "<group>";
 		};
-		760B3D41E2F22737EBE029B3 /* Products */ = {
+		D350B87A3F38A3704826A5EC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1AEB7FCE867A41B98F7622D1 /* libbxDebug.a */,
+				7716DE19E3A59F04ECA1801C /* libbxDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				625EA180CE458C76D7338EF2 /* PBXTargetDependency */,
+				BFA31CBA2B8B07B03479092C /* PBXTargetDependency */,
 			);
 			name = "geometryc";
 			productInstallPath = "$(HOME)/bin";
@@ -224,8 +224,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 760B3D41E2F22737EBE029B3 /* Products */;
-					ProjectRef = 3CD8538B2881BBBA5117D739 /* bx.xcodeproj */;
+					ProductGroup = D350B87A3F38A3704826A5EC /* Products */;
+					ProjectRef = 391CA9BE25C510EE4E5B2C6D /* bx.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -236,11 +236,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1AEB7FCE867A41B98F7622D1 /* libbxDebug.a */ = {
+		7716DE19E3A59F04ECA1801C /* libbxDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../ios-arm/bin/libbxDebug.a";
-			remoteRef = 3794FE982369464C4C188648 /* PBXContainerItemProxy */;
+			remoteRef = 3485E201205A2AB549096AB1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -286,10 +286,10 @@
 /* End PBXVariantGroup section */
 
 /* Begin PBXTargetDependency section */
-		625EA180CE458C76D7338EF2 /* PBXTargetDependency */ = {
+		BFA31CBA2B8B07B03479092C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbxDebug.a";
-			targetProxy = 91CCB8647DA10018A6504014 /* PBXContainerItemProxy */;
+			targetProxy = 8EBD9CCD7A92E480A341247D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
