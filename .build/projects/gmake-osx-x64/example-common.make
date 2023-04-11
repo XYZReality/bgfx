@@ -98,6 +98,7 @@ ifeq ($(config),debug32)
 	$(OBJDIR)/examples/common/entry/entry.o \
 	$(OBJDIR)/examples/common/entry/entry_android.o \
 	$(OBJDIR)/examples/common/entry/entry_glfw.o \
+	$(OBJDIR)/examples/common/entry/entry_headless.o \
 	$(OBJDIR)/examples/common/entry/entry_html5.o \
 	$(OBJDIR)/examples/common/entry/entry_ios.o \
 	$(OBJDIR)/examples/common/entry/entry_noop.o \
@@ -176,6 +177,7 @@ ifeq ($(config),release32)
 	$(OBJDIR)/examples/common/entry/entry.o \
 	$(OBJDIR)/examples/common/entry/entry_android.o \
 	$(OBJDIR)/examples/common/entry/entry_glfw.o \
+	$(OBJDIR)/examples/common/entry/entry_headless.o \
 	$(OBJDIR)/examples/common/entry/entry_html5.o \
 	$(OBJDIR)/examples/common/entry/entry_ios.o \
 	$(OBJDIR)/examples/common/entry/entry_noop.o \
@@ -254,6 +256,7 @@ ifeq ($(config),debug64)
 	$(OBJDIR)/examples/common/entry/entry.o \
 	$(OBJDIR)/examples/common/entry/entry_android.o \
 	$(OBJDIR)/examples/common/entry/entry_glfw.o \
+	$(OBJDIR)/examples/common/entry/entry_headless.o \
 	$(OBJDIR)/examples/common/entry/entry_html5.o \
 	$(OBJDIR)/examples/common/entry/entry_ios.o \
 	$(OBJDIR)/examples/common/entry/entry_noop.o \
@@ -332,6 +335,7 @@ ifeq ($(config),release64)
 	$(OBJDIR)/examples/common/entry/entry.o \
 	$(OBJDIR)/examples/common/entry/entry_android.o \
 	$(OBJDIR)/examples/common/entry/entry_glfw.o \
+	$(OBJDIR)/examples/common/entry/entry_headless.o \
 	$(OBJDIR)/examples/common/entry/entry_html5.o \
 	$(OBJDIR)/examples/common/entry/entry_ios.o \
 	$(OBJDIR)/examples/common/entry/entry_noop.o \
@@ -410,6 +414,7 @@ ifeq ($(config),debug)
 	$(OBJDIR)/examples/common/entry/entry.o \
 	$(OBJDIR)/examples/common/entry/entry_android.o \
 	$(OBJDIR)/examples/common/entry/entry_glfw.o \
+	$(OBJDIR)/examples/common/entry/entry_headless.o \
 	$(OBJDIR)/examples/common/entry/entry_html5.o \
 	$(OBJDIR)/examples/common/entry/entry_ios.o \
 	$(OBJDIR)/examples/common/entry/entry_noop.o \
@@ -488,6 +493,7 @@ ifeq ($(config),release)
 	$(OBJDIR)/examples/common/entry/entry.o \
 	$(OBJDIR)/examples/common/entry/entry_android.o \
 	$(OBJDIR)/examples/common/entry/entry_glfw.o \
+	$(OBJDIR)/examples/common/entry/entry_headless.o \
 	$(OBJDIR)/examples/common/entry/entry_html5.o \
 	$(OBJDIR)/examples/common/entry/entry_ios.o \
 	$(OBJDIR)/examples/common/entry/entry_noop.o \
@@ -705,6 +711,10 @@ $(OBJDIR)/examples/common/entry/entry_android.o: ../../../examples/common/entry/
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
 $(OBJDIR)/examples/common/entry/entry_glfw.o: ../../../examples/common/entry/entry_glfw.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/examples/common/entry
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
+
+$(OBJDIR)/examples/common/entry/entry_headless.o: ../../../examples/common/entry/entry_headless.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/examples/common/entry
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 

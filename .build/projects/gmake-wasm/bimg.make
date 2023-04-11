@@ -31,9 +31,9 @@ else
   RM    = $(SILENT) del /F "$(subst /,\\,$(1))" 2> nul || exit 0
 endif
 
-CC  = gcc
-CXX = g++
-AR  = ar
+CC  = "$(EMSCRIPTEN)/emcc"
+CXX = "$(EMSCRIPTEN)/em++"
+AR  = "$(EMSCRIPTEN)/emar"
 
 ifndef RESCOMP
   ifdef WINDRES
@@ -46,11 +46,11 @@ endif
 MAKEFILE = bimg.make
 
 ifeq ($(config),debug32)
-  OBJDIR              = ../../rpi/obj/x32/Debug/bimg
-  TARGETDIR           = ../../rpi/bin
-  TARGET              = $(TARGETDIR)/libbimgDebug.a
-  DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -D__VCCOREVER__=0x04000000 -D__STDC_VERSION__=199901L -DBX_CONFIG_DEBUG=1
-  INCLUDES           += -I"../../../../../../../../../../../../opt/vc/include" -I"../../../../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bimg/include" -I"../../../../bimg/3rdparty/astc-encoder/include" -I"../../../../bimg/3rdparty/tinyexr/deps/miniz" -I"../../../../bx/include"
+  OBJDIR              = ../../wasm/obj/x32/Debug/bimg
+  TARGETDIR           = ../../wasm/bin
+  TARGET              = $(TARGETDIR)/bimgDebug.bc
+  DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBX_CONFIG_DEBUG=1
+  INCLUDES           += -I"../../../../bimg/include" -I"../../../../bimg/3rdparty/astc-encoder/include" -I"../../../../bimg/3rdparty/tinyexr/deps/miniz" -I"../../../../bx/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -Wunused-value -Wundef
@@ -58,14 +58,14 @@ ifeq ($(config),debug32)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../../../../../opt/vc/lib" -L"." -L"../../rpi/bin" -Wl,--gc-sections
-  LIBDEPS            += ../../rpi/bin/libbxDebug.a
-  LDDEPS             += ../../rpi/bin/libbxDebug.a
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/wasm" -L"../../wasm/bin" -s MAX_WEBGL_VERSION=2
+  LIBDEPS            += ../../wasm/bin/bxDebug.bc
+  LDDEPS             += ../../wasm/bin/bxDebug.bc
   LDRESP              =
-  LIBS               += $(LDDEPS) -lrt -ldl
+  LIBS               += $(LDDEPS)
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
-  LINKCMD             = $(AR)  -rcs $(TARGET)
+  LINKCMD             = $(AR)  rcs $(TARGET)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/bimg/3rdparty/astc-encoder/source/astcenc_averages_and_directions.o \
@@ -104,11 +104,11 @@ ifeq ($(config),debug32)
 endif
 
 ifeq ($(config),release32)
-  OBJDIR              = ../../rpi/obj/x32/Release/bimg
-  TARGETDIR           = ../../rpi/bin
-  TARGET              = $(TARGETDIR)/libbimgRelease.a
-  DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -D__VCCOREVER__=0x04000000 -D__STDC_VERSION__=199901L -DBX_CONFIG_DEBUG=0
-  INCLUDES           += -I"../../../../../../../../../../../../opt/vc/include" -I"../../../../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bimg/include" -I"../../../../bimg/3rdparty/astc-encoder/include" -I"../../../../bimg/3rdparty/tinyexr/deps/miniz" -I"../../../../bx/include"
+  OBJDIR              = ../../wasm/obj/x32/Release/bimg
+  TARGETDIR           = ../../wasm/bin
+  TARGET              = $(TARGETDIR)/bimgRelease.bc
+  DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBX_CONFIG_DEBUG=0
+  INCLUDES           += -I"../../../../bimg/include" -I"../../../../bimg/3rdparty/astc-encoder/include" -I"../../../../bimg/3rdparty/tinyexr/deps/miniz" -I"../../../../bx/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
@@ -116,14 +116,14 @@ ifeq ($(config),release32)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../../../../../opt/vc/lib" -L"." -L"../../rpi/bin" -Wl,--gc-sections
-  LIBDEPS            += ../../rpi/bin/libbxRelease.a
-  LDDEPS             += ../../rpi/bin/libbxRelease.a
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/wasm" -L"../../wasm/bin" -s MAX_WEBGL_VERSION=2
+  LIBDEPS            += ../../wasm/bin/bxRelease.bc
+  LDDEPS             += ../../wasm/bin/bxRelease.bc
   LDRESP              =
-  LIBS               += $(LDDEPS) -lrt -ldl
+  LIBS               += $(LDDEPS)
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
-  LINKCMD             = $(AR)  -rcs $(TARGET)
+  LINKCMD             = $(AR)  rcs $(TARGET)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/bimg/3rdparty/astc-encoder/source/astcenc_averages_and_directions.o \
@@ -162,11 +162,11 @@ ifeq ($(config),release32)
 endif
 
 ifeq ($(config),debug64)
-  OBJDIR              = ../../rpi/obj/x64/Debug/bimg
-  TARGETDIR           = ../../rpi/bin
-  TARGET              = $(TARGETDIR)/libbimgDebug.a
-  DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -D__VCCOREVER__=0x04000000 -D__STDC_VERSION__=199901L -DBX_CONFIG_DEBUG=1
-  INCLUDES           += -I"../../../../../../../../../../../../opt/vc/include" -I"../../../../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bimg/include" -I"../../../../bimg/3rdparty/astc-encoder/include" -I"../../../../bimg/3rdparty/tinyexr/deps/miniz" -I"../../../../bx/include"
+  OBJDIR              = ../../wasm/obj/x64/Debug/bimg
+  TARGETDIR           = ../../wasm/bin
+  TARGET              = $(TARGETDIR)/bimgDebug.bc
+  DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBX_CONFIG_DEBUG=1
+  INCLUDES           += -I"../../../../bimg/include" -I"../../../../bimg/3rdparty/astc-encoder/include" -I"../../../../bimg/3rdparty/tinyexr/deps/miniz" -I"../../../../bx/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -Wunused-value -Wundef
@@ -174,14 +174,14 @@ ifeq ($(config),debug64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../../../../../opt/vc/lib" -L"." -L"../../rpi/bin" -Wl,--gc-sections
-  LIBDEPS            += ../../rpi/bin/libbxDebug.a
-  LDDEPS             += ../../rpi/bin/libbxDebug.a
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/wasm" -L"../../wasm/bin" -s MAX_WEBGL_VERSION=2
+  LIBDEPS            += ../../wasm/bin/bxDebug.bc
+  LDDEPS             += ../../wasm/bin/bxDebug.bc
   LDRESP              =
-  LIBS               += $(LDDEPS) -lrt -ldl
+  LIBS               += $(LDDEPS)
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
-  LINKCMD             = $(AR)  -rcs $(TARGET)
+  LINKCMD             = $(AR)  rcs $(TARGET)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/bimg/3rdparty/astc-encoder/source/astcenc_averages_and_directions.o \
@@ -220,11 +220,11 @@ ifeq ($(config),debug64)
 endif
 
 ifeq ($(config),release64)
-  OBJDIR              = ../../rpi/obj/x64/Release/bimg
-  TARGETDIR           = ../../rpi/bin
-  TARGET              = $(TARGETDIR)/libbimgRelease.a
-  DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -D__VCCOREVER__=0x04000000 -D__STDC_VERSION__=199901L -DBX_CONFIG_DEBUG=0
-  INCLUDES           += -I"../../../../../../../../../../../../opt/vc/include" -I"../../../../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bimg/include" -I"../../../../bimg/3rdparty/astc-encoder/include" -I"../../../../bimg/3rdparty/tinyexr/deps/miniz" -I"../../../../bx/include"
+  OBJDIR              = ../../wasm/obj/x64/Release/bimg
+  TARGETDIR           = ../../wasm/bin
+  TARGET              = $(TARGETDIR)/bimgRelease.bc
+  DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBX_CONFIG_DEBUG=0
+  INCLUDES           += -I"../../../../bimg/include" -I"../../../../bimg/3rdparty/astc-encoder/include" -I"../../../../bimg/3rdparty/tinyexr/deps/miniz" -I"../../../../bx/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
@@ -232,14 +232,14 @@ ifeq ($(config),release64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../../../../../opt/vc/lib" -L"." -L"../../rpi/bin" -Wl,--gc-sections
-  LIBDEPS            += ../../rpi/bin/libbxRelease.a
-  LDDEPS             += ../../rpi/bin/libbxRelease.a
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/wasm" -L"../../wasm/bin" -s MAX_WEBGL_VERSION=2
+  LIBDEPS            += ../../wasm/bin/bxRelease.bc
+  LDDEPS             += ../../wasm/bin/bxRelease.bc
   LDRESP              =
-  LIBS               += $(LDDEPS) -lrt -ldl
+  LIBS               += $(LDDEPS)
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
-  LINKCMD             = $(AR)  -rcs $(TARGET)
+  LINKCMD             = $(AR)  rcs $(TARGET)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/bimg/3rdparty/astc-encoder/source/astcenc_averages_and_directions.o \
@@ -278,11 +278,11 @@ ifeq ($(config),release64)
 endif
 
 ifeq ($(config),debug)
-  OBJDIR              = ../../rpi/obj/Debug/bimg
-  TARGETDIR           = ../../rpi/bin
-  TARGET              = $(TARGETDIR)/libbimgDebug.a
-  DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -D__VCCOREVER__=0x04000000 -D__STDC_VERSION__=199901L -DBX_CONFIG_DEBUG=1
-  INCLUDES           += -I"../../../../../../../../../../../../opt/vc/include" -I"../../../../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bimg/include" -I"../../../../bimg/3rdparty/astc-encoder/include" -I"../../../../bimg/3rdparty/tinyexr/deps/miniz" -I"../../../../bx/include"
+  OBJDIR              = ../../wasm/obj/Debug/bimg
+  TARGETDIR           = ../../wasm/bin
+  TARGET              = $(TARGETDIR)/bimgDebug.bc
+  DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBX_CONFIG_DEBUG=1
+  INCLUDES           += -I"../../../../bimg/include" -I"../../../../bimg/3rdparty/astc-encoder/include" -I"../../../../bimg/3rdparty/tinyexr/deps/miniz" -I"../../../../bx/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -Wunused-value -Wundef
@@ -290,14 +290,14 @@ ifeq ($(config),debug)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../../../../../opt/vc/lib" -L"." -L"../../rpi/bin" -Wl,--gc-sections
-  LIBDEPS            += ../../rpi/bin/libbxDebug.a
-  LDDEPS             += ../../rpi/bin/libbxDebug.a
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/wasm" -L"../../wasm/bin" -s MAX_WEBGL_VERSION=2
+  LIBDEPS            += ../../wasm/bin/bxDebug.bc
+  LDDEPS             += ../../wasm/bin/bxDebug.bc
   LDRESP              =
-  LIBS               += $(LDDEPS) -lrt -ldl
+  LIBS               += $(LDDEPS)
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
-  LINKCMD             = $(AR)  -rcs $(TARGET)
+  LINKCMD             = $(AR)  rcs $(TARGET)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/bimg/3rdparty/astc-encoder/source/astcenc_averages_and_directions.o \
@@ -336,11 +336,11 @@ ifeq ($(config),debug)
 endif
 
 ifeq ($(config),release)
-  OBJDIR              = ../../rpi/obj/Release/bimg
-  TARGETDIR           = ../../rpi/bin
-  TARGET              = $(TARGETDIR)/libbimgRelease.a
-  DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -D__VCCOREVER__=0x04000000 -D__STDC_VERSION__=199901L -DBX_CONFIG_DEBUG=0
-  INCLUDES           += -I"../../../../../../../../../../../../opt/vc/include" -I"../../../../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bimg/include" -I"../../../../bimg/3rdparty/astc-encoder/include" -I"../../../../bimg/3rdparty/tinyexr/deps/miniz" -I"../../../../bx/include"
+  OBJDIR              = ../../wasm/obj/Release/bimg
+  TARGETDIR           = ../../wasm/bin
+  TARGET              = $(TARGETDIR)/bimgRelease.bc
+  DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBX_CONFIG_DEBUG=0
+  INCLUDES           += -I"../../../../bimg/include" -I"../../../../bimg/3rdparty/astc-encoder/include" -I"../../../../bimg/3rdparty/tinyexr/deps/miniz" -I"../../../../bx/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
@@ -348,14 +348,14 @@ ifeq ($(config),release)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/rpi" -L"../../../../../../../../../../../../opt/vc/lib" -L"." -L"../../rpi/bin" -Wl,--gc-sections
-  LIBDEPS            += ../../rpi/bin/libbxRelease.a
-  LDDEPS             += ../../rpi/bin/libbxRelease.a
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/wasm" -L"../../wasm/bin" -s MAX_WEBGL_VERSION=2
+  LIBDEPS            += ../../wasm/bin/bxRelease.bc
+  LDDEPS             += ../../wasm/bin/bxRelease.bc
   LDRESP              =
-  LIBS               += $(LDDEPS) -lrt -ldl
+  LIBS               += $(LDDEPS)
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
-  LINKCMD             = $(AR)  -rcs $(TARGET)
+  LINKCMD             = $(AR)  rcs $(TARGET)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/bimg/3rdparty/astc-encoder/source/astcenc_averages_and_directions.o \

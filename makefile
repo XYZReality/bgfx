@@ -45,34 +45,35 @@ clean: ## Clean all intermediate files.
 	@mkdir .build
 
 projgen: ## Generate project files for all configurations.
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib                       vs2022
-	$(GENIE) --with-tools --with-combined-examples                   --vs=winstore100      vs2022
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=mingw-gcc       gmake
-	$(GENIE)                                       --with-shared-lib --gcc=linux-gcc       gmake
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=osx-x64         gmake
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=osx-arm64       gmake
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --xcode=osx           xcode9
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --xcode=ios           xcode9
-	$(GENIE)              --with-combined-examples --with-shared-lib --gcc=freebsd         gmake
-	$(GENIE)              --with-combined-examples --with-shared-lib --gcc=android-arm     gmake
-	$(GENIE)              --with-combined-examples --with-shared-lib --gcc=android-arm64   gmake
-	$(GENIE)              --with-combined-examples --with-shared-lib --gcc=android-x86     gmake
-	$(GENIE)              --with-combined-examples --with-shared-lib --gcc=android-x86_64  gmake
-	$(GENIE)              --with-examples                            --gcc=wasm2js         gmake
-	$(GENIE)              --with-combined-examples                   --gcc=ios-arm         gmake
-	$(GENIE)              --with-combined-examples                   --gcc=ios-arm64       gmake
-	$(GENIE)              --with-combined-examples                   --gcc=ios-simulator   gmake
-	$(GENIE)              --with-combined-examples                   --gcc=ios-simulator64 gmake
-	$(GENIE)              --with-combined-examples                   --gcc=rpi             gmake
-	$(GENIE)                                       --with-shared-lib --gcc=linux-arm-gcc   gmake
-	$(GENIE)                                       --with-shared-lib --gcc=orin            gmake
+	$(GENIE) --with-tools --with-shared-lib                       vs2022
+	$(GENIE) --with-tools                   --vs=winstore100      vs2022
+	$(GENIE) --with-tools --with-shared-lib --gcc=mingw-gcc       gmake
+	$(GENIE)              --with-shared-lib --gcc=linux-gcc       gmake
+	$(GENIE) --with-tools --with-shared-lib --gcc=osx-x64         gmake
+	$(GENIE) --with-tools --with-shared-lib --gcc=osx-arm64       gmake
+	$(GENIE) --with-tools --with-shared-lib --xcode=osx           xcode9
+	$(GENIE) --with-tools --with-shared-lib --xcode=ios           xcode9
+	$(GENIE)              --with-shared-lib --gcc=freebsd         gmake
+	$(GENIE)              --with-shared-lib --gcc=android-arm     gmake
+	$(GENIE)              --with-shared-lib --gcc=android-arm64   gmake
+	$(GENIE)              --with-shared-lib --gcc=android-x86     gmake
+	$(GENIE)              --with-shared-lib --gcc=android-x86_64  gmake
+	$(GENIE)                                --gcc=wasm2js         gmake
+	$(GENIE)                                --gcc=wasm         	  gmake
+	$(GENIE)                                --gcc=ios-arm         gmake
+	$(GENIE)                                --gcc=ios-arm64       gmake
+	$(GENIE)                                --gcc=ios-simulator   gmake
+	$(GENIE)                                --gcc=ios-simulator64 gmake
+	$(GENIE)                                --gcc=rpi             gmake
+	$(GENIE)              --with-shared-lib --gcc=linux-arm-gcc   gmake
+	$(GENIE)              --with-shared-lib --gcc=orin            gmake
 
 idl: ## Generate code from IDL.
 	@echo Generating code from IDL.
 	cd scripts && ../$(GENIE) idl
 
 .build/projects/gmake-android-arm:
-	$(GENIE) --gcc=android-arm --with-combined-examples --with-shared-lib gmake
+	$(GENIE) --gcc=android-arm --with-shared-lib gmake
 android-arm-debug: .build/projects/gmake-android-arm ## Build - Android ARM Debug
 	$(MAKE) -R -C .build/projects/gmake-android-arm config=debug
 android-arm-release: .build/projects/gmake-android-arm ## Build - Android ARM Release
@@ -80,7 +81,7 @@ android-arm-release: .build/projects/gmake-android-arm ## Build - Android ARM Re
 android-arm: android-arm-debug android-arm-release ## Build - Android ARM Debug and Release
 
 .build/projects/gmake-android-arm64:
-	$(GENIE) --gcc=android-arm64 --with-combined-examples --with-shared-lib gmake
+	$(GENIE) --gcc=android-arm64 --with-shared-lib gmake
 android-arm64-debug: .build/projects/gmake-android-arm64 ## Build - Android ARM64 Debug
 	$(MAKE) -R -C .build/projects/gmake-android-arm64 config=debug
 android-arm64-release: .build/projects/gmake-android-arm64 ## Build - Android ARM64 Release
@@ -88,7 +89,7 @@ android-arm64-release: .build/projects/gmake-android-arm64 ## Build - Android AR
 android-arm64: android-arm64-debug android-arm64-release ## Build - Android ARM64 Debug and Release
 
 .build/projects/gmake-android-x86:
-	$(GENIE) --gcc=android-x86 --with-combined-examples --with-shared-lib gmake
+	$(GENIE) --gcc=android-x86 --with-shared-lib gmake
 android-x86-debug: .build/projects/gmake-android-x86 ## Build - Android x86 Debug and Release
 	$(MAKE) -R -C .build/projects/gmake-android-x86 config=debug
 android-x86-release: .build/projects/gmake-android-x86 ## Build - Android x86 Debug and Release
@@ -96,7 +97,7 @@ android-x86-release: .build/projects/gmake-android-x86 ## Build - Android x86 De
 android-x86: android-x86-debug android-x86-release ## Build - Android x86 Debug and Release
 
 .build/projects/gmake-android-x86_64:
-	$(GENIE) --gcc=android-x86_64 --with-combined-examples --with-shared-lib gmake
+	$(GENIE) --gcc=android-x86_64 --with-shared-lib gmake
 android-x86_64-debug: .build/projects/gmake-android-x86_64 ## Build - Android x86_64 Debug and Release
 	$(MAKE) -R -C .build/projects/gmake-android-x86_64 config=debug
 android-x86_64-release: .build/projects/gmake-android-x86_64 ## Build - Android x86_64 Debug and Release
@@ -104,7 +105,7 @@ android-x86_64-release: .build/projects/gmake-android-x86_64 ## Build - Android 
 android-x86_64: android-x86_64-debug android-x86_64-release ## Build - Android x86_64 Debug and Release
 
 .build/projects/gmake-wasm2js: # Wasm2JS: The JavaScript fallback for web builds when Wasm is not supported by browser
-	$(GENIE) --gcc=wasm2js --with-combined-examples gmake
+	$(GENIE) --gcc=wasm2js gmake
 wasm2js-debug: .build/projects/gmake-wasm2js ## Build - Emscripten Debug
 	$(MAKE) -R -C .build/projects/gmake-wasm2js config=debug
 wasm2js-release: .build/projects/gmake-wasm2js ## Build - Emscripten Release
@@ -112,7 +113,7 @@ wasm2js-release: .build/projects/gmake-wasm2js ## Build - Emscripten Release
 wasm2js: wasm2js-debug wasm2js-release ## Build - Emscripten Debug and Release
 
 .build/projects/gmake-wasm:
-	$(GENIE) --gcc=wasm --with-combined-examples gmake
+	$(GENIE) --gcc=wasm gmake
 wasm-debug: .build/projects/gmake-wasm ## Build - Emscripten Debug
 	$(MAKE) -R -C .build/projects/gmake-wasm config=debug
 wasm-release: .build/projects/gmake-wasm ## Build - Emscripten Release
@@ -120,7 +121,7 @@ wasm-release: .build/projects/gmake-wasm ## Build - Emscripten Release
 wasm: wasm-debug wasm-release ## Build - Emscripten Debug and Release
 
 .build/projects/gmake-linux:
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=linux-gcc gmake
+	$(GENIE) --with-tools --with-shared-lib --gcc=linux-gcc gmake
 linux-debug64: .build/projects/gmake-linux ## Build - Linux x64 Debug
 	$(MAKE) -R -C .build/projects/gmake-linux config=debug64
 linux-release64: .build/projects/gmake-linux ## Build - Linux x64 Release
@@ -128,7 +129,7 @@ linux-release64: .build/projects/gmake-linux ## Build - Linux x64 Release
 linux: linux-debug64 linux-release64 ## Build - Linux x86/x64 Debug and Release
 
 .build/projects/gmake-linux-arm-gcc:
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=linux-arm-gcc gmake
+	$(GENIE) --with-tools --with-shared-lib --gcc=linux-arm-gcc gmake
 linux-arm-debug64: .build/projects/gmake-linux-arm-gcc ## Build - Linux ARM Debug
 	$(MAKE) -R -C .build/projects/gmake-linux-arm-gcc config=debug64
 linux-arm-release64: .build/projects/gmake-linux-arm-gcc ## Build - Linux ARM Release
@@ -136,7 +137,7 @@ linux-arm-release64: .build/projects/gmake-linux-arm-gcc ## Build - Linux ARM Re
 linux-arm: linux-arm-debug64 linux-arm-release64 ## Build - Linux ARM Debug and Release
 
 .build/projects/gmake-orin:
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=orin gmake
+	$(GENIE) --with-tools --with-shared-lib --gcc=orin gmake
 orin-debug64: .build/projects/gmake-orin ## Build - nVidia Orin Debug
 	$(MAKE) -R -C .build/projects/gmake-orin config=debug64
 orin-release64: .build/projects/gmake-orin ## Build - nVidia Orin Release
@@ -144,7 +145,7 @@ orin-release64: .build/projects/gmake-orin ## Build - nVidia Orin Release
 orin: orin-debug64 orin-release64 ## Build - nVidia Orin Debug and Release
 
 .build/projects/gmake-freebsd:
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=freebsd gmake
+	$(GENIE) --with-tools --with-shared-lib --gcc=freebsd gmake
 freebsd-debug32: .build/projects/gmake-freebsd ## Build - FreeBSD x86 Debug
 	$(MAKE) -R -C .build/projects/gmake-freebsd config=debug32
 freebsd-release32: .build/projects/gmake-freebsd ## Build - FreeBSD x86 Release
@@ -156,7 +157,7 @@ freebsd-release64: .build/projects/gmake-freebsd ## Build - FreeBSD x86 Release
 freebsd: freebsd-debug32 freebsd-release32 freebsd-debug64 freebsd-release64 ## Build - FreeBSD x86/x64 Debug and Release
 
 .build/projects/gmake-mingw-gcc:
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --os=windows --gcc=mingw-gcc gmake
+	$(GENIE) --with-tools --with-shared-lib --os=windows --gcc=mingw-gcc gmake
 mingw-gcc-debug32: .build/projects/gmake-mingw-gcc ## Build - MinGW GCC x86 Debug
 	$(MAKE) -R -C .build/projects/gmake-mingw-gcc config=debug32
 mingw-gcc-release32: .build/projects/gmake-mingw-gcc ## Build - MinGW GCC x86 Release
@@ -168,7 +169,7 @@ mingw-gcc-release64: .build/projects/gmake-mingw-gcc ## Build - MinGW GCC x64 Re
 mingw-gcc: mingw-gcc-debug32 mingw-gcc-release32 mingw-gcc-debug64 mingw-gcc-release64 ## Build - MinGW GCC x86/x64 Debug and Release
 
 .build/projects/gmake-mingw-clang:
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --os=windows --gcc=mingw-clang gmake
+	$(GENIE) --with-tools --with-shared-lib --os=windows --gcc=mingw-clang gmake
 mingw-clang-debug32: .build/projects/gmake-mingw-clang ## Build - MinGW Clang x86 Debug
 	$(MAKE) -R -C .build/projects/gmake-mingw-clang config=debug32
 mingw-clang-release32: .build/projects/gmake-mingw-clang ## Build - MinGW Clang x86 Release
@@ -180,7 +181,7 @@ mingw-clang-release64: .build/projects/gmake-mingw-clang ## Build - MinGW Clang 
 mingw-clang: mingw-clang-debug32 mingw-clang-release32 mingw-clang-debug64 mingw-clang-release64 ## Build - MinGW Clang x86/x64 Debug and Release
 
 .build/projects/vs2017:
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib vs2017
+	$(GENIE) --with-tools --with-shared-lib vs2017
 vs2017-debug32: .build/projects/vs2017 ## Build - vs2017 x86 Debug
 	devenv .build/projects/vs2017/bgfx.sln /Build "Debug|Win32"
 vs2017-release32: .build/projects/vs2017 ## Build - vs2017 x86 Release
@@ -192,7 +193,7 @@ vs2017-release64: .build/projects/vs2017 ## Build - vs2017 x64 Release
 vs2017: vs2017-debug32 vs2017-release32 vs2017-debug64 vs2017-release64 ## Build - vs2017 x86/x64 Debug and Release
 
 .build/projects/vs2017-winstore100:
-	$(GENIE) --with-combined-examples --vs=winstore100 vs2017
+	$(GENIE) --vs=winstore100 vs2017
 vs2017-winstore100-debug32: .build/projects/vs2017-winstore100 ## Build - vs2017-winstore100 x86 Debug
 	devenv .build/projects/vs2017-winstore100/bgfx.sln /Build "Debug|Win32"
 vs2017-winstore100-release32: .build/projects/vs2017-winstore100 ## Build - vs2017-winstore100 x86 Release
@@ -204,9 +205,9 @@ vs2017-winstore100-release64: .build/projects/vs2017-winstore100 ## Build - vs20
 vs2017-winstore100: vs2017-winstore100-debug32 vs2017-winstore100-release32 vs2017-winstore100-debug64 vs2017-winstore100-release64 ## Build - vs2017-winstore100 x86/x64 Debug and Release
 
 .build/projects/gmake-osx-x64:
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=osx-x64 gmake
+	$(GENIE) --with-tools --with-shared-lib --gcc=osx-x64 gmake
 .build/projects/gmake-osx-arm64:
-	$(GENIE) --with-tools --with-combined-examples --with-shared-lib --gcc=osx-arm64 gmake
+	$(GENIE) --with-tools --with-shared-lib --gcc=osx-arm64 gmake
 
 osx-debug: osx-x64-debug osx-arm64-debug ## Build - macOS Universal Debug
 osx-release: osx-x64-release osx-arm64-release ## Build - macOS Universal Release

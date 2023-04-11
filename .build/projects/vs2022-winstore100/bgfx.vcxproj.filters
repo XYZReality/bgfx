@@ -44,9 +44,6 @@
     <ClInclude Include="..\..\..\include\bgfx\c99\bgfx.h">
       <Filter>include\bgfx\c99</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\renderer_d3d12.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\bgfx_p.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -98,6 +95,9 @@
     <ClInclude Include="..\..\..\src\renderer_d3d11.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\renderer_d3d12.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\src\renderer_d3d9.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -136,9 +136,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\glcontext_glx.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\amalgamated.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -152,6 +149,9 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\glcontext_egl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\glcontext_glx.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\glcontext_html5.cpp">

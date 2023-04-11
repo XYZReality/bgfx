@@ -30,7 +30,7 @@
 		C5A28795310C1DF8BA4FCBA2 /* libglsl-optimizerDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE6BA6CC9BC416AB2665CBD /* libglsl-optimizerDebug.a */; };
 		13C74A417F398D5DC8CDC2E1 /* libspirv-optDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2CD12E58E0CBD60378F9992 /* libspirv-optDebug.a */; };
 		4760EB5733CBAB63DCE610C9 /* libspirv-crossDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 161A049C8201EF918BEFF00D /* libspirv-crossDebug.a */; };
-		EF8809FF5B4F661BA4AAF47D /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0E9E510A219EAAB30A7B97 /* libbxDebug.a */; };
+		8C4C079DF81264B9416EF21B /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BDB7E8E87EE7EE730D85BD4 /* libbxDebug.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,16 +104,16 @@
 			remoteGlobalIDString = CCCB21BB38E408E50191987E;
 			remoteInfo = "libspirv-crossDebug.a";
 		};
-		836C262F6F416EE298F0ADDE /* PBXContainerItemProxy */ = {
+		805D0A986C32524B95E19147 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8824FE9074CD65C09D63813F /* bx.xcodeproj */;
+			containerPortal = 856853C47111BBF39AA7D672 /* bx.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D5D335834140F17D0A3489DB;
 			remoteInfo = "libbxDebug.a";
 		};
-		DDA4E0FAC97928AEF22868AA /* PBXContainerItemProxy */ = {
+		DA95C463C66A0C17EF194C13 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8824FE9074CD65C09D63813F /* bx.xcodeproj */;
+			containerPortal = 856853C47111BBF39AA7D672 /* bx.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 1B1D4BC607ACD48FB0CAE88A;
 			remoteInfo = "libbxDebug.a";
@@ -145,7 +145,7 @@
 		FB620B56E78F57871071FA97 /* glsl-optimizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "glsl-optimizer.xcodeproj"; path = "glsl-optimizer.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		40C531B02C9BB8AD1545D300 /* spirv-opt.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "spirv-opt.xcodeproj"; path = "spirv-opt.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		DD29FB8849480F5692151568 /* spirv-cross.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "spirv-cross.xcodeproj"; path = "spirv-cross.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		8824FE9074CD65C09D63813F /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		856853C47111BBF39AA7D672 /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +159,7 @@
 				C5A28795310C1DF8BA4FCBA2 /* libglsl-optimizerDebug.a in Frameworks */,
 				13C74A417F398D5DC8CDC2E1 /* libspirv-optDebug.a in Frameworks */,
 				4760EB5733CBAB63DCE610C9 /* libspirv-crossDebug.a in Frameworks */,
-				EF8809FF5B4F661BA4AAF47D /* libbxDebug.a in Frameworks */,
+				8C4C079DF81264B9416EF21B /* libbxDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +245,7 @@
 				FB620B56E78F57871071FA97 /* glsl-optimizer.xcodeproj */,
 				40C531B02C9BB8AD1545D300 /* spirv-opt.xcodeproj */,
 				DD29FB8849480F5692151568 /* spirv-cross.xcodeproj */,
-				8824FE9074CD65C09D63813F /* bx.xcodeproj */,
+				856853C47111BBF39AA7D672 /* bx.xcodeproj */,
 			);
 			name = "Projects";
 			path = ".";
@@ -291,10 +291,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		420A65B2AEF14FA8B7DF5124 /* Products */ = {
+		A822D5BA140AC0B01DF8C12C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1E0E9E510A219EAAB30A7B97 /* libbxDebug.a */,
+				9BDB7E8E87EE7EE730D85BD4 /* libbxDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,7 +318,7 @@
 				C1424EFB2D2E615C360768D5 /* PBXTargetDependency */,
 				064E6CC272C201203B0C4F2F /* PBXTargetDependency */,
 				C3FB3A73AF2887A4D8092AB5 /* PBXTargetDependency */,
-				2E5DC9F19A44B4E7A332B663 /* PBXTargetDependency */,
+				8BA2442BF7892F210078319D /* PBXTargetDependency */,
 			);
 			name = "shaderc";
 			productInstallPath = "$(HOME)/bin";
@@ -358,8 +358,8 @@
 					ProjectRef = DD29FB8849480F5692151568 /* spirv-cross.xcodeproj */;
 				},
 				{
-					ProductGroup = 420A65B2AEF14FA8B7DF5124 /* Products */;
-					ProjectRef = 8824FE9074CD65C09D63813F /* bx.xcodeproj */;
+					ProductGroup = A822D5BA140AC0B01DF8C12C /* Products */;
+					ProjectRef = 856853C47111BBF39AA7D672 /* bx.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -405,11 +405,11 @@
 			remoteRef = 78AB0FBDE475E1172D7CE03C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1E0E9E510A219EAAB30A7B97 /* libbxDebug.a */ = {
+		9BDB7E8E87EE7EE730D85BD4 /* libbxDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../../../bx/scripts/libbxDebug.a";
-			remoteRef = 836C262F6F416EE298F0ADDE /* PBXContainerItemProxy */;
+			remoteRef = 805D0A986C32524B95E19147 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -474,10 +474,10 @@
 			name = "libspirv-crossDebug.a";
 			targetProxy = F2FCA7995EC779F4A7CD7819 /* PBXContainerItemProxy */;
 		};
-		2E5DC9F19A44B4E7A332B663 /* PBXTargetDependency */ = {
+		8BA2442BF7892F210078319D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbxDebug.a";
-			targetProxy = DDA4E0FAC97928AEF22868AA /* PBXContainerItemProxy */;
+			targetProxy = DA95C463C66A0C17EF194C13 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -570,16 +570,16 @@
 				OBJROOT = obj/Debug/shaderc;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -657,16 +657,16 @@
 				OBJROOT = obj/Release/shaderc;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",

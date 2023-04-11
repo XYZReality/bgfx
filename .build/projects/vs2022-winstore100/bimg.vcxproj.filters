@@ -42,10 +42,10 @@
     <ClInclude Include="..\..\..\..\bimg\include\bimg\encode.h">
       <Filter>bimg\include\bimg</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_internal.h">
+    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_diagnostic_trace.h">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_diagnostic_trace.h">
+    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_internal.h">
       <Filter>bimg\3rdparty\astc-encoder\source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_internal_entry.h">

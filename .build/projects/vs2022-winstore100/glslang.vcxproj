@@ -452,8 +452,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\HLSL\hlslTokenStream.cpp">
     </ClCompile>
-    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\linkValidate.cpp">
-    </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\attribute.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\Constant.cpp">
@@ -473,6 +471,8 @@
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\iomapper.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\limits.cpp">
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\linkValidate.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\glslang\glslang\MachineIndependent\parseConst.cpp">
     </ClCompile>

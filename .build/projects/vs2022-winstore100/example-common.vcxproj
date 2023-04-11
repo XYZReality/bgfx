@@ -504,6 +504,8 @@
     </ClCompile>
     <ClCompile Include="..\..\..\examples\common\entry\entry_glfw.cpp">
     </ClCompile>
+    <ClCompile Include="..\..\..\examples\common\entry\entry_headless.cpp">
+    </ClCompile>
     <ClCompile Include="..\..\..\examples\common\entry\entry_html5.cpp">
     </ClCompile>
     <ClCompile Include="..\..\..\examples\common\entry\entry_noop.cpp">

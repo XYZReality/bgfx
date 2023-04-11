@@ -6,7 +6,7 @@ ifndef config
 endif
 export config
 
-PROJECTS := bgfx bgfx-shared-lib bimg bimg_decode bimg_encode bx example-17-drawstress example-25-c99 example-common example-glue examples fcpp geometryc geometryv glsl-optimizer glslang shaderc spirv-cross spirv-opt texturec texturev
+PROJECTS := bgfx bgfx-shared-lib bimg bimg_decode bimg_encode bx example-common example-glue fcpp geometryc geometryv glsl-optimizer glslang shaderc spirv-cross spirv-opt texturec texturev
 
 .PHONY: all clean help $(PROJECTS)
 
@@ -43,18 +43,6 @@ example-glue: bx
 example-common: bx
 	@echo "==== Building example-common ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f example-common.make
-
-examples: example-glue example-common bgfx bimg_decode bimg bx
-	@echo "==== Building examples ($(config)) ===="
-	@${MAKE} --no-print-directory -C . -f examples.make
-
-example-17-drawstress: example-glue example-common bgfx bimg_decode bimg bx
-	@echo "==== Building example-17-drawstress ($(config)) ===="
-	@${MAKE} --no-print-directory -C . -f example-17-drawstress.make
-
-example-25-c99: example-glue example-common bgfx bimg_decode bimg bx
-	@echo "==== Building example-25-c99 ($(config)) ===="
-	@${MAKE} --no-print-directory -C . -f example-25-c99.make
 
 spirv-opt: 
 	@echo "==== Building spirv-opt ($(config)) ===="
@@ -105,9 +93,6 @@ clean:
 	@${MAKE} --no-print-directory -C . -f bimg_encode.make clean
 	@${MAKE} --no-print-directory -C . -f example-glue.make clean
 	@${MAKE} --no-print-directory -C . -f example-common.make clean
-	@${MAKE} --no-print-directory -C . -f examples.make clean
-	@${MAKE} --no-print-directory -C . -f example-17-drawstress.make clean
-	@${MAKE} --no-print-directory -C . -f example-25-c99.make clean
 	@${MAKE} --no-print-directory -C . -f spirv-opt.make clean
 	@${MAKE} --no-print-directory -C . -f spirv-cross.make clean
 	@${MAKE} --no-print-directory -C . -f glslang.make clean
@@ -141,9 +126,6 @@ help:
 	@echo "   bimg_encode"
 	@echo "   example-glue"
 	@echo "   example-common"
-	@echo "   examples"
-	@echo "   example-17-drawstress"
-	@echo "   example-25-c99"
 	@echo "   spirv-opt"
 	@echo "   spirv-cross"
 	@echo "   glslang"

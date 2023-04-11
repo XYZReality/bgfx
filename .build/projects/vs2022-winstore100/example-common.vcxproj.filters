@@ -379,6 +379,9 @@
     <ClCompile Include="..\..\..\examples\common\entry\entry_glfw.cpp">
       <Filter>examples\common\entry</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\examples\common\entry\entry_headless.cpp">
+      <Filter>examples\common\entry</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\examples\common\entry\entry_html5.cpp">
       <Filter>examples\common\entry</Filter>
     </ClCompile>

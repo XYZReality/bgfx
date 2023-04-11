@@ -10,80 +10,80 @@
 		31D7F7AB1D805FDB46167B5A /* fs_mesh.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = E027ED834C8D800AD56522E3 /* fs_mesh.bin.h */; };
 		2CC944DA988FA1F6E1EA2F59 /* geometryv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5425AD11C08A40984963E270 /* geometryv.cpp */; };
 		AF9F421A1B669F3664C12D99 /* vs_mesh.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E291BF58A3C1B4E3326F83A /* vs_mesh.bin.h */; };
-		68275228D490E78A5DD49535 /* libexample-commonDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B05AA62386E1A30C30FCF6 /* libexample-commonDebug.a */; };
-		D0F2EFF2BC8932A8653EA9A8 /* libbimg_decodeDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF2178316BB5D9DF749C4996 /* libbimg_decodeDebug.a */; };
-		FE32ED936A1AD8897308DA05 /* libbimgDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFA87D1398E7D79A252D72D /* libbimgDebug.a */; };
-		167577FA82B0D7BD8BA5544D /* libbgfxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 653E631151A629DFBA113EF5 /* libbgfxDebug.a */; };
-		B0AE8EFF1C75EB1B65D0797E /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5773CF2B6A7328D4535015 /* libbxDebug.a */; };
+		306DF9DB9CD68E3E251A3DE9 /* libexample-commonDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF38A56BEB0E2C69D4B846BC /* libexample-commonDebug.a */; };
+		4D1A2E1E39B170D3E265E7D3 /* libbimg_decodeDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C67F36AC8FA5419D1E1C4CF /* libbimg_decodeDebug.a */; };
+		1B7D2DBC876418B290521A2E /* libbimgDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3EDD0436D2D2AC9F962C61 /* libbimgDebug.a */; };
+		33F271D39F2DD296A8224F26 /* libbgfxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D586C84E3D4D96B7A861AC /* libbgfxDebug.a */; };
+		4D728C9DB938E9B90294771C /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC24540CA837546551213152 /* libbxDebug.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5079F35B3CD263DF65CC4579 /* PBXContainerItemProxy */ = {
+		18E4AF20043D20A42D37023E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D57062DCC19DAE0DEA7E511E /* example-common.xcodeproj */;
+			containerPortal = 9D93E4B689C030E8B2A1D3F8 /* example-common.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9D8CE35A09FB38DA52E4F3D9;
 			remoteInfo = "libexample-commonDebug.a";
 		};
-		2A1BDEE616744E6A3F6E3004 /* PBXContainerItemProxy */ = {
+		F2859AABDEDE0A2F07D9ECC8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D57062DCC19DAE0DEA7E511E /* example-common.xcodeproj */;
+			containerPortal = 9D93E4B689C030E8B2A1D3F8 /* example-common.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = E3DC407FCF2D2CC1F8911A83;
 			remoteInfo = "libexample-commonDebug.a";
 		};
-		888623D3F450F52D3D57F452 /* PBXContainerItemProxy */ = {
+		25E4E6D191AEB82CDAB4B751 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A43B3729105A4BF659275108 /* bimg_decode.xcodeproj */;
+			containerPortal = 414C99AEAD6AAD7BF637B38D /* bimg_decode.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 7D6367F06989315752CFB622;
 			remoteInfo = "libbimg_decodeDebug.a";
 		};
-		02D8BBAF6EA28D0AB7A88C2F /* PBXContainerItemProxy */ = {
+		9F357FAE0B0051095406502E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A43B3729105A4BF659275108 /* bimg_decode.xcodeproj */;
+			containerPortal = 414C99AEAD6AAD7BF637B38D /* bimg_decode.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = C35735362F701C60F81CACF9;
 			remoteInfo = "libbimg_decodeDebug.a";
 		};
-		2DA983211914442DC22FA992 /* PBXContainerItemProxy */ = {
+		6ACD27535638E85EFF534DC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F2537077DE921AF38715F724 /* bimg.xcodeproj */;
+			containerPortal = 2F8B26D51BCAD050C44CAD82 /* bimg.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5ACAB1E8C601FA7FCF0B5EA3;
 			remoteInfo = "libbimgDebug.a";
 		};
-		C775B160B3E0716C5CFCD6D1 /* PBXContainerItemProxy */ = {
+		049A5592F004169E99207B03 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F2537077DE921AF38715F724 /* bimg.xcodeproj */;
+			containerPortal = 2F8B26D51BCAD050C44CAD82 /* bimg.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 00D72F0FECD05861D53DEF71;
 			remoteInfo = "libbimgDebug.a";
 		};
-		5E8C09AC4AF7C9B7F3122F1D /* PBXContainerItemProxy */ = {
+		9BB0ADDD871B6EE93037D34E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2396022F0FD5ACAAB85789DC /* bgfx.xcodeproj */;
+			containerPortal = 60CDB88C4C0C6308F58E3F3A /* bgfx.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 02DC17D86E13606F771DC492;
 			remoteInfo = "libbgfxDebug.a";
 		};
-		F85837EBE4C3F7F68DDF5C5C /* PBXContainerItemProxy */ = {
+		357DDB1C21E89B28CA03018E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2396022F0FD5ACAAB85789DC /* bgfx.xcodeproj */;
+			containerPortal = 60CDB88C4C0C6308F58E3F3A /* bgfx.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = A853C66B944DEFBD7DBA85CE;
 			remoteInfo = "libbgfxDebug.a";
 		};
-		4DA30017397848CA622788C6 /* PBXContainerItemProxy */ = {
+		4A94E47F36692C335F186C2F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2916A51C15BF0C4C3E5528CB /* bx.xcodeproj */;
+			containerPortal = 265AFA4F1203627F3B997DFE /* bx.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D5D335834140F17D0A3489DB;
 			remoteInfo = "libbxDebug.a";
 		};
-		7EA72B356A7C73E8932BB3E4 /* PBXContainerItemProxy */ = {
+		A4CC9E4B90A1E6FEB95026FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2916A51C15BF0C4C3E5528CB /* bx.xcodeproj */;
+			containerPortal = 265AFA4F1203627F3B997DFE /* bx.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 1B1D4BC607ACD48FB0CAE88A;
 			remoteInfo = "libbxDebug.a";
@@ -99,11 +99,11 @@
 		9E291BF58A3C1B4E3326F83A /* vs_mesh.bin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "vs_mesh.bin.h"; path = "vs_mesh.bin.h"; sourceTree = "<group>"; };
 		67918172D3ABE4131CCEF4A7 /* vs_mesh.sc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "vs_mesh.sc"; path = "vs_mesh.sc"; sourceTree = "<group>"; };
 		776623D0E39D6B67ECA7CF8A /* geometryvDebug */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "geometryvDebug"; path = "geometryvDebug"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D57062DCC19DAE0DEA7E511E /* example-common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "example-common.xcodeproj"; path = "example-common.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		A43B3729105A4BF659275108 /* bimg_decode.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg_decode.xcodeproj"; path = "bimg_decode.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		F2537077DE921AF38715F724 /* bimg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg.xcodeproj"; path = "bimg.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		2396022F0FD5ACAAB85789DC /* bgfx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bgfx.xcodeproj"; path = "bgfx.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		2916A51C15BF0C4C3E5528CB /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		9D93E4B689C030E8B2A1D3F8 /* example-common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "example-common.xcodeproj"; path = "example-common.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		414C99AEAD6AAD7BF637B38D /* bimg_decode.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg_decode.xcodeproj"; path = "bimg_decode.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		2F8B26D51BCAD050C44CAD82 /* bimg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg.xcodeproj"; path = "bimg.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		60CDB88C4C0C6308F58E3F3A /* bgfx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bgfx.xcodeproj"; path = "bgfx.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		265AFA4F1203627F3B997DFE /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +111,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68275228D490E78A5DD49535 /* libexample-commonDebug.a in Frameworks */,
-				D0F2EFF2BC8932A8653EA9A8 /* libbimg_decodeDebug.a in Frameworks */,
-				FE32ED936A1AD8897308DA05 /* libbimgDebug.a in Frameworks */,
-				167577FA82B0D7BD8BA5544D /* libbgfxDebug.a in Frameworks */,
-				B0AE8EFF1C75EB1B65D0797E /* libbxDebug.a in Frameworks */,
+				306DF9DB9CD68E3E251A3DE9 /* libexample-commonDebug.a in Frameworks */,
+				4D1A2E1E39B170D3E265E7D3 /* libbimg_decodeDebug.a in Frameworks */,
+				1B7D2DBC876418B290521A2E /* libbimgDebug.a in Frameworks */,
+				33F271D39F2DD296A8224F26 /* libbgfxDebug.a in Frameworks */,
+				4D728C9DB938E9B90294771C /* libbxDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,52 +168,52 @@
 		C980CA7B35B812133EC27636 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				D57062DCC19DAE0DEA7E511E /* example-common.xcodeproj */,
-				A43B3729105A4BF659275108 /* bimg_decode.xcodeproj */,
-				F2537077DE921AF38715F724 /* bimg.xcodeproj */,
-				2396022F0FD5ACAAB85789DC /* bgfx.xcodeproj */,
-				2916A51C15BF0C4C3E5528CB /* bx.xcodeproj */,
+				9D93E4B689C030E8B2A1D3F8 /* example-common.xcodeproj */,
+				414C99AEAD6AAD7BF637B38D /* bimg_decode.xcodeproj */,
+				2F8B26D51BCAD050C44CAD82 /* bimg.xcodeproj */,
+				60CDB88C4C0C6308F58E3F3A /* bgfx.xcodeproj */,
+				265AFA4F1203627F3B997DFE /* bx.xcodeproj */,
 			);
 			name = "Projects";
 			path = ".";
 			sourceTree = "<group>";
 		};
-		EFF723685BE336C964BC3D42 /* Products */ = {
+		B7291A6E23152DCF2CEE3348 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37B05AA62386E1A30C30FCF6 /* libexample-commonDebug.a */,
+				FF38A56BEB0E2C69D4B846BC /* libexample-commonDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		87028561732FD1929C1074A3 /* Products */ = {
+		84A054C670CDA0F799AE4308 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FF2178316BB5D9DF749C4996 /* libbimg_decodeDebug.a */,
+				5C67F36AC8FA5419D1E1C4CF /* libbimg_decodeDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6C4D2659D80ACF8F61D5BAF7 /* Products */ = {
+		095E88DE751B3115FEE51C7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DFA87D1398E7D79A252D72D /* libbimgDebug.a */,
+				4A3EDD0436D2D2AC9F962C61 /* libbimgDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7D0EF4C9E9CB9C0072968868 /* Products */ = {
+		63D8CBAECF9574E55860604D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				653E631151A629DFBA113EF5 /* libbgfxDebug.a */,
+				62D586C84E3D4D96B7A861AC /* libbgfxDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CC8F0E453877F93A4165FBB6 /* Products */ = {
+		29D5897E95BC74749EAA76F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F5773CF2B6A7328D4535015 /* libbxDebug.a */,
+				BC24540CA837546551213152 /* libbxDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,11 +232,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				5BF7A3A1C7E2B602D0BBBD7B /* PBXTargetDependency */,
-				AA6746FE9694922FBF753540 /* PBXTargetDependency */,
-				18C520008482C9360D4DB59E /* PBXTargetDependency */,
-				2986EE70954397A71E0E830F /* PBXTargetDependency */,
-				AF0F7EB51BF768AB24E56A27 /* PBXTargetDependency */,
+				23299AA78F14AD0898EDB381 /* PBXTargetDependency */,
+				D052871EBC7FD34FE5607660 /* PBXTargetDependency */,
+				B5D5828521932BBCAA5D1724 /* PBXTargetDependency */,
+				C69650F63254F92CBB1EE594 /* PBXTargetDependency */,
+				0C55F9EE783CE4E4812AE660 /* PBXTargetDependency */,
 			);
 			name = "geometryv";
 			productInstallPath = "$(HOME)/bin";
@@ -256,24 +256,24 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = EFF723685BE336C964BC3D42 /* Products */;
-					ProjectRef = D57062DCC19DAE0DEA7E511E /* example-common.xcodeproj */;
+					ProductGroup = B7291A6E23152DCF2CEE3348 /* Products */;
+					ProjectRef = 9D93E4B689C030E8B2A1D3F8 /* example-common.xcodeproj */;
 				},
 				{
-					ProductGroup = 87028561732FD1929C1074A3 /* Products */;
-					ProjectRef = A43B3729105A4BF659275108 /* bimg_decode.xcodeproj */;
+					ProductGroup = 84A054C670CDA0F799AE4308 /* Products */;
+					ProjectRef = 414C99AEAD6AAD7BF637B38D /* bimg_decode.xcodeproj */;
 				},
 				{
-					ProductGroup = 6C4D2659D80ACF8F61D5BAF7 /* Products */;
-					ProjectRef = F2537077DE921AF38715F724 /* bimg.xcodeproj */;
+					ProductGroup = 095E88DE751B3115FEE51C7D /* Products */;
+					ProjectRef = 2F8B26D51BCAD050C44CAD82 /* bimg.xcodeproj */;
 				},
 				{
-					ProductGroup = 7D0EF4C9E9CB9C0072968868 /* Products */;
-					ProjectRef = 2396022F0FD5ACAAB85789DC /* bgfx.xcodeproj */;
+					ProductGroup = 63D8CBAECF9574E55860604D /* Products */;
+					ProjectRef = 60CDB88C4C0C6308F58E3F3A /* bgfx.xcodeproj */;
 				},
 				{
-					ProductGroup = CC8F0E453877F93A4165FBB6 /* Products */;
-					ProjectRef = 2916A51C15BF0C4C3E5528CB /* bx.xcodeproj */;
+					ProductGroup = 29D5897E95BC74749EAA76F0 /* Products */;
+					ProjectRef = 265AFA4F1203627F3B997DFE /* bx.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -284,39 +284,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		37B05AA62386E1A30C30FCF6 /* libexample-commonDebug.a */ = {
+		FF38A56BEB0E2C69D4B846BC /* libexample-commonDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../../scripts/libexample-commonDebug.a";
-			remoteRef = 5079F35B3CD263DF65CC4579 /* PBXContainerItemProxy */;
+			remoteRef = 18E4AF20043D20A42D37023E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FF2178316BB5D9DF749C4996 /* libbimg_decodeDebug.a */ = {
+		5C67F36AC8FA5419D1E1C4CF /* libbimg_decodeDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../../../bimg/scripts/libbimg_decodeDebug.a";
-			remoteRef = 888623D3F450F52D3D57F452 /* PBXContainerItemProxy */;
+			remoteRef = 25E4E6D191AEB82CDAB4B751 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4DFA87D1398E7D79A252D72D /* libbimgDebug.a */ = {
+		4A3EDD0436D2D2AC9F962C61 /* libbimgDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../../../bimg/scripts/libbimgDebug.a";
-			remoteRef = 2DA983211914442DC22FA992 /* PBXContainerItemProxy */;
+			remoteRef = 6ACD27535638E85EFF534DC4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		653E631151A629DFBA113EF5 /* libbgfxDebug.a */ = {
+		62D586C84E3D4D96B7A861AC /* libbgfxDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../../scripts/libbgfxDebug.a";
-			remoteRef = 5E8C09AC4AF7C9B7F3122F1D /* PBXContainerItemProxy */;
+			remoteRef = 9BB0ADDD871B6EE93037D34E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3F5773CF2B6A7328D4535015 /* libbxDebug.a */ = {
+		BC24540CA837546551213152 /* libbxDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../../../bx/scripts/libbxDebug.a";
-			remoteRef = 4DA30017397848CA622788C6 /* PBXContainerItemProxy */;
+			remoteRef = 4A94E47F36692C335F186C2F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -346,30 +346,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin PBXTargetDependency section */
-		5BF7A3A1C7E2B602D0BBBD7B /* PBXTargetDependency */ = {
+		23299AA78F14AD0898EDB381 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libexample-commonDebug.a";
-			targetProxy = 2A1BDEE616744E6A3F6E3004 /* PBXContainerItemProxy */;
+			targetProxy = F2859AABDEDE0A2F07D9ECC8 /* PBXContainerItemProxy */;
 		};
-		AA6746FE9694922FBF753540 /* PBXTargetDependency */ = {
+		D052871EBC7FD34FE5607660 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbimg_decodeDebug.a";
-			targetProxy = 02D8BBAF6EA28D0AB7A88C2F /* PBXContainerItemProxy */;
+			targetProxy = 9F357FAE0B0051095406502E /* PBXContainerItemProxy */;
 		};
-		18C520008482C9360D4DB59E /* PBXTargetDependency */ = {
+		B5D5828521932BBCAA5D1724 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbimgDebug.a";
-			targetProxy = C775B160B3E0716C5CFCD6D1 /* PBXContainerItemProxy */;
+			targetProxy = 049A5592F004169E99207B03 /* PBXContainerItemProxy */;
 		};
-		2986EE70954397A71E0E830F /* PBXTargetDependency */ = {
+		C69650F63254F92CBB1EE594 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbgfxDebug.a";
-			targetProxy = F85837EBE4C3F7F68DDF5C5C /* PBXContainerItemProxy */;
+			targetProxy = 357DDB1C21E89B28CA03018E /* PBXContainerItemProxy */;
 		};
-		AF0F7EB51BF768AB24E56A27 /* PBXTargetDependency */ = {
+		0C55F9EE783CE4E4812AE660 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbxDebug.a";
-			targetProxy = 7EA72B356A7C73E8932BB3E4 /* PBXContainerItemProxy */;
+			targetProxy = A4CC9E4B90A1E6FEB95026FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -454,16 +454,16 @@
 				OBJROOT = obj/Debug/geometryv;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -537,16 +537,16 @@
 				OBJROOT = obj/Release/geometryv;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",

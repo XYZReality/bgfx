@@ -248,8 +248,8 @@
     <ClInclude Include="..\..\..\..\bimg\include\bimg\bimg.h" />
     <ClInclude Include="..\..\..\..\bimg\include\bimg\decode.h" />
     <ClInclude Include="..\..\..\..\bimg\include\bimg\encode.h" />
-    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_internal.h" />
     <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_diagnostic_trace.h" />
+    <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_internal.h" />
     <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_internal_entry.h" />
     <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_mathlib.h" />
     <ClInclude Include="..\..\..\..\bimg\3rdparty\astc-encoder\source\astcenc_vecmathlib.h" />

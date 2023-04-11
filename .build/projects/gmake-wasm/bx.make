@@ -31,9 +31,9 @@ else
   RM    = $(SILENT) del /F "$(subst /,\\,$(1))" 2> nul || exit 0
 endif
 
-CC  = gcc
-CXX = g++
-AR  = ar
+CC  = "$(EMSCRIPTEN)/emcc"
+CXX = "$(EMSCRIPTEN)/em++"
+AR  = "$(EMSCRIPTEN)/emar"
 
 ifndef RESCOMP
   ifdef WINDRES
@@ -46,26 +46,26 @@ endif
 MAKEFILE = bx.make
 
 ifeq ($(config),debug32)
-  OBJDIR              = ../../orin/obj/x32/Debug/bx
-  TARGETDIR           = ../../orin/bin
-  TARGET              = $(TARGETDIR)/libbxDebug.a
+  OBJDIR              = ../../wasm/obj/x32/Debug/bx
+  TARGETDIR           = ../../wasm/bin
+  TARGET              = $(TARGETDIR)/bxDebug.bc
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBX_CONFIG_DEBUG=1
-  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../../../../../opt/vc/include" -I"../../../../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
+  INCLUDES           += -I"../../../../bx/include" -I"../../../../bx/3rdparty"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/wasm" -s MAX_WEBGL_VERSION=2
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lrt -ldl
+  LIBS               += $(LDDEPS)
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
-  LINKCMD             = $(AR)  -rcs $(TARGET)
+  LINKCMD             = $(AR)  rcs $(TARGET)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/bx/src/allocator.o \
@@ -100,26 +100,26 @@ ifeq ($(config),debug32)
 endif
 
 ifeq ($(config),release32)
-  OBJDIR              = ../../orin/obj/x32/Release/bx
-  TARGETDIR           = ../../orin/bin
-  TARGET              = $(TARGETDIR)/libbxRelease.a
+  OBJDIR              = ../../wasm/obj/x32/Release/bx
+  TARGETDIR           = ../../wasm/bin
+  TARGET              = $(TARGETDIR)/bxRelease.bc
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBX_CONFIG_DEBUG=0
-  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../../../../../opt/vc/include" -I"../../../../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
+  INCLUDES           += -I"../../../../bx/include" -I"../../../../bx/3rdparty"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/wasm" -s MAX_WEBGL_VERSION=2
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lrt -ldl
+  LIBS               += $(LDDEPS)
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
-  LINKCMD             = $(AR)  -rcs $(TARGET)
+  LINKCMD             = $(AR)  rcs $(TARGET)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/bx/src/allocator.o \
@@ -154,26 +154,26 @@ ifeq ($(config),release32)
 endif
 
 ifeq ($(config),debug64)
-  OBJDIR              = ../../orin/obj/x64/Debug/bx
-  TARGETDIR           = ../../orin/bin
-  TARGET              = $(TARGETDIR)/libbxDebug.a
+  OBJDIR              = ../../wasm/obj/x64/Debug/bx
+  TARGETDIR           = ../../wasm/bin
+  TARGET              = $(TARGETDIR)/bxDebug.bc
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBX_CONFIG_DEBUG=1
-  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../../../../../opt/vc/include" -I"../../../../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
+  INCLUDES           += -I"../../../../bx/include" -I"../../../../bx/3rdparty"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/wasm" -s MAX_WEBGL_VERSION=2
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lrt -ldl
+  LIBS               += $(LDDEPS)
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
-  LINKCMD             = $(AR)  -rcs $(TARGET)
+  LINKCMD             = $(AR)  rcs $(TARGET)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/bx/src/allocator.o \
@@ -208,26 +208,26 @@ ifeq ($(config),debug64)
 endif
 
 ifeq ($(config),release64)
-  OBJDIR              = ../../orin/obj/x64/Release/bx
-  TARGETDIR           = ../../orin/bin
-  TARGET              = $(TARGETDIR)/libbxRelease.a
+  OBJDIR              = ../../wasm/obj/x64/Release/bx
+  TARGETDIR           = ../../wasm/bin
+  TARGET              = $(TARGETDIR)/bxRelease.bc
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBX_CONFIG_DEBUG=0
-  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../../../../../opt/vc/include" -I"../../../../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
+  INCLUDES           += -I"../../../../bx/include" -I"../../../../bx/3rdparty"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/wasm" -s MAX_WEBGL_VERSION=2
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lrt -ldl
+  LIBS               += $(LDDEPS)
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
-  LINKCMD             = $(AR)  -rcs $(TARGET)
+  LINKCMD             = $(AR)  rcs $(TARGET)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/bx/src/allocator.o \
@@ -262,26 +262,26 @@ ifeq ($(config),release64)
 endif
 
 ifeq ($(config),debug)
-  OBJDIR              = ../../orin/obj/Debug/bx
-  TARGETDIR           = ../../orin/bin
-  TARGET              = $(TARGETDIR)/libbxDebug.a
+  OBJDIR              = ../../wasm/obj/Debug/bx
+  TARGETDIR           = ../../wasm/bin
+  TARGET              = $(TARGETDIR)/bxDebug.bc
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -D_DEBUG -DBX_CONFIG_DEBUG=1
-  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../../../../../opt/vc/include" -I"../../../../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
+  INCLUDES           += -I"../../../../bx/include" -I"../../../../bx/3rdparty"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/wasm" -s MAX_WEBGL_VERSION=2
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lrt -ldl
+  LIBS               += $(LDDEPS)
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
-  LINKCMD             = $(AR)  -rcs $(TARGET)
+  LINKCMD             = $(AR)  rcs $(TARGET)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/bx/src/allocator.o \
@@ -316,26 +316,26 @@ ifeq ($(config),debug)
 endif
 
 ifeq ($(config),release)
-  OBJDIR              = ../../orin/obj/Release/bx
-  TARGETDIR           = ../../orin/bin
-  TARGET              = $(TARGETDIR)/libbxRelease.a
+  OBJDIR              = ../../wasm/obj/Release/bx
+  TARGETDIR           = ../../wasm/bin
+  TARGET              = $(TARGETDIR)/bxRelease.bc
   DEFINES            += -D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_CONSTANT_MACROS -DNDEBUG -DBX_CONFIG_DEBUG=0
-  INCLUDES           += -I"../../../../bx/include/compat/linux" -I"../../../../../../../../../../../../opt/vc/include" -I"../../../../../../../../../../../../opt/vc/include/interface/vcos/pthreads" -I"../../../../../../../../../../../../opt/vc/include/interface/vmcs_host/linux" -I"../../../../bx/include" -I"../../../../bx/3rdparty"
+  INCLUDES           += -I"../../../../bx/include" -I"../../../../bx/3rdparty"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
-  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
-  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef -march=armv8.2-a -mtune=cortex-a76 -fPIC -Wshadow
+  ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
+  ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef
+  ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -Wunused-value -Wundef
+  ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -ffast-math -fomit-frame-pointer -g -O3 -std=c++14 -fno-exceptions -Wunused-value -Wundef
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/orin" -L"../../../../../../../../../../../../opt/vc/lib" -L"." -Wl,--gc-sections
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../3rdparty/lib/wasm" -s MAX_WEBGL_VERSION=2
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lrt -ldl
+  LIBS               += $(LDDEPS)
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
-  LINKCMD             = $(AR)  -rcs $(TARGET)
+  LINKCMD             = $(AR)  rcs $(TARGET)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/bx/src/allocator.o \

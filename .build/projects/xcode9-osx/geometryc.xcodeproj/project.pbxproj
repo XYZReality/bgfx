@@ -27,20 +27,20 @@
 		24CFC53E10219D2EF93FDA3E /* vertexlayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 5315ACDABF83015A086DBC59 /* vertexlayout.h */; };
 		5DC95330C98FB04C12EB3EAF /* geometryc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C0E12FE78211257210BEF43 /* geometryc.cpp */; };
 		1A8775448640E0EE0FA0FAC8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1230C8F8FE55925FE79B172B /* Cocoa.framework */; };
-		52C50B61BE8B687D07E7F6DF /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A140BD148D53BD6D363D9A5A /* libbxDebug.a */; };
+		EF8809FF5B4F661BA4AAF47D /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0E9E510A219EAAB30A7B97 /* libbxDebug.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		867B42C672508A799BFFC975 /* PBXContainerItemProxy */ = {
+		836C262F6F416EE298F0ADDE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8BE0A85D7789108DA01F2C0C /* bx.xcodeproj */;
+			containerPortal = 8824FE9074CD65C09D63813F /* bx.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D5D335834140F17D0A3489DB;
 			remoteInfo = "libbxDebug.a";
 		};
-		E0B3FC91CC884445F5378441 /* PBXContainerItemProxy */ = {
+		DDA4E0FAC97928AEF22868AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8BE0A85D7789108DA01F2C0C /* bx.xcodeproj */;
+			containerPortal = 8824FE9074CD65C09D63813F /* bx.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 1B1D4BC607ACD48FB0CAE88A;
 			remoteInfo = "libbxDebug.a";
@@ -69,7 +69,7 @@
 		8C0E12FE78211257210BEF43 /* geometryc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "geometryc.cpp"; path = "geometryc.cpp"; sourceTree = "<group>"; };
 		1230C8F8FE55925FE79B172B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Cocoa.framework"; path = "/System/Library/Frameworks/Cocoa.framework"; sourceTree = "<absolute>"; };
 		841F5F6AF056A701F9600B25 /* geometrycDebug */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "geometrycDebug"; path = "geometrycDebug"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BE0A85D7789108DA01F2C0C /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		8824FE9074CD65C09D63813F /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A8775448640E0EE0FA0FAC8 /* Cocoa.framework in Frameworks */,
-				52C50B61BE8B687D07E7F6DF /* libbxDebug.a in Frameworks */,
+				EF8809FF5B4F661BA4AAF47D /* libbxDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,16 +188,16 @@
 		95AE38A601E6803D0AF0E460 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				8BE0A85D7789108DA01F2C0C /* bx.xcodeproj */,
+				8824FE9074CD65C09D63813F /* bx.xcodeproj */,
 			);
 			name = "Projects";
 			path = ".";
 			sourceTree = "<group>";
 		};
-		E5C4E97851ACD46E5A9AD6EA /* Products */ = {
+		420A65B2AEF14FA8B7DF5124 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A140BD148D53BD6D363D9A5A /* libbxDebug.a */,
+				1E0E9E510A219EAAB30A7B97 /* libbxDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D1174EB83DFF38AE46ED3A2A /* PBXTargetDependency */,
+				2E5DC9F19A44B4E7A332B663 /* PBXTargetDependency */,
 			);
 			name = "geometryc";
 			productInstallPath = "$(HOME)/bin";
@@ -236,8 +236,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = E5C4E97851ACD46E5A9AD6EA /* Products */;
-					ProjectRef = 8BE0A85D7789108DA01F2C0C /* bx.xcodeproj */;
+					ProductGroup = 420A65B2AEF14FA8B7DF5124 /* Products */;
+					ProjectRef = 8824FE9074CD65C09D63813F /* bx.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -248,11 +248,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A140BD148D53BD6D363D9A5A /* libbxDebug.a */ = {
+		1E0E9E510A219EAAB30A7B97 /* libbxDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../../../bx/scripts/libbxDebug.a";
-			remoteRef = 867B42C672508A799BFFC975 /* PBXContainerItemProxy */;
+			remoteRef = 836C262F6F416EE298F0ADDE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -298,10 +298,10 @@
 /* End PBXVariantGroup section */
 
 /* Begin PBXTargetDependency section */
-		D1174EB83DFF38AE46ED3A2A /* PBXTargetDependency */ = {
+		2E5DC9F19A44B4E7A332B663 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbxDebug.a";
-			targetProxy = E0B3FC91CC884445F5378441 /* PBXContainerItemProxy */;
+			targetProxy = DDA4E0FAC97928AEF22868AA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -385,16 +385,16 @@
 				OBJROOT = obj/Debug/geometryc;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -460,16 +460,16 @@
 				OBJROOT = obj/Release/geometryc;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",

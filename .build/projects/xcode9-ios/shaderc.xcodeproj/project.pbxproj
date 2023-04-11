@@ -29,7 +29,7 @@
 		12981F60FE2E6215A7E3D815 /* libglsl-optimizerDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A958BBF7628ED6D7F0F5D24 /* libglsl-optimizerDebug.a */; };
 		C0F3D4B4ACB3655915D14D64 /* libspirv-optDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFE220D7B1A15FE44F2816B /* libspirv-optDebug.a */; };
 		D4074CAD40D0193109612243 /* libspirv-crossDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F1223D4FC66AF07875AAEC /* libspirv-crossDebug.a */; };
-		4810D6243423D67DDD0CB36A /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7716DE19E3A59F04ECA1801C /* libbxDebug.a */; };
+		C5DDB661B1F0B6BA5ADA93A7 /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4413C6540D1FD4F49CDDE67 /* libbxDebug.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,16 +103,16 @@
 			remoteGlobalIDString = CCCB21BB38E408E50191987E;
 			remoteInfo = "libspirv-crossDebug.a";
 		};
-		3485E201205A2AB549096AB1 /* PBXContainerItemProxy */ = {
+		3176C66A1D4B0E1E46FA4D1A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 391CA9BE25C510EE4E5B2C6D /* bx.xcodeproj */;
+			containerPortal = 3660FEF1220966214B9F81A0 /* bx.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D5D335834140F17D0A3489DB;
 			remoteInfo = "libbxDebug.a";
 		};
-		8EBD9CCD7A92E480A341247D /* PBXContainerItemProxy */ = {
+		8BAE80367783C8E9A03208E6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 391CA9BE25C510EE4E5B2C6D /* bx.xcodeproj */;
+			containerPortal = 3660FEF1220966214B9F81A0 /* bx.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 1B1D4BC607ACD48FB0CAE88A;
 			remoteInfo = "libbxDebug.a";
@@ -143,7 +143,7 @@
 		2C6C96E51899E216417A8527 /* glsl-optimizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "glsl-optimizer.xcodeproj"; path = "glsl-optimizer.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		D10B8578BDE10B76A68B26C9 /* spirv-opt.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "spirv-opt.xcodeproj"; path = "spirv-opt.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		AE583AB31A774E8063445492 /* spirv-cross.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "spirv-cross.xcodeproj"; path = "spirv-cross.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		391CA9BE25C510EE4E5B2C6D /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		3660FEF1220966214B9F81A0 /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 				12981F60FE2E6215A7E3D815 /* libglsl-optimizerDebug.a in Frameworks */,
 				C0F3D4B4ACB3655915D14D64 /* libspirv-optDebug.a in Frameworks */,
 				D4074CAD40D0193109612243 /* libspirv-crossDebug.a in Frameworks */,
-				4810D6243423D67DDD0CB36A /* libbxDebug.a in Frameworks */,
+				C5DDB661B1F0B6BA5ADA93A7 /* libbxDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +233,7 @@
 				2C6C96E51899E216417A8527 /* glsl-optimizer.xcodeproj */,
 				D10B8578BDE10B76A68B26C9 /* spirv-opt.xcodeproj */,
 				AE583AB31A774E8063445492 /* spirv-cross.xcodeproj */,
-				391CA9BE25C510EE4E5B2C6D /* bx.xcodeproj */,
+				3660FEF1220966214B9F81A0 /* bx.xcodeproj */,
 			);
 			name = "Projects";
 			path = ".";
@@ -279,10 +279,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D350B87A3F38A3704826A5EC /* Products */ = {
+		39692883A5501379AE3E15F5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7716DE19E3A59F04ECA1801C /* libbxDebug.a */,
+				D4413C6540D1FD4F49CDDE67 /* libbxDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 				D2EA8EC93ED6A12A47AFA8A3 /* PBXTargetDependency */,
 				7767DE60E3DB73BEAC25C1CD /* PBXTargetDependency */,
 				743599766062E5A7894388B8 /* PBXTargetDependency */,
-				BFA31CBA2B8B07B03479092C /* PBXTargetDependency */,
+				1CE997F388D082E991BE8465 /* PBXTargetDependency */,
 			);
 			name = "shaderc";
 			productInstallPath = "$(HOME)/bin";
@@ -346,8 +346,8 @@
 					ProjectRef = AE583AB31A774E8063445492 /* spirv-cross.xcodeproj */;
 				},
 				{
-					ProductGroup = D350B87A3F38A3704826A5EC /* Products */;
-					ProjectRef = 391CA9BE25C510EE4E5B2C6D /* bx.xcodeproj */;
+					ProductGroup = 39692883A5501379AE3E15F5 /* Products */;
+					ProjectRef = 3660FEF1220966214B9F81A0 /* bx.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -393,11 +393,11 @@
 			remoteRef = 491B352CB5E50687FEEB05AC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7716DE19E3A59F04ECA1801C /* libbxDebug.a */ = {
+		D4413C6540D1FD4F49CDDE67 /* libbxDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../ios-arm/bin/libbxDebug.a";
-			remoteRef = 3485E201205A2AB549096AB1 /* PBXContainerItemProxy */;
+			remoteRef = 3176C66A1D4B0E1E46FA4D1A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -462,10 +462,10 @@
 			name = "libspirv-crossDebug.a";
 			targetProxy = C36CCD082F379F63783D9E88 /* PBXContainerItemProxy */;
 		};
-		BFA31CBA2B8B07B03479092C /* PBXTargetDependency */ = {
+		1CE997F388D082E991BE8465 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbxDebug.a";
-			targetProxy = 8EBD9CCD7A92E480A341247D /* PBXContainerItemProxy */;
+			targetProxy = 8BAE80367783C8E9A03208E6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -17,80 +17,80 @@
 		DDDB5B0CC959ACA5B2516A3D /* texturev.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5DA68C461F5CB65AA17DCF9 /* texturev.cpp */; };
 		3E6193D92AF5888193B9E235 /* vs_texture.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DF1A834F961ABADC2802536 /* vs_texture.bin.h */; };
 		FFEE3CB06BD627A674C42922 /* vs_texture_cube.bin.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E52E55BFAE5DA0363AA34B8 /* vs_texture_cube.bin.h */; };
-		815C2D5CEDC5C2BE76097169 /* libexample-commonDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A25155428E27DC3F77D1F692 /* libexample-commonDebug.a */; };
-		326054301EF796E5C7AB0DE6 /* libbimg_decodeDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 212A48348DBDA9E296A41999 /* libbimg_decodeDebug.a */; };
-		D74D16D9433501CF4C23034B /* libbimgDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A9D582723DCB2ADB0125DF /* libbimgDebug.a */; };
-		B88AFEE824C65EAC2DBBDB3B /* libbgfxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C6BBC6B32E82941C9A96AA /* libbgfxDebug.a */; };
-		AB5B0F3C17226C58607DFABA /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 032A075AEF3C07B39826E49F /* libbxDebug.a */; };
+		49A2D40FB50B6A723E4F181D /* libexample-commonDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 789A1BA76470A2A44D1ABDF7 /* libexample-commonDebug.a */; };
+		AF87925B9B1ED51044D34B11 /* libbimg_decodeDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6FC36DEA02251CF3E994D2 /* libbimg_decodeDebug.a */; };
+		F4975601607F41F7696D4373 /* libbimgDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC08E145989CD6ED016130A2 /* libbimgDebug.a */; };
+		D507F9C1414359854A38D614 /* libbgfxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C45DDF7DB0C5A54B1931BA61 /* libbgfxDebug.a */; };
+		919F8660FD65E37C46C171DF /* libbxDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F7E7966C0AE8EF15F4C4DC /* libbxDebug.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7B1705D86770755B906A57F5 /* PBXContainerItemProxy */ = {
+		7A93D41566EC44998FE62633 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 00149A44EC40E67515228986 /* example-common.xcodeproj */;
+			containerPortal = FF0049F4EB2D9525140F3836 /* example-common.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9D8CE35A09FB38DA52E4F3D9;
 			remoteInfo = "libexample-commonDebug.a";
 		};
-		55B9EF62411260E66A0C4280 /* PBXContainerItemProxy */ = {
+		5435BFA0408E2F24698811BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 00149A44EC40E67515228986 /* example-common.xcodeproj */;
+			containerPortal = FF0049F4EB2D9525140F3836 /* example-common.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = E3DC407FCF2D2CC1F8911A83;
 			remoteInfo = "libexample-commonDebug.a";
 		};
-		E1AE520C4D792467967F238C /* PBXContainerItemProxy */ = {
+		7E0C160BEAD6E76533DDE68A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46D42920B2F23DEDFBBF43FF /* bimg_decode.xcodeproj */;
+			containerPortal = E3E48BA54F03A07298D0A584 /* bimg_decode.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 7D6367F06989315752CFB622;
 			remoteInfo = "libbimg_decodeDebug.a";
 		};
-		5B00EBE8C7CABC4310D1BB68 /* PBXContainerItemProxy */ = {
+		F85DAEE764288042AD2E7F67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46D42920B2F23DEDFBBF43FF /* bimg_decode.xcodeproj */;
+			containerPortal = E3E48BA54F03A07298D0A584 /* bimg_decode.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = C35735362F701C60F81CACF9;
 			remoteInfo = "libbimg_decodeDebug.a";
 		};
-		0F56C9F6FBC08902A4DCEE67 /* PBXContainerItemProxy */ = {
+		4C7A6D2838E52D34E1009399 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D43E9008C07D3A84690017B6 /* bimg.xcodeproj */;
+			containerPortal = 11764666FDB4F0E1A637CD13 /* bimg.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5ACAB1E8C601FA7FCF0B5EA3;
 			remoteInfo = "libbimgDebug.a";
 		};
-		A922F735958DB7413EA91CA7 /* PBXContainerItemProxy */ = {
+		E6469B67D2B15B737BCDC0D8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D43E9008C07D3A84690017B6 /* bimg.xcodeproj */;
+			containerPortal = 11764666FDB4F0E1A637CD13 /* bimg.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 00D72F0FECD05861D53DEF71;
 			remoteInfo = "libbimgDebug.a";
 		};
-		40394F812CA40F8DD5BF74F2 /* PBXContainerItemProxy */ = {
+		7D5DF3B269C8B3BE12E41824 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 058122C0F1BFCC3B9A42A96D /* bgfx.xcodeproj */;
+			containerPortal = 42B8D81D2EF78299D7795FCB /* bgfx.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 02DC17D86E13606F771DC492;
 			remoteInfo = "libbgfxDebug.a";
 		};
-		DA057DC0C6703DCC6F8CA231 /* PBXContainerItemProxy */ = {
+		172A21F20395E1FDACB04663 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 058122C0F1BFCC3B9A42A96D /* bgfx.xcodeproj */;
+			containerPortal = 42B8D81D2EF78299D7795FCB /* bgfx.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = A853C66B944DEFBD7DBA85CE;
 			remoteInfo = "libbgfxDebug.a";
 		};
-		E8871323D45C5BD6FD0B9BD2 /* PBXContainerItemProxy */ = {
+		E578F78BD14D3F3FFAFC7E3B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EDAAAC9ED95314CE02EA2F4D /* bx.xcodeproj */;
+			containerPortal = EAEE01D2D6976901FF2D8580 /* bx.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D5D335834140F17D0A3489DB;
 			remoteInfo = "libbxDebug.a";
 		};
-		42C0CDEE2E9515A25744559E /* PBXContainerItemProxy */ = {
+		3FB1B1572B86F90A54353907 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EDAAAC9ED95314CE02EA2F4D /* bx.xcodeproj */;
+			containerPortal = EAEE01D2D6976901FF2D8580 /* bx.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 1B1D4BC607ACD48FB0CAE88A;
 			remoteInfo = "libbxDebug.a";
@@ -121,11 +121,11 @@
 		0E52E55BFAE5DA0363AA34B8 /* vs_texture_cube.bin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "vs_texture_cube.bin.h"; path = "vs_texture_cube.bin.h"; sourceTree = "<group>"; };
 		9711FC2B034D5CEF0C42D97E /* vs_texture_cube.sc */ = {isa = PBXFileReference; lastKnownFileType = text; name = "vs_texture_cube.sc"; path = "vs_texture_cube.sc"; sourceTree = "<group>"; };
 		FC4372E7E83D9B39D1AA314A /* texturevDebug */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "texturevDebug"; path = "texturevDebug"; sourceTree = BUILT_PRODUCTS_DIR; };
-		00149A44EC40E67515228986 /* example-common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "example-common.xcodeproj"; path = "example-common.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		46D42920B2F23DEDFBBF43FF /* bimg_decode.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg_decode.xcodeproj"; path = "bimg_decode.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		D43E9008C07D3A84690017B6 /* bimg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg.xcodeproj"; path = "bimg.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		058122C0F1BFCC3B9A42A96D /* bgfx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bgfx.xcodeproj"; path = "bgfx.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		EDAAAC9ED95314CE02EA2F4D /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		FF0049F4EB2D9525140F3836 /* example-common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "example-common.xcodeproj"; path = "example-common.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		E3E48BA54F03A07298D0A584 /* bimg_decode.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg_decode.xcodeproj"; path = "bimg_decode.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		11764666FDB4F0E1A637CD13 /* bimg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bimg.xcodeproj"; path = "bimg.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		42B8D81D2EF78299D7795FCB /* bgfx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bgfx.xcodeproj"; path = "bgfx.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		EAEE01D2D6976901FF2D8580 /* bx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "bx.xcodeproj"; path = "bx.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,11 +133,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				815C2D5CEDC5C2BE76097169 /* libexample-commonDebug.a in Frameworks */,
-				326054301EF796E5C7AB0DE6 /* libbimg_decodeDebug.a in Frameworks */,
-				D74D16D9433501CF4C23034B /* libbimgDebug.a in Frameworks */,
-				B88AFEE824C65EAC2DBBDB3B /* libbgfxDebug.a in Frameworks */,
-				AB5B0F3C17226C58607DFABA /* libbxDebug.a in Frameworks */,
+				49A2D40FB50B6A723E4F181D /* libexample-commonDebug.a in Frameworks */,
+				AF87925B9B1ED51044D34B11 /* libbimg_decodeDebug.a in Frameworks */,
+				F4975601607F41F7696D4373 /* libbimgDebug.a in Frameworks */,
+				D507F9C1414359854A38D614 /* libbgfxDebug.a in Frameworks */,
+				919F8660FD65E37C46C171DF /* libbxDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,52 +205,52 @@
 		32559FB61E4FC80807BC5E19 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				00149A44EC40E67515228986 /* example-common.xcodeproj */,
-				46D42920B2F23DEDFBBF43FF /* bimg_decode.xcodeproj */,
-				D43E9008C07D3A84690017B6 /* bimg.xcodeproj */,
-				058122C0F1BFCC3B9A42A96D /* bgfx.xcodeproj */,
-				EDAAAC9ED95314CE02EA2F4D /* bx.xcodeproj */,
+				FF0049F4EB2D9525140F3836 /* example-common.xcodeproj */,
+				E3E48BA54F03A07298D0A584 /* bimg_decode.xcodeproj */,
+				11764666FDB4F0E1A637CD13 /* bimg.xcodeproj */,
+				42B8D81D2EF78299D7795FCB /* bgfx.xcodeproj */,
+				EAEE01D2D6976901FF2D8580 /* bx.xcodeproj */,
 			);
 			name = "Projects";
 			path = ".";
 			sourceTree = "<group>";
 		};
-		BAFC142626E827872FC12E00 /* Products */ = {
+		D974D5AB4560E80C4E39EF85 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A25155428E27DC3F77D1F692 /* libexample-commonDebug.a */,
+				789A1BA76470A2A44D1ABDF7 /* libexample-commonDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C003D4B0AC3020E2D511C3F2 /* Products */ = {
+		E6EE14D1D21B6102FBFC0313 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				212A48348DBDA9E296A41999 /* libbimg_decodeDebug.a */,
+				7E6FC36DEA02251CF3E994D2 /* libbimg_decodeDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0EE618507AA3C186036EADEE /* Products */ = {
+		ABF67AD517B4230CA07E0F74 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86A9D582723DCB2ADB0125DF /* libbimgDebug.a */,
+				AC08E145989CD6ED016130A2 /* libbimgDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1FA7E6C08B648FF7142F7B5F /* Products */ = {
+		BCB748462875F17CB13FDDE4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C7C6BBC6B32E82941C9A96AA /* libbgfxDebug.a */,
+				C45DDF7DB0C5A54B1931BA61 /* libbgfxDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		07CDB97B73B4A4717CA2A6ED /* Products */ = {
+		641235B5D0F91FABD9E72127 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				032A075AEF3C07B39826E49F /* libbxDebug.a */,
+				80F7E7966C0AE8EF15F4C4DC /* libbxDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -269,11 +269,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				26FC945F92E7A7C09BC0AE39 /* PBXTargetDependency */,
-				0CB60609F8E2523A21C4F54A /* PBXTargetDependency */,
-				BA5D13F7261BBC2DAFE5A795 /* PBXTargetDependency */,
-				CB1EE16737DC899EC0A67506 /* PBXTargetDependency */,
-				F31F1EBB5F0709B168F50A2D /* PBXTargetDependency */,
+				457455E5B15F6846BA386FBF /* PBXTargetDependency */,
+				0954D66DF580229F1E62C5AF /* PBXTargetDependency */,
+				576E757CC32B1EB34CF6091B /* PBXTargetDependency */,
+				682F43EDD4ECEB235DB7D78B /* PBXTargetDependency */,
+				506599F4BC4C84EAC53A8666 /* PBXTargetDependency */,
 			);
 			name = "texturev";
 			productInstallPath = "$(HOME)/bin";
@@ -293,24 +293,24 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = BAFC142626E827872FC12E00 /* Products */;
-					ProjectRef = 00149A44EC40E67515228986 /* example-common.xcodeproj */;
+					ProductGroup = D974D5AB4560E80C4E39EF85 /* Products */;
+					ProjectRef = FF0049F4EB2D9525140F3836 /* example-common.xcodeproj */;
 				},
 				{
-					ProductGroup = C003D4B0AC3020E2D511C3F2 /* Products */;
-					ProjectRef = 46D42920B2F23DEDFBBF43FF /* bimg_decode.xcodeproj */;
+					ProductGroup = E6EE14D1D21B6102FBFC0313 /* Products */;
+					ProjectRef = E3E48BA54F03A07298D0A584 /* bimg_decode.xcodeproj */;
 				},
 				{
-					ProductGroup = 0EE618507AA3C186036EADEE /* Products */;
-					ProjectRef = D43E9008C07D3A84690017B6 /* bimg.xcodeproj */;
+					ProductGroup = ABF67AD517B4230CA07E0F74 /* Products */;
+					ProjectRef = 11764666FDB4F0E1A637CD13 /* bimg.xcodeproj */;
 				},
 				{
-					ProductGroup = 1FA7E6C08B648FF7142F7B5F /* Products */;
-					ProjectRef = 058122C0F1BFCC3B9A42A96D /* bgfx.xcodeproj */;
+					ProductGroup = BCB748462875F17CB13FDDE4 /* Products */;
+					ProjectRef = 42B8D81D2EF78299D7795FCB /* bgfx.xcodeproj */;
 				},
 				{
-					ProductGroup = 07CDB97B73B4A4717CA2A6ED /* Products */;
-					ProjectRef = EDAAAC9ED95314CE02EA2F4D /* bx.xcodeproj */;
+					ProductGroup = 641235B5D0F91FABD9E72127 /* Products */;
+					ProjectRef = EAEE01D2D6976901FF2D8580 /* bx.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -321,39 +321,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A25155428E27DC3F77D1F692 /* libexample-commonDebug.a */ = {
+		789A1BA76470A2A44D1ABDF7 /* libexample-commonDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../../scripts/libexample-commonDebug.a";
-			remoteRef = 7B1705D86770755B906A57F5 /* PBXContainerItemProxy */;
+			remoteRef = 7A93D41566EC44998FE62633 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		212A48348DBDA9E296A41999 /* libbimg_decodeDebug.a */ = {
+		7E6FC36DEA02251CF3E994D2 /* libbimg_decodeDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../../../bimg/scripts/libbimg_decodeDebug.a";
-			remoteRef = E1AE520C4D792467967F238C /* PBXContainerItemProxy */;
+			remoteRef = 7E0C160BEAD6E76533DDE68A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		86A9D582723DCB2ADB0125DF /* libbimgDebug.a */ = {
+		AC08E145989CD6ED016130A2 /* libbimgDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../../../bimg/scripts/libbimgDebug.a";
-			remoteRef = 0F56C9F6FBC08902A4DCEE67 /* PBXContainerItemProxy */;
+			remoteRef = 4C7A6D2838E52D34E1009399 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C7C6BBC6B32E82941C9A96AA /* libbgfxDebug.a */ = {
+		C45DDF7DB0C5A54B1931BA61 /* libbgfxDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../../scripts/libbgfxDebug.a";
-			remoteRef = 40394F812CA40F8DD5BF74F2 /* PBXContainerItemProxy */;
+			remoteRef = 7D5DF3B269C8B3BE12E41824 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		032A075AEF3C07B39826E49F /* libbxDebug.a */ = {
+		80F7E7966C0AE8EF15F4C4DC /* libbxDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "../../../../bx/scripts/libbxDebug.a";
-			remoteRef = E8871323D45C5BD6FD0B9BD2 /* PBXContainerItemProxy */;
+			remoteRef = E578F78BD14D3F3FFAFC7E3B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -383,30 +383,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin PBXTargetDependency section */
-		26FC945F92E7A7C09BC0AE39 /* PBXTargetDependency */ = {
+		457455E5B15F6846BA386FBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libexample-commonDebug.a";
-			targetProxy = 55B9EF62411260E66A0C4280 /* PBXContainerItemProxy */;
+			targetProxy = 5435BFA0408E2F24698811BE /* PBXContainerItemProxy */;
 		};
-		0CB60609F8E2523A21C4F54A /* PBXTargetDependency */ = {
+		0954D66DF580229F1E62C5AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbimg_decodeDebug.a";
-			targetProxy = 5B00EBE8C7CABC4310D1BB68 /* PBXContainerItemProxy */;
+			targetProxy = F85DAEE764288042AD2E7F67 /* PBXContainerItemProxy */;
 		};
-		BA5D13F7261BBC2DAFE5A795 /* PBXTargetDependency */ = {
+		576E757CC32B1EB34CF6091B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbimgDebug.a";
-			targetProxy = A922F735958DB7413EA91CA7 /* PBXContainerItemProxy */;
+			targetProxy = E6469B67D2B15B737BCDC0D8 /* PBXContainerItemProxy */;
 		};
-		CB1EE16737DC899EC0A67506 /* PBXTargetDependency */ = {
+		682F43EDD4ECEB235DB7D78B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbgfxDebug.a";
-			targetProxy = DA057DC0C6703DCC6F8CA231 /* PBXContainerItemProxy */;
+			targetProxy = 172A21F20395E1FDACB04663 /* PBXContainerItemProxy */;
 		};
-		F31F1EBB5F0709B168F50A2D /* PBXTargetDependency */ = {
+		506599F4BC4C84EAC53A8666 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libbxDebug.a";
-			targetProxy = 42C0CDEE2E9515A25744559E /* PBXContainerItemProxy */;
+			targetProxy = 3FB1B1572B86F90A54353907 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -491,16 +491,16 @@
 				OBJROOT = obj/Debug/texturev;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
@@ -574,16 +574,16 @@
 				OBJROOT = obj/Release/texturev;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
 					"-Wundef",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
-					"-ffast-math",
 					"-fomit-frame-pointer",
+					"-ffast-math",
 					"-Wshadow",
 					"-Wfatal-errors",
 					"-Wunused-value",
