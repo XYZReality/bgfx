@@ -554,7 +554,7 @@ namespace entry
 	{
 		BX_UNUSED(_thread);
 
-		int32_t result = chdir("/sdcard/bgfx/examples/runtime");
+		int32_t result = chdir("/sdcard/XYZReality");
 		BX_ASSERT(0 == result, "Failed to chdir to dir. android.permission.WRITE_EXTERNAL_STORAGE?", errno);
 
 		MainThreadEntry* self = (MainThreadEntry*)_userData;
