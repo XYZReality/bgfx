@@ -12,6 +12,8 @@
 
 #include "defines.h"
 
+#define BGFX_CONFIG_USE_32BIT_HANDLES 1
+
 #if BGFX_CONFIG_USE_32BIT_HANDLES
 typedef uint32_t bgfx_handle;
 #else
