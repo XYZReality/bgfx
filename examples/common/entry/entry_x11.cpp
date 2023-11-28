@@ -781,6 +781,32 @@ namespace entry
 		BX_UNUSED(_handle);
 	}
 
+	void showWindowFrame(WindowHandle _handle, bool _show)
+	{
+		typedef struct Hints
+		{
+			unsigned long   flags;
+			unsigned long   functions;
+			unsigned long   decorations;
+			long            inputMode;
+			unsigned long   status;
+		} Hints;
+
+		Hints hints;
+		Atom property;
+		hints.flags = 2;
+		hints.decorations = _show;
+		property = XInternAtom(s_ctx.m_display, "_MOTIF_WM_HINTS", true);
+		XChangeProperty(s_ctx.m_display,
+						s_ctx.m_window[_handle.idx],
+						property,
+						property,
+						32,
+						PropModeReplace,(unsigned char *)&hints,
+						5);
+		XMapWindow(s_ctx.m_display, s_ctx.m_window[_handle.idx]);
+	}
+
 	void setMouseLock(WindowHandle _handle, bool _lock)
 	{
 		BX_UNUSED(_handle, _lock);

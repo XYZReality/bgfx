@@ -272,6 +272,7 @@ namespace entry
 		WM_USER_WINDOW_SET_FLAGS,
 		WM_USER_WINDOW_SET_POS,
 		WM_USER_WINDOW_SET_SIZE,
+		WM_USER_WINDOW_TOGGLE_FULLSCREEN,
 		WM_USER_WINDOW_TOGGLE_FRAME,
 		WM_USER_WINDOW_MOUSE_LOCK,
 	};
@@ -638,7 +639,18 @@ namespace entry
 					{
 						uint32_t width  = GET_X_LPARAM(_lparam);
 						uint32_t height = GET_Y_LPARAM(_lparam);
-						adjust(m_hwnd[_wparam], width, height, true);
+						adjust(m_hwnd[_wparam], width, height, m_frame);
+					}
+					break;
+
+				case WM_USER_WINDOW_TOGGLE_FULLSCREEN:
+					{
+						if (m_frame)
+						{
+							m_oldWidth  = m_width;
+							m_oldHeight = m_height;
+						}
+						adjust(m_hwnd[_wparam], m_oldWidth, m_oldHeight, !m_frame);
 					}
 					break;
 
@@ -649,7 +661,8 @@ namespace entry
 							m_oldWidth  = m_width;
 							m_oldHeight = m_height;
 						}
-						adjust(m_hwnd[_wparam], m_oldWidth, m_oldHeight, !m_frame);
+						m_frame = (bool)_lparam;
+						adjust(m_hwnd[_wparam], m_oldWidth, m_oldHeight, m_frame);
 					}
 					break;
 
@@ -936,7 +949,7 @@ namespace entry
 			DeleteObject(brush);
 		}
 
-		void adjust(HWND _hwnd, uint32_t _width, uint32_t _height, bool _windowFrame)
+		void adjust(HWND _hwnd, uint32_t _width, uint32_t _height, bool _windowFrame, bool _fullscreen = false)
 		{
 			m_width  = _width;
 			m_height = _height;
@@ -945,28 +958,40 @@ namespace entry
 			ShowWindow(_hwnd, SW_SHOWNORMAL);
 			RECT rect;
 			RECT newrect = {0, 0, (LONG)_width, (LONG)_height};
-			DWORD style = WS_POPUP|WS_SYSMENU;
+			DWORD style = _windowFrame ? WS_OVERLAPPEDWINDOW : WS_POPUP;
+			m_style = GetWindowLong(_hwnd, GWL_STYLE);
 
 			if (m_frame)
 			{
 				GetWindowRect(_hwnd, &m_rect);
-				m_style = GetWindowLong(_hwnd, GWL_STYLE);
 			}
 
 			if (_windowFrame)
 			{
 				rect = m_rect;
-				style = m_style;
+				style = m_style | style;
 			}
 			else
 			{
-				HMONITOR monitor = MonitorFromWindow(_hwnd, MONITOR_DEFAULTTONEAREST);
-				MONITORINFO mi;
-				mi.cbSize = sizeof(mi);
-				GetMonitorInfo(monitor, &mi);
-				newrect = mi.rcMonitor;
-				rect = mi.rcMonitor;
-				m_aspectRatio = float(newrect.right  - newrect.left)/float(newrect.bottom - newrect.top);
+				m_style &= ~WS_OVERLAPPEDWINDOW;
+				if (_fullscreen)
+				{
+					HMONITOR monitor = MonitorFromWindow(_hwnd, MONITOR_DEFAULTTONEAREST);
+					MONITORINFO mi;
+					mi.cbSize = sizeof(mi);
+					GetMonitorInfo(monitor, &mi);
+					newrect = mi.rcMonitor;
+					rect = mi.rcMonitor;
+					m_aspectRatio = float(newrect.right - newrect.left) / float(newrect.bottom - newrect.top);
+				}
+				else
+				{
+					GetWindowRect(_hwnd, &m_rect);
+					newrect = m_rect;
+					newrect.right = newrect.left + _width;
+					newrect.bottom = newrect.top + _height;
+					rect = m_rect;
+				}
 			}
 
 			SetWindowLong(_hwnd, GWL_STYLE, style);
@@ -1157,7 +1182,12 @@ namespace entry
 
 	void toggleFullscreen(WindowHandle _handle)
 	{
-		PostMessage(s_ctx.m_hwnd[0], WM_USER_WINDOW_TOGGLE_FRAME, _handle.idx, 0);
+		PostMessage(s_ctx.m_hwnd[0], WM_USER_WINDOW_TOGGLE_FULLSCREEN, _handle.idx, 0);
+	}
+
+	void showWindowFrame(WindowHandle _handle, bool _show)
+	{
+		PostMessage(s_ctx.m_hwnd[0], WM_USER_WINDOW_TOGGLE_FRAME, _handle.idx, _show);
 	}
 
 	void setMouseLock(WindowHandle _handle, bool _lock)
